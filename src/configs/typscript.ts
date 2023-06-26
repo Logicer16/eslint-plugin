@@ -16,7 +16,7 @@ export = {
   rules: {
     // Modify existing rules
     "@typescript-eslint/return-await": "error",
-    "eslint/no-return-await": "off",
+    "no-return-await": "off",
 
     // Add new rules
     // eslint-disable-next-line sort-keys
