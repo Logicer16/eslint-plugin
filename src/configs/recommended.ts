@@ -1,0 +1,44 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
+export = {
+  extends: ["eslint:recommended"],
+  rules: {
+    "capitalized-comments": "error",
+    "func-names": ["error", "as-needed"],
+    "func-style": ["error", "declaration", {allowArrowFunctions: true}],
+    "id-length": ["error", {exceptions: ["i", "j"]}],
+    "no-else-return": "error",
+    "no-param-reassign": "error",
+    "no-return-await": "error",
+    "no-void": "error",
+    // Prettier recommends "one-var-declaration-per-line": "off", but this is seemingly not applicable to js/ts
+    "one-var-declaration-per-line": ["error", "initializations"],
+    "prefer-named-capture-group": "error",
+    "require-unicode-regexp": "error",
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: true
+      }
+    ],
+    "sort-keys": "error",
+
+    // Disable undesirable rules
+    // eslint-disable-next-line sort-keys
+    "consistent-return": "off",
+    "init-declarations": "off",
+    "lines-between-class-members": "off",
+    "max-lines-per-function": "off",
+    "max-statements": "off",
+    "multiline-comment-style": "off",
+    "no-bitwise": "off",
+    "no-console": "off",
+    "no-magic-numbers": "off",
+    "no-plusplus": "off",
+    "no-shadow": "off",
+    "no-undefined": "off",
+    "one-var": "off",
+    "prefer-destructuring": "off",
+    "prefer-template": "off"
+  }
+};
