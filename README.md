@@ -49,14 +49,14 @@ Add to you `.eslintrc.cjs` or similar:
 
 ### JavaScript
 
-```json
+```
 extends: ["plugin:@logicer/recommended", ...],
 plugins: [..., "@logicer", ...]
 ```
 
 ### TypeScript
 
-```json
+```
 extends: ["plugin:@logicer/recommended-typescript", ...],
 parser: "@typescript-eslint/parser",
 parserOptions: {
@@ -67,13 +67,13 @@ plugins: [..., "@logicer", ...]
 
 ### Prettier
 
-> **note**
+> **Note**
 > Ensure `"plugin:@logicer/recommended-prettier"` is last in `extends`
 
-> **note**
+> **Note**
 > This package does not provide configuration for Prettier. You must still provide a .prettierrc
 
-```json
+```
 {
 extends: [..., "plugin:@logicer/recommended-prettier"],
 plugins: [..., "@logicer", ...]
