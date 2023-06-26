@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/logicer16/eslint-plugin.git"
+    "url": "https://github.com/Logicer16/eslint-plugin.git"
   },
   "author": "logicer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/logicer16/eslint-plugin/issues"
+    "url": "https://github.com/Logicer16/eslint-plugin/issues"
   },
-  "homepage": "https://github.com/logicer16/eslint-plugin#readme",
+  "homepage": "https://github.com/Logicer16/eslint-plugin#readme",
   "engines": {
     "node": "^18.14.2"
   },
