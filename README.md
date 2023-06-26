@@ -1,5 +1,9 @@
 # Logicer's ESLint Base Configuration
 
+![npm (scoped)](https://img.shields.io/npm/v/%40logicer/eslint-plugin)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Logicer16/eslint-plugin/style.yml)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Logicer16/ESLint-plugin)
+
 Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs.
 
 `plugin:@logicer/recommended` automatically enables `eslint:recommended`.
