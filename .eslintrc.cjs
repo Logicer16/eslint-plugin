@@ -9,6 +9,7 @@ module.exports = {
       extends: [
         "plugin:@logicer/recommended-typescript",
         "plugin:eslint-plugin/recommended",
+        "plugin:@logicer/recommended-jsdoc",
         "plugin:@logicer/recommended-prettier"
       ],
       parser: "@typescript-eslint/parser",
