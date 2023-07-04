@@ -42,7 +42,7 @@
     "eslint-plugin-jsdoc": "^46.4.3",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.8.8",
-    "typescript": "~5.0.4"
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
