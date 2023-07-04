@@ -21,10 +21,12 @@ Contents:
 - [Install](#install)
   - [TypeScript](#typescript)
   - [Prettier](#prettier)
+  - [JSDoc](#jsdoc)
 - [Usage](#usage)
   - [JavaScript](#javascript)
   - [TypeScript](#typescript-1)
   - [Prettier](#prettier-1)
+  - [JSDoc](#jsdoc-1)
 
 ## Install
 
@@ -45,6 +47,12 @@ npm install --save-dev typescript @typescript-eslint/eslint-plugin @typescript-e
 ```sh
 npm install --save-dev --save-exact prettier
 npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+```
+
+### JSDoc
+
+```sh
+npm install --save-dev eslint-plugin-jsdoc
 ```
 
 ## Usage
@@ -82,4 +90,11 @@ plugins: [..., "@logicer", ...]
 extends: [..., "plugin:@logicer/recommended-prettier"],
 plugins: [..., "@logicer", ...]
 }
+```
+
+### JSDoc
+
+```
+extends: [..., "plugin:@logicer/recommended-JSDoc", ...],
+plugins: [..., "@logicer", ...]
 ```

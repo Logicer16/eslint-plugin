@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+/**
+ * @file A default typescript-eslint configuration.
+ */
 
+/**
+ * A default typescript-eslint configuration.
+ */
 export = {
   extends: [
     "./configs/recommended.js",
