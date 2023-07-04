@@ -37,16 +37,24 @@ export = {
     "@typescript-eslint/naming-convention": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-void-expression": "error",
+    "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/prefer-literal-enum-member": [
       "error",
       {allowBitwiseExpressions: true}
     ],
+    "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/promise-function-async": "error",
     "@typescript-eslint/require-array-sort-compare": [
       "error",
       {ignoreStringArrays: true}
     ],
-    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/strict-boolean-expressions": [
+      "error",
+      {
+        allowNullableBoolean: true,
+        allowString: false
+      }
+    ],
 
     // Disable undesirable rules
     // eslint-disable-next-line sort-keys
