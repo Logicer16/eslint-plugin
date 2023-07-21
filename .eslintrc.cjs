@@ -1,6 +1,6 @@
 module.exports = {
-  // extends: ["plugin:@logicer/recommended-prettier"],
-  // plugins: ["@logicer"],
+  extends: ["plugin:@logicer/recommended-prettier"],
+  plugins: ["@logicer"],
   root: true,
 
   overrides: [
@@ -14,7 +14,7 @@ module.exports = {
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "./tsconfig.json"
+        project: true
       },
       plugins: ["@logicer"]
     }
