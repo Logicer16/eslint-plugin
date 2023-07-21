@@ -32,6 +32,7 @@
     "node": "^18.14.2"
   },
   "devDependencies": {
+    "@logicer/eslint-plugin": "^1.0.0",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
@@ -42,34 +43,5 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.8.8",
     "typescript": "^5.0.4"
-  },
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
-    "eslint": "^8.43.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-jsdoc": "^46.4.3",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "2.8.8"
-  },
-  "peerDependenciesMeta": {
-    "@typescript-eslint/eslint-plugin": {
-      "optional": true
-    },
-    "@typescript-eslint/parser": {
-      "optional": true
-    },
-    "eslint-config-prettier": {
-      "optional": true
-    },
-    "eslint-plugin-jsdoc": {
-      "optional": true
-    },
-    "eslint-plugin-prettier": {
-      "optional": true
-    },
-    "prettier": {
-      "optional": true
-    }
   }
 }
