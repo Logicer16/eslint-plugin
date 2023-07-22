@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@logicer/eslint-plugin",
   "version": "1.2.0",
   "description": "Logicer's ESLint Base Configuration as a Plugin",
@@ -8,6 +9,7 @@
     "eslint-plugin"
   ],
   "main": "dist/src/index.js",
+  "type": "commonjs",
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc",
@@ -33,6 +35,8 @@
   },
   "devDependencies": {
     "@logicer/eslint-plugin": "^1.0.0",
+    "@logicer/prettier-config": "^1.0.1",
+    "@logicer/tsconfig": "^3.0.0",
     "@types/node": "^18.16.19",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
