@@ -24,6 +24,7 @@ export = {
     "jsdoc/require-description-complete-sentence": "error",
     "jsdoc/require-file-overview": "error",
     "jsdoc/require-hyphen-before-param-description": ["error", "never"],
+    "jsdoc/require-returns": ["error", {enableFixer: true}],
     "jsdoc/require-throws": "error",
     "jsdoc/sort-tags": "error"
   }
