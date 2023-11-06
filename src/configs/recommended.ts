@@ -17,8 +17,6 @@ export = {
     "no-param-reassign": "error",
     "no-return-await": "error",
     "no-void": "error",
-    // Prettier recommends "one-var-declaration-per-line": "off", but this is seemingly not applicable to js/ts
-    "one-var-declaration-per-line": ["error", "initializations"],
     "prefer-named-capture-group": "error",
     "require-unicode-regexp": "error",
     "sort-imports": [
