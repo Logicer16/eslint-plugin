@@ -9,7 +9,6 @@
 export = {
   extends: ["eslint:recommended"],
   rules: {
-    "capitalized-comments": "error",
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "declaration", {allowArrowFunctions: true}],
     "id-length": ["error", {exceptions: ["i", "j"]}],
