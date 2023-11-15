@@ -36,6 +36,7 @@ export = {
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-void-expression": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/prefer-literal-enum-member": [
       "error",
       {allowBitwiseExpressions: true}
