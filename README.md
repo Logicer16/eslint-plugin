@@ -6,27 +6,15 @@
 
 Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs.
 
-`plugin:@logicer/recommended` automatically enables `eslint:recommended`.
-In addition to the previous, for `plugin:@logicer/recommended-typescript` it also enables, in this order:
-
-- `plugin:@typescript-eslint/eslint-recommended`
-- `plugin:@typescript-eslint/recommended`
-- `plugin:@typescript-eslint/recommended-requiring-type-checking`
-- `plugin:@typescript-eslint/strict`
-
-A default prettier configuration is also provided in `plugin:@logicer/recommended-prettier`, which automatically enables `plugin:prettier/recommended`.
-
 Contents:
 
 - [Install](#install)
+- [Configs](#configs)
+  - [JavaScript](#javascript)
   - [TypeScript](#typescript)
   - [Prettier](#prettier)
   - [JSDoc](#jsdoc)
-- [Usage](#usage)
-  - [JavaScript](#javascript)
-  - [TypeScript](#typescript-1)
-  - [Prettier](#prettier-1)
-  - [JSDoc](#jsdoc-1)
+  - [Deprecation](#deprecation)
 
 ## Install
 
@@ -34,32 +22,15 @@ Contents:
 npm install --save-dev eslint @logicer/eslint-plugin
 ```
 
-For additional features:
-
-### TypeScript
-
-```sh
-npm install --save-dev typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
-```
-
-### Prettier
-
-```sh
-npm install --save-dev --save-exact prettier
-npm install --save-dev eslint-config-prettier eslint-plugin-prettier
-```
-
-### JSDoc
-
-```sh
-npm install --save-dev eslint-plugin-jsdoc
-```
-
-## Usage
-
-Add to you `.eslintrc.cjs` or similar:
+## Configs
 
 ### JavaScript
+
+Automatically configures `eslint:recommended`.
+
+#### Usage
+
+`.eslintrc.cjs`:
 
 ```
 extends: ["plugin:@logicer/recommended", ...],
@@ -67,6 +38,23 @@ plugins: [..., "@logicer", ...]
 ```
 
 ### TypeScript
+
+Extends upon `plugin:@logicer/recommended`, configuring, in this order:
+
+- `plugin:@typescript-eslint/eslint-recommended`
+- `plugin:@typescript-eslint/recommended`
+- `plugin:@typescript-eslint/recommended-requiring-type-checking`
+- `plugin:@typescript-eslint/strict`
+
+#### Install
+
+```sh
+npm install --save-dev typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+#### Usage
+
+`.eslintrc.cjs`:
 
 ```
 extends: ["plugin:@logicer/recommended-typescript", ...],
@@ -79,11 +67,21 @@ plugins: [..., "@logicer", ...]
 
 ### Prettier
 
+Automatically configures `plugin:prettier/recommended` with a default prettier configuration.
+
 > **Note**
 > Ensure `"plugin:@logicer/recommended-prettier"` is last in `extends`
 
-> **Note**
-> This package does not provide configuration for Prettier. You must still provide a .prettierrc
+#### Install
+
+```sh
+npm install --save-dev --save-exact prettier
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+```
+
+#### Usage
+
+`.eslintrc.cjs`:
 
 ```
 {
@@ -94,7 +92,41 @@ plugins: [..., "@logicer", ...]
 
 ### JSDoc
 
+Automatically configures `plugin:jsdoc/recommended-typescript-error`.
+
+#### Install
+
+```sh
+npm install --save-dev eslint-plugin-jsdoc
 ```
-extends: [..., "plugin:@logicer/recommended-JSDoc", ...],
+
+#### Usage
+
+`.eslintrc.cjs`:
+
+```
+extends: [..., "plugin:@logicer/recommended-jsdoc", ...],
+plugins: [..., "@logicer", ...]
+```
+
+### Deprecation
+
+Automatically enables `plugin:deprecation/recommended` and configures `@typescript-eslint/parser` as the parser.
+
+#### Install
+
+Depends on the typescript ESLint parser.
+
+```sh
+npm install --save-dev typescript @typescript-eslint/parser
+npm install --save-dev eslint-plugin-deprecation
+```
+
+#### Usage
+
+`.eslintrc.cjs`:
+
+```
+extends: [..., "plugin:@logicer/deprecation", ...],
 plugins: [..., "@logicer", ...]
 ```

@@ -10,12 +10,9 @@ export = {
   extends: [
     "./configs/recommended.js",
     "plugin:@typescript-eslint/strict-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    ".configs/private/typescriptParser.ts"
   ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    project: true
-  },
   plugins: ["@typescript-eslint"],
   rules: {
     // Modify existing rules
