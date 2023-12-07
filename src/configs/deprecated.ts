@@ -8,7 +8,7 @@
  */
 export = {
   extends: [
-    "./configs/private/typescriptParser.ts",
+    "./configs/private/typescriptParser.js",
     "plugin:deprecation/recommended"
   ]
 };
