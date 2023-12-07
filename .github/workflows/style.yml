@@ -12,6 +12,9 @@ jobs:
       matrix:
         node-version: [20.x]
 
+    permissions:
+      checks: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -35,7 +38,16 @@ jobs:
         run: npm run build
 
       - name: Run ESLint
-        run: npm run lint:ci
+        run: npm run lint:ci -- --output-file .eslint_report.json --format json
+        continue-on-error: true
+
+      - name: Annotate ESLint Results
+        uses: ataylorme/eslint-annotate-action@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          report-json: ".eslint_report.json"
+          fail-on-warning: true
+          markdown-report-on-step-summary: true
 
       - name: Run Prettier
         run: npm run prettier:ci
