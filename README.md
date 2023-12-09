@@ -13,6 +13,7 @@ Contents:
   - [JavaScript](#javascript)
   - [TypeScript](#typescript)
   - [Prettier](#prettier)
+  - [Style](#style)
   - [JSDoc](#jsdoc)
   - [Deprecation](#deprecation)
 
@@ -84,10 +85,31 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 `.eslintrc.cjs`:
 
 ```
-{
 extends: [..., "plugin:@logicer/recommended-prettier"],
 plugins: [..., "@logicer", ...]
-}
+```
+
+### Style
+
+Extends upon `plugin:@logicer/recommended-prettier`, configuring additional stylistic rules:
+
+> **Note**
+> Ensure `"plugin:@logicer/recommended-style"` is last in `extends`
+
+#### Install
+
+```sh
+npm install --save-dev --save-exact prettier
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+```
+
+#### Usage
+
+`.eslintrc.cjs`:
+
+```
+extends: [..., "plugin:@logicer/recommended-style"],
+plugins: [..., "@logicer", ...]
 ```
 
 ### JSDoc
