@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 /**
  * @file A deprecation configuration. Uses the JSDoc `@deprecated` statement.
  */

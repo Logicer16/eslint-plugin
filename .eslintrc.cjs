@@ -17,7 +17,10 @@ module.exports = {
       parserOptions: {
         project: true
       },
-      plugins: ["@logicer"]
+      plugins: ["@logicer"],
+      rules: {
+        "@typescript-eslint/naming-convention": "off"
+      }
     }
   ]
 };
