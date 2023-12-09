@@ -14,7 +14,9 @@ export = {
     "no-else-return": "error",
     "no-param-reassign": "error",
     "no-return-await": "error",
+    "no-useless-return": "error",
     "no-void": "error",
+    "operator-assignment": "error",
     "prefer-named-capture-group": "error",
     "require-unicode-regexp": "error",
     "sort-imports": [
