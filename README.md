@@ -32,7 +32,7 @@ Automatically configures `eslint:recommended`.
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn
 ```
 
 #### Usage
@@ -56,7 +56,7 @@ Extends upon `plugin:@logicer/recommended`, configuring, in this order:
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 #### Usage

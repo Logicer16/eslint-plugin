@@ -9,8 +9,11 @@ export = {
   extends: ["plugin:prettier/recommended"],
   plugins: ["prettier"],
   rules: {
+    "prettier/prettier": "warn",
+
+    // eslint-disable-next-line sort-keys
     "array-bracket-spacing": "off",
     "object-bracket-spacing": "off",
-    "prettier/prettier": "warn"
+    "unicorn/template-indent": "off"
   }
 };
