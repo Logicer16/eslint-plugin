@@ -29,6 +29,12 @@ npm install --save-dev eslint @logicer/eslint-plugin
 
 Automatically configures `eslint:recommended`.
 
+#### Install
+
+```sh
+npm install --save-dev eslint-plugin-n
+```
+
 #### Usage
 
 `.eslintrc.cjs`:
@@ -50,7 +56,7 @@ Extends upon `plugin:@logicer/recommended`, configuring, in this order:
 #### Install
 
 ```sh
-npm install --save-dev typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev eslint-plugin-n typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 #### Usage
