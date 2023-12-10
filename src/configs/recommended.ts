@@ -8,6 +8,7 @@
 export = {
   extends: ["eslint:recommended"],
   rules: {
+    "array-callback-return": ["error", {allowImplicit: true}],
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "declaration", {allowArrowFunctions: true}],
     "id-length": ["error", {exceptions: ["i", "j"]}],
@@ -43,6 +44,6 @@ export = {
     "no-undefined": "off",
     "one-var": "off",
     "prefer-destructuring": "off",
-    "prefer-template": "off"
+    "prefer-template": "off",
   }
 };
