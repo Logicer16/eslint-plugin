@@ -16,6 +16,7 @@ Contents:
   - [Style](#style)
   - [JSDoc](#jsdoc)
   - [Deprecation](#deprecation)
+- [Versioning Policy](#versioning-policy)
 
 ## Install
 
@@ -158,3 +159,8 @@ npm install --save-dev eslint-plugin-deprecation
 extends: [..., "plugin:@logicer/deprecation", ...],
 plugins: [..., "@logicer", ...]
 ```
+
+## Versioning Policy
+
+A breaking change does not encompass one which "**refines**" the linter, such as the addition or reconfiguration of a rule. Other changes such as renaming or restricting configurations, which will prevent a linter from running due to being unable to parse the config file, continue to be classified as breaking. In all other cases, semver is followed.
+
