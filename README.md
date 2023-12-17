@@ -15,7 +15,6 @@ Contents:
   - [Prettier](#prettier)
   - [Style](#style)
   - [JSDoc](#jsdoc)
-  - [Deprecation](#deprecation)
 - [Versioning Policy](#versioning-policy)
 
 ## Install
@@ -53,6 +52,8 @@ Extends upon `plugin:@logicer/recommended`, configuring, in this order:
 - `plugin:@typescript-eslint/recommended`
 - `plugin:@typescript-eslint/recommended-requiring-type-checking`
 - `plugin:@typescript-eslint/strict`
+
+It also automatically enables `plugin:deprecation/recommended`.
 
 #### Install
 
@@ -135,28 +136,6 @@ npm install --save-dev eslint-plugin-jsdoc
 
 ```
 extends: [..., "plugin:@logicer/recommended-jsdoc", ...],
-plugins: [..., "@logicer", ...]
-```
-
-### Deprecation
-
-Automatically enables `plugin:deprecation/recommended` and configures `@typescript-eslint/parser` as the parser.
-
-#### Install
-
-Depends on the typescript ESLint parser.
-
-```sh
-npm install --save-dev typescript @typescript-eslint/parser
-npm install --save-dev eslint-plugin-deprecation
-```
-
-#### Usage
-
-`.eslintrc.cjs`:
-
-```
-extends: [..., "plugin:@logicer/deprecation", ...],
 plugins: [..., "@logicer", ...]
 ```
 

@@ -12,6 +12,7 @@ import typescriptConfig from "./configs/typescript.js";
 
 export = {
   configs: {
+    // eslint-disable-next-line deprecation/deprecation
     "deprecation": deprecation,
     "recommended": recommendedConfig,
     "recommended-jsdoc": jsdocConfig,

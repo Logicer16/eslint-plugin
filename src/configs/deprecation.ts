@@ -4,6 +4,7 @@
 
 /**
  * A deprecation configuration. Uses the JSDoc `@deprecated` statement.
+ * @deprecated
  */
 export = {
   extends: [
