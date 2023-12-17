@@ -27,12 +27,12 @@ npm install --save-dev eslint @logicer/eslint-plugin
 
 ### JavaScript
 
-Automatically configures `eslint:recommended`.
+Automatically configures `eslint:recommended`, `plugin:n/recommended`, `plugin:unicorn/recommended`, and `plugin:regexp/recommended`.
 
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex
 ```
 
 #### Usage
@@ -58,7 +58,7 @@ It also automatically enables `plugin:deprecation/recommended`.
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 #### Usage
