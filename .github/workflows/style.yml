@@ -37,6 +37,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Type Converage
+        run: npm run type-coverage
+
       - name: Run ESLint
         run: npm run lint:ci -- --output-file .eslint_report.json --format json
         continue-on-error: true
