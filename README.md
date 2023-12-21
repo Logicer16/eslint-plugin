@@ -28,12 +28,17 @@ npm install --save-dev eslint @logicer/eslint-plugin
 
 ### JavaScript
 
-Automatically configures `eslint:recommended`, `plugin:n/recommended`, `plugin:unicorn/recommended`, and `plugin:regexp/recommended`.
+Automatically configures:
+- `eslint:recommended`
+- `plugin:n/recommended`
+- `plugin:unicorn/recommended`
+- `plugin:regexp/recommended`
+- `plugin:import/recommended`.
 
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex eslint-plugin-import@npm:eslint-plugin-i@latest eslint-import-resolver-typescript
 ```
 
 #### Usage
@@ -47,19 +52,19 @@ plugins: [..., "@logicer", ...]
 
 ### TypeScript
 
-Extends upon `plugin:@logicer/recommended`, configuring, in this order:
+Extends upon `plugin:@logicer/recommended`, configuring `@typescript-eslint/parser` and enabling, in this order:
 
 - `plugin:@typescript-eslint/eslint-recommended`
 - `plugin:@typescript-eslint/recommended`
 - `plugin:@typescript-eslint/recommended-requiring-type-checking`
 - `plugin:@typescript-eslint/strict`
-
-It also automatically enables `plugin:deprecation/recommended`.
+- `plugin:deprecation/recommended`
+- `plugin:import/typescript`
 
 #### Install
 
 ```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex eslint-plugin-import@npm:eslint-plugin-i@latest eslint-import-resolver-typescript typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 #### Usage

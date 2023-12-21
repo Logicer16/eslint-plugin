@@ -11,6 +11,7 @@ export = {
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:deprecation/recommended",
+    "plugin:import/typescript",
     "./configs/private/typescriptParser.js"
   ],
   plugins: ["@typescript-eslint"],
