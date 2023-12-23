@@ -3,3 +3,4 @@ dist/
 .type-coverage/
 
 .eslint_report.json
+.eslintcache
