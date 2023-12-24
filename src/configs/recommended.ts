@@ -15,6 +15,7 @@ export = {
   ],
   rules: {
     "array-callback-return": ["error", {allowImplicit: true}],
+    "curly": ["error", "multi-line"],
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "declaration", {allowArrowFunctions: true}],
     "id-length": ["error", {exceptions: ["i", "j"]}],
