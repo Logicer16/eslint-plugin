@@ -6,7 +6,7 @@
  * A default prettier configuration.
  */
 export = {
-  extends: ["plugin:svelte/recommended"],
+  extends: ["plugin:svelte/recommended", "plugin:svelte/prettier"],
   plugins: ["svelte"],
   rules: {
     "svelte/block-lang": [
