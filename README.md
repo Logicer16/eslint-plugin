@@ -15,6 +15,7 @@ Contents:
   - [TypeScript](#typescript)
   - [Prettier](#prettier)
   - [JSDoc](#jsdoc)
+  - [Svelte](#svelte)
 - [Versioning Policy](#versioning-policy)
 
 ## Install
@@ -119,6 +120,25 @@ npm install --save-dev eslint-plugin-jsdoc
 
 ```
 extends: [..., "plugin:@logicer/recommended-jsdoc", ...],
+plugins: [..., "@logicer", ...]
+```
+
+### Svelte
+
+Automatically configures `plugin:svelte/recommended` and `plugin:svelte/prettier`.
+
+#### Install
+
+```sh
+npm install --save-dev eslint-plugin-svelte
+```
+
+#### Usage
+
+`.eslintrc.cjs`:
+
+```
+extends: [..., "plugin:@logicer/recommended-svelte", ...],
 plugins: [..., "@logicer", ...]
 ```
 
