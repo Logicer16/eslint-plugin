@@ -6,7 +6,7 @@
  * A default prettier configuration.
  */
 export = {
-  extends: ["plugin:prettier/recommended", "plugin:svelte/prettier"],
+  extends: ["plugin:prettier/recommended"],
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": "warn",
