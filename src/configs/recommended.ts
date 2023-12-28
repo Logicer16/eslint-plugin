@@ -122,7 +122,7 @@ export = {
     // Disable undesirable rules
     // Doesn't work.
     // eslint-disable-next-line sort-keys
-    "consistent-return": "error",
+    "consistent-return": "off",
     "init-declarations": "off",
     "lines-between-class-members": "off",
     "max-lines-per-function": "off",
