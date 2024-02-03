@@ -1,15 +1,8 @@
 /**
  * @file Generate an eslint config.
  */
+import type {ConfigOptions} from "./types.js";
 import {Linter} from "eslint";
-
-export interface ConfigOptions {
-  javascript?: boolean;
-  typescript?: boolean;
-  prettier?: boolean;
-  jsdoc?: boolean;
-  svelte?: boolean;
-}
 
 const defaultOptions: Required<ConfigOptions> = {
   javascript: true,

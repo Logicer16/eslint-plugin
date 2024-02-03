@@ -1,3 +1,6 @@
+/**
+ * @file Merge two sets of ESLint globals to create the most permissive combination.
+ */
 import {ESLint} from "eslint";
 
 type GlobalValue = ESLint.Globals[string];

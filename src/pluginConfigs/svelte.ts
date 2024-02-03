@@ -1,14 +1,21 @@
 /**
  * @file The configuration for `eslint-plugin-svelte`.
  */
-import {ConfigOptions} from "../configGenerator.js";
+import type {ConfigOptions} from "../types.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 import {Linter} from "eslint";
 import svelteParser from "svelte-eslint-parser";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export function getSvelteConfig(options: Required<ConfigOptions>): Linter.FlatConfig[] {
+/**
+ * Generate an eslint config for svelte based on the generator's options.
+ * @param options The options of the config generator.
+ * @returns A eslint config for svelte.
+ */
+export function getSvelteConfig(
+  options: Required<ConfigOptions>
+): Linter.FlatConfig[] {
   return [
     ...compat.extends("plugin:svelte/recommended"),
     {
@@ -63,7 +70,9 @@ export function getSvelteConfig(options: Required<ConfigOptions>): Linter.FlatCo
     {
       files: ["**/*.svelte"],
       languageOptions: {
-        parser: svelteParser,
+        // DefinitelyTyped/DefinitelyTyped#68232
+        // type-coverage:ignore-next-line
+        parser: svelteParser as unknown as Linter.ParserModule,
         parserOptions: options.typescript
           ? {
               parser: "@typescript-eslint/parser"

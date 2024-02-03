@@ -14,8 +14,9 @@ export const tsConfig: Linter.FlatConfig[] = [
   ),
   {
     languageOptions: {
-      // Incorrect types which are too far above my pay grade of nothing.
-      parser: typescriptParser,
+      // DefinitelyTyped/DefinitelyTyped#68232
+      // type-coverage:ignore-next-line
+      parser: typescriptParser as Linter.ParserModule,
       parserOptions: {
         project: true
       }
