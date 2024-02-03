@@ -3,6 +3,13 @@ module.exports = {
   plugins: ["@logicer"],
   root: true,
 
+  settings: {
+    "import/resolver": {
+      node: true,
+      typescript: true
+    }
+  },
+
   overrides: [
     {
       files: ["src/**/*"],
@@ -10,7 +17,6 @@ module.exports = {
         "plugin:@logicer/recommended-typescript",
         "plugin:eslint-plugin/recommended",
         "plugin:@logicer/recommended-jsdoc",
-        "plugin:@logicer/deprecation",
         "plugin:@logicer/recommended-prettier"
       ],
       parser: "@typescript-eslint/parser",

@@ -1,13 +1,10 @@
 /**
- * @file A default JSDoc configuration.
+ * @file The configuration for `eslint-plugin-jsdoc`.
  */
+import jsdoc from "eslint-plugin-jsdoc";
+import {Linter} from "eslint";
 
-/**
- * A default JSDoc configuration.
- */
-export = {
-  extends: ["plugin:jsdoc/recommended-typescript-error"],
-  plugins: ["jsdoc"],
+export const jsdocConfig: Linter.FlatConfig = {
   rules: {
     "jsdoc/check-indentation": "error",
     "jsdoc/check-line-alignment": "error",
@@ -28,3 +25,9 @@ export = {
     "jsdoc/sort-tags": "error"
   }
 };
+
+export const jsdocJsConfig: Linter.FlatConfig =
+  jsdoc.configs["flat/recommended-typescript-error"];
+
+export const jsdocTsConfig: Linter.FlatConfig =
+  jsdoc.configs["flat/recommended-typescript-error"];

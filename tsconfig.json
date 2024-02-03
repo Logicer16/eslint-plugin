@@ -2,10 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@logicer/tsconfig",
   "compilerOptions": {
-		"outDir": "./dist"
+		"outDir": "./dist",
+    "module": "NodeNext"
 	},
   "include": [
     "./package.json",
-    "./src/**/*"
+    "./src/**/*",
+    "./types/**/*",
+    "./types/eslint.d.ts"
   ]
 }

@@ -1,25 +1,37 @@
 /**
  * @file Plugin entrypoint and definitions.
  */
+import ConfigGenerator from "./configGenerator.js";
+import {ESLint} from "eslint";
+import packageJSON from "../package.json" with {type: "json"};
 
-import {name as packageName, version as packageVersion} from "../package.json";
-import jsdocConfig from "./configs/jsdoc.js";
-import prettierConfig from "./configs/prettier.js";
-import recommendedConfig from "./configs/recommended.js";
-import svelteConfig from "./configs/svelte";
-import typescriptConfig from "./configs/typescript.js";
-
-export = {
+const plugin: ESLint.Plugin = {
   configs: {
-    "recommended": recommendedConfig,
-    "recommended-jsdoc": jsdocConfig,
-    "recommended-prettier": prettierConfig,
-    "recommended-svelte": svelteConfig,
-    "recommended-typescript": typescriptConfig
+    "recommended": await new ConfigGenerator({
+      javascript: true,
+      jsdoc: true
+    }).config,
+    "recommended-prettier": await new ConfigGenerator({
+      javascript: true,
+      jsdoc: true,
+      prettier: true
+    }).endConfig,
+    "recommended-typescript": await new ConfigGenerator({
+      javascript: true,
+      jsdoc: true,
+      typescript: true
+    }).config
   },
 
   meta: {
-    name: packageName,
-    version: packageVersion
+    name: packageJSON.name,
+    version: packageJSON.version
   }
 };
+
+export default plugin;
+
+export type {ConfigOptions} from "./configGenerator.js";
+export {default as ConfigGenerator} from "./configGenerator.js";
+export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
+export {mergeGlobals} from "./mergeGlobals.js";

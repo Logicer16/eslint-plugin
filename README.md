@@ -5,18 +5,22 @@
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Logicer16/ESLint-plugin)](https://github.com/Logicer16/eslint-plugin/graphs/contributors)
 [![Type Coverage](https://img.shields.io/badge/dynamic/json.svg?label=type%20coverage&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2FLogicer16%2Feslint-plugin%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 
-Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs.
+Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs. For use in flat config files.
 
 Contents:
 
 - [Install](#install)
-- [Configs](#configs)
-  - [JavaScript](#javascript)
-  - [TypeScript](#typescript)
-  - [Prettier](#prettier)
-  - [JSDoc](#jsdoc)
-  - [Svelte](#svelte)
-- [Versioning Policy](#versioning-policy)
+- [Usage](#usage)
+  - [Options](#options)
+    - [`javascript`](#javascript)
+    - [`typescript`](#typescript)
+    - [`prettier`](#prettier)
+    - [`jsdoc`](#jsdoc)
+    - [`svelte`](#svelte)
+  - [Predefined Configs](#predefined-configs)
+    - [`recommended`](#recommended)
+    - [`recommended-prettier`](#recommended-prettier)
+    - [`recommended-typescript`](#recommended-typescript)
 
 ## Install
 
@@ -24,124 +28,95 @@ Contents:
 npm install --save-dev eslint @logicer/eslint-plugin
 ```
 
-## Configs
+## Usage
 
-### JavaScript
+In your `eslint.config.js`:
+
+```js
+import {ConfigGenerator} from "@logicer/eslint-plugin";
+
+const generator = new ConfigGenerator({
+  javascript: true, // or false
+  jsdoc: true, // or false
+  prettier: true, // or false
+  svelte: true, // or false
+  typescript: true // or false
+});
+
+const config = [
+  ...(await generator.config),
+  // <Your custom config>
+  ...(await generator.endConfig)
+];
+
+export default config;
+```
+
+### Options
+
+#### `javascript`
 
 Automatically configures:
 
-- `eslint:recommended`
-- `plugin:n/recommended`
-- `plugin:unicorn/recommended`
-- `plugin:regexp/recommended`
-- `plugin:import/recommended`.
+- `"@eslint/js".configs.recommended`
+- `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` and `"eslint-plugin-n"configs["flat/recommended"]` for all other files
+- `"eslint-plugin-unicorn".configs["flat/recommended"]`
+- `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
-#### Install
+#### `typescript`
 
-```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex eslint-plugin-import@npm:eslint-plugin-i@latest eslint-import-resolver-typescript
+Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and enables, in this order:
+
+- `plugin:@typescript-eslint/strict-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:@typescript-eslint/stylistic-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+
+#### `prettier`
+
+Automatically configures `plugin:prettier/recommended`
+
+See also [`svelte`](#svelte)
+
+#### `jsdoc`
+
+Automatically configures `plugin:jsdoc/recommended-typescript-error` for TypeScript and `flat/recommended-typescript-flavor-error` for JavaScript.
+
+#### `svelte`
+
+Automatically configures `plugin:svelte/recommended`.
+If [`prettier`](#prettier) is also set, it also configures `plugin:svelte/prettier`.
+
+### Predefined Configs
+
+This plugin comes with some predefined configurations, generated with the following options:
+
+#### `recommended`
+
+```js
+{
+  javascript: true,
+  jsdoc: true
+}
 ```
 
-#### Usage
+#### `recommended-prettier`
 
-`.eslintrc.cjs`:
-
-```
-extends: ["plugin:@logicer/recommended", ...],
-plugins: [..., "@logicer", ...]
-```
-
-### TypeScript
-
-Extends upon `plugin:@logicer/recommended`, configuring `@typescript-eslint/parser` and enabling, in this order:
-
-- `plugin:@typescript-eslint/eslint-recommended`
-- `plugin:@typescript-eslint/recommended`
-- `plugin:@typescript-eslint/recommended-requiring-type-checking`
-- `plugin:@typescript-eslint/strict`
-- `plugin:deprecation/recommended`
-- `plugin:import/typescript`
-
-#### Install
-
-```sh
-npm install --save-dev eslint-plugin-n eslint-plugin-unicorn eslint-plugin-regex eslint-plugin-import@npm:eslint-plugin-i@latest eslint-import-resolver-typescript typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```js
+{
+  javascript: true,
+  jsdoc: true,
+  prettier: true
+}
 ```
 
-#### Usage
+#### `recommended-typescript`
 
-`.eslintrc.cjs`:
-
+```js
+{
+  javascript: true,
+  jsdoc: true,
+  typescript: true
+}
 ```
-extends: ["plugin:@logicer/recommended-typescript", ...],
-parser: "@typescript-eslint/parser",
-parserOptions: {
-  project: "./tsconfig.json"
-},
-plugins: [..., "@logicer", ...]
-```
-
-### Prettier
-
-Automatically configures `plugin:prettier/recommended` with a default prettier configuration.
-
-> **Note**
-> Ensure `"plugin:@logicer/recommended-prettier"` is last in `extends`
-
-#### Install
-
-```sh
-npm install --save-dev --save-exact prettier
-npm install --save-dev eslint-config-prettier eslint-plugin-prettier
-```
-
-#### Usage
-
-`.eslintrc.cjs`:
-
-```
-extends: [..., "plugin:@logicer/recommended-prettier"],
-plugins: [..., "@logicer", ...]
-```
-
-### JSDoc
-
-Automatically configures `plugin:jsdoc/recommended-typescript-error`.
-
-#### Install
-
-```sh
-npm install --save-dev eslint-plugin-jsdoc
-```
-
-#### Usage
-
-`.eslintrc.cjs`:
-
-```
-extends: [..., "plugin:@logicer/recommended-jsdoc", ...],
-plugins: [..., "@logicer", ...]
-```
-
-### Svelte
-
-Automatically configures `plugin:svelte/recommended` and `plugin:svelte/prettier`.
-
-#### Install
-
-```sh
-npm install --save-dev eslint-plugin-svelte
-```
-
-#### Usage
-
-`.eslintrc.cjs`:
-
-```
-extends: [..., "plugin:@logicer/recommended-svelte", ...],
-plugins: [..., "@logicer", ...]
-```
-
-## Versioning Policy
-
-A breaking change does not encompass one which "**refines**" the linter, such as the addition or reconfiguration of a rule. Other changes such as renaming or restricting configurations, which will prevent a linter from running due to being unable to parse the config file, continue to be classified as breaking. In all other cases, semver is followed.
