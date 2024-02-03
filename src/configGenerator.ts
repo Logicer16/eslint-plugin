@@ -73,13 +73,7 @@ export default class configGenerator {
     if (this.options.jsdoc) {
       configs.push(
         import("./pluginConfigs/jsdoc.js").then((importedConfig) => {
-          const jsdocConfigs = [importedConfig.jsdocJsConfig];
-          if (this.options.typescript)
-            jsdocConfigs.push({
-              ignores: ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
-              ...importedConfig.jsdocTsConfig
-            });
-          return jsdocConfigs;
+          return importedConfig.getJSDocConfig(this.options);
         })
       );
     }

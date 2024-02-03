@@ -56,6 +56,7 @@ export const unicornConfig: Linter.FlatConfig[] = [
       "unicorn/prevent-abbreviations": [
         "error",
         {
+          ignore: [/.*jsdoc.*/iv],
           replacements: {
             args: {
               arguments: false
