@@ -1,5 +1,5 @@
 /**
- * Type declarations for `eslint-plugin-unicorn`.
+ * @file Type declarations for `eslint-plugin-unicorn`.
  *
  * Temporary until https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2246 is fixed.
  */

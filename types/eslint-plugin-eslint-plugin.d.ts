@@ -1,10 +1,10 @@
 /**
- * Type declarations for `eslint-plugin-n`.
+ * @file Type declarations for `eslint-plugin-n`.
  *
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-eslint-plugin" {
-  import type {ESLint, Linter, Rule} from "eslint";
+  import type {ESLint, Linter} from "eslint";
 
   declare const eslintPluginESLintPlugin: ESLint.Plugin & {
     configs: {

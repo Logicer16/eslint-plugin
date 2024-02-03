@@ -39,8 +39,6 @@ export default class configGenerator {
     )[] = [];
 
     if (this.options.javascript) {
-      const importImport = await import("./pluginConfigs/import.js");
-
       configs.push(
         import("./pluginConfigs/javascript.js").then((importedConfig) => {
           return importedConfig.jsConfig;
@@ -54,7 +52,9 @@ export default class configGenerator {
         import("./pluginConfigs/regexp.js").then((importedConfig) => {
           return importedConfig.regexpConfig;
         }),
-        importImport.importConfig
+        import("./pluginConfigs/import.js").then((importedConfig) => {
+          return importedConfig.getImportConfig(this.options);
+        })
       );
       // Typescript automatically enables javascript.
       if (this.options.typescript) {
@@ -64,8 +64,7 @@ export default class configGenerator {
           }),
           import("./pluginConfigs/deprecation.js").then((importedConfig) => {
             return importedConfig.deprecationConfig;
-          }),
-          importImport.importTypescriptConfig
+          })
         );
       }
     }

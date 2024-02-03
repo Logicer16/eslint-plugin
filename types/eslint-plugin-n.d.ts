@@ -1,5 +1,5 @@
 /**
- * Type declarations for `eslint-plugin-n`.
+ * @file Type declarations for `eslint-plugin-n`.
  *
  * Sourced from https://github.com/eslint-community/eslint-plugin-n/issues/142.
  * Temporary until the above issue is fixed.
