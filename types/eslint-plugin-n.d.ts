@@ -7,11 +7,7 @@
 declare module "eslint-plugin-n" {
   import type {ESLint, Linter, Rule} from "eslint";
 
-  declare const eslintPluginN: {
-    meta: {
-      name: string;
-      version: string;
-    };
+  declare const eslintPluginN: ESLint.Plugin & {
     rules: Record<string, Rule.RuleModule>;
     configs: {
       "recommended-module": ESLint.ConfigData;
@@ -23,5 +19,6 @@ declare module "eslint-plugin-n" {
       "flat/mixed-esm-and-cjs": Linter.FlatConfig[];
     };
   };
+
   export default eslintPluginN;
 }
