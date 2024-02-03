@@ -6,9 +6,10 @@
 declare module "eslint-plugin-unicorn" {
   import type {Linter} from "eslint";
 
-  export default {} as {
+  declare const eslintPluginUnicorn: {
     configs: {
       "flat/recommended": Linter.FlatConfig;
     };
   };
+  export default eslintPluginUnicorn;
 }

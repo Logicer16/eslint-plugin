@@ -7,7 +7,7 @@
 declare module "eslint-plugin-n" {
   import type {ESLint, Linter, Rule} from "eslint";
 
-  export default {} as {
+  declare const eslintPluginN: {
     meta: {
       name: string;
       version: string;
@@ -23,4 +23,5 @@ declare module "eslint-plugin-n" {
       "flat/mixed-esm-and-cjs": Linter.FlatConfig[];
     };
   };
+  export default eslintPluginN;
 }
