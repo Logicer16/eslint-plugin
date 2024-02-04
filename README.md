@@ -66,6 +66,12 @@ Automatically configures:
 
 #### `typescript`
 
+Typescript requires extra dependencies:
+
+```sh
+npm install --save-dev eslint-import-resolver-typescript
+```
+
 Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and enables, in this order:
 
 - `plugin:@typescript-eslint/strict-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
@@ -119,4 +125,10 @@ This plugin comes with some predefined configurations, generated with the follow
   jsdoc: true,
   typescript: true
 }
+```
+
+Note, Typescript requires extra dependencies:
+
+```sh
+npm install --save-dev eslint-import-resolver-typescript
 ```
