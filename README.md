@@ -63,6 +63,7 @@ Automatically configures:
 - `"eslint-plugin-unicorn".configs["flat/recommended"]`
 - `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-security".configs.recommended`
 
 #### `typescript`
 
