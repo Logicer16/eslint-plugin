@@ -64,6 +64,7 @@ Automatically configures:
 - `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `"eslint-plugin-security".configs.recommended`
+- `plugin:promise/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
 #### `typescript`
 

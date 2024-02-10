@@ -57,6 +57,9 @@ export default class configGenerator {
         }),
         import("./pluginConfigs/security.js").then((importedConfig) => {
           return importedConfig.securityConfig;
+        }),
+        import("./pluginConfigs/promise.js").then((importedConfig) => {
+          return importedConfig.promiseConfig;
         })
       );
       // Typescript automatically enables javascript.
