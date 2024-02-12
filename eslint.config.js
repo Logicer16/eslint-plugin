@@ -1,7 +1,7 @@
 /**
  * @file The eslint config.
  */
-// Would've used espree but it is yet to support import-attributes
+// Espree is yet to support import-attributes
 // n/no-unpublished-import giving false positives
 // eslint-disable-next-line n/no-unpublished-import, import/namespace, import/no-deprecated
 import {ConfigGenerator} from "@logicer/eslint-plugin";

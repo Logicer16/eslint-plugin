@@ -10,7 +10,7 @@ export const jsPrettierOverrides: Linter.FlatConfig = {
   }
 };
 
-export const jsConfig: Linter.FlatConfig[] = [
+export const jsConfigs: Linter.FlatConfig[] = [
   js.configs.recommended,
   jsPrettierOverrides,
   {

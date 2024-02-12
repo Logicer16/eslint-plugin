@@ -13,7 +13,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */
-export function getSvelteConfig(
+export function getSvelteConfigs(
   options: Required<ConfigOptions>
 ): Linter.FlatConfig[] {
   return [
@@ -90,6 +90,6 @@ export function getSvelteConfig(
   ];
 }
 
-export const sveltePrettierConfig: Linter.FlatConfig[] = compat.extends(
+export const sveltePrettierConfigs: Linter.FlatConfig[] = compat.extends(
   "plugin:svelte/prettier"
 );

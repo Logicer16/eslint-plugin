@@ -6,7 +6,7 @@ import {Linter} from "eslint";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const promiseConfig: Linter.FlatConfig[] = [
+export const promiseConfigs: Linter.FlatConfig[] = [
   ...compat.extends("plugin:promise/recommended"),
   {
     rules: {

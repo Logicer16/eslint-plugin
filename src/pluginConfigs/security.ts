@@ -4,7 +4,7 @@
 import eslintPluginSecurity from "eslint-plugin-security";
 import {Linter} from "eslint";
 
-export const securityConfig: Linter.FlatConfig[] = [
+export const securityConfigs: Linter.FlatConfig[] = [
   eslintPluginSecurity.configs.recommended,
   {
     rules: {

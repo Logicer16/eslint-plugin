@@ -12,7 +12,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  * @param options The options of the config generator.
  * @returns A eslint config for import.
  */
-export function getImportConfig(
+export function getImportConfigs(
   options: Required<ConfigOptions>
 ): Linter.FlatConfig[] {
   const importTypescriptConfig: Linter.FlatConfig[] = options.typescript

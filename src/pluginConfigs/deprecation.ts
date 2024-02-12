@@ -9,6 +9,6 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
 /**
  * Depends on `@typescript-eslint/parser`.
  */
-export const deprecationConfig: Linter.FlatConfig[] = compat.extends(
+export const deprecationConfigs: Linter.FlatConfig[] = compat.extends(
   "plugin:deprecation/recommended"
 );

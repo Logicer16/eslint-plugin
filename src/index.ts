@@ -35,3 +35,5 @@ export type {ConfigOptions} from "./types.js";
 export {default as ConfigGenerator} from "./configGenerator.js";
 export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";
+export {FlatCompat} from "@eslint/eslintrc";
+export * as ESLint from "eslint";

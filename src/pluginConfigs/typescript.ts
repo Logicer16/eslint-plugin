@@ -7,7 +7,7 @@ import typescriptParser from "@typescript-eslint/parser";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const tsConfig: Linter.FlatConfig[] = [
+export const tsConfigs: Linter.FlatConfig[] = [
   ...compat.extends(
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked"

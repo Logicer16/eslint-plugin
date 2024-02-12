@@ -10,7 +10,7 @@ import {Linter} from "eslint";
  * @param options The options of the config generator.
  * @returns A eslint config for jsdoc.
  */
-export function getJSDocConfig(
+export function getJSDocConfigs(
   options: Required<ConfigOptions>
 ): Linter.FlatConfig[] {
   return [

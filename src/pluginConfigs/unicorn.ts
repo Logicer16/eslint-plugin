@@ -4,7 +4,7 @@
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import {Linter} from "eslint";
 
-export const unicornConfig: Linter.FlatConfig[] = [
+export const unicornConfigs: Linter.FlatConfig[] = [
   eslintPluginUnicorn.configs["flat/recommended"],
   {
     rules: {

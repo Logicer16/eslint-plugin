@@ -64,7 +64,15 @@ Automatically configures:
 - `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `"eslint-plugin-security".configs.recommended`
-- `plugin:promise/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:jsonc/recommended-with-json5` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:jsonc/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:markdown/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:yml/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
 #### `typescript`
 
@@ -103,30 +111,30 @@ This plugin comes with some predefined configurations, generated with the follow
 #### `recommended`
 
 ```js
-{
+const config = {
   javascript: true,
   jsdoc: true
-}
+};
 ```
 
 #### `recommended-prettier`
 
 ```js
-{
+const config = {
   javascript: true,
   jsdoc: true,
   prettier: true
-}
+};
 ```
 
 #### `recommended-typescript`
 
 ```js
-{
+const config = {
   javascript: true,
   jsdoc: true,
   typescript: true
-}
+};
 ```
 
 Note, Typescript requires extra dependencies:

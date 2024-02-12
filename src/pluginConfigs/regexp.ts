@@ -6,7 +6,7 @@ import {Linter} from "eslint";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const regexpConfig: Linter.FlatConfig[] = [
+export const regexpConfigs: Linter.FlatConfig[] = [
   ...compat.extends("plugin:regexp/recommended"),
   {
     rules: {

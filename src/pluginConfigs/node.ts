@@ -5,7 +5,7 @@
 import {Linter} from "eslint";
 import nodePlugin from "eslint-plugin-n";
 
-export const nodeConfig: Linter.FlatConfig[] = [
+export const nodeConfigs: Linter.FlatConfig[] = [
   {
     // Default to inferred.
     ...nodePlugin.configs["flat/recommended"],
