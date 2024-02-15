@@ -31,7 +31,7 @@ const plugin: ESLint.Plugin = {
 
 export default plugin;
 
-export type {ConfigOptions} from "./types.js";
+export type {ConfigOptions} from "./common.js";
 export {default as ConfigGenerator} from "./configGenerator.js";
 export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";

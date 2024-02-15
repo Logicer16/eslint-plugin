@@ -5,7 +5,7 @@
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Logicer16/ESLint-plugin)](https://github.com/Logicer16/eslint-plugin/graphs/contributors)
 [![Type Coverage](https://img.shields.io/badge/dynamic/json.svg?label=type%20coverage&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2FLogicer16%2Feslint-plugin%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 
-Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs. For use in flat config files.
+Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs. Dependency plugins may be omitted if they're not configured to be used. For use in flat config files.
 
 Contents:
 
@@ -17,6 +17,7 @@ Contents:
     - [`prettier`](#prettier)
     - [`jsdoc`](#jsdoc)
     - [`svelte`](#svelte)
+    - [`jest`](#jest)
   - [Predefined Configs](#predefined-configs)
     - [`recommended`](#recommended)
     - [`recommended-prettier`](#recommended-prettier)
@@ -36,11 +37,12 @@ In your `eslint.config.js`:
 import {ConfigGenerator} from "@logicer/eslint-plugin";
 
 const generator = new ConfigGenerator({
-  javascript: true, // or false
-  jsdoc: true, // or false
-  prettier: true, // or false
-  svelte: true, // or false
-  typescript: true // or false
+  javascript: true, // (default) or false
+  jest: true, // or false (default)
+  jsdoc: true, // or false (default)
+  prettier: true, // or false (default)
+  svelte: true, // or false (default)
+  typescript: true // or false (default)
 });
 
 const config = [
@@ -56,7 +58,7 @@ export default config;
 
 #### `javascript`
 
-Automatically configures:
+Extends:
 
 - `"@eslint/js".configs.recommended`
 - `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` and `"eslint-plugin-n"configs["flat/recommended"]` for all other files
@@ -67,22 +69,25 @@ Automatically configures:
 - `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json5` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:jsonc/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:markdown/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+
+If [`prettier`](#prettier) is set, it also extends:
+
+- `plugin:jsonc/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:yml/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
 #### `typescript`
 
-Typescript requires extra dependencies:
+Typescript **requires** extra dependencies:
 
 ```sh
 npm install --save-dev eslint-import-resolver-typescript
 ```
 
-Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and enables, in this order:
+Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and extends:
 
 - `plugin:@typescript-eslint/strict-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:@typescript-eslint/stylistic-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
@@ -91,18 +96,30 @@ Automatically enables [`javascript`](#javascript). Configures `@typescript-eslin
 
 #### `prettier`
 
-Automatically configures `plugin:prettier/recommended`
+Extends `plugin:prettier/recommended`
 
-See also [`svelte`](#svelte)
+See also [`javascript`](#javascript) and [`svelte`](#svelte)
 
 #### `jsdoc`
 
-Automatically configures `plugin:jsdoc/recommended-typescript-error` for TypeScript and `flat/recommended-typescript-flavor-error` for JavaScript.
+Extends:
+
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-error"]` for TypeScript
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-flavor-error"]` for JavaScript.
 
 #### `svelte`
 
-Automatically configures `plugin:svelte/recommended`.
-If [`prettier`](#prettier) is also set, it also configures `plugin:svelte/prettier`.
+Extends `plugin:svelte/recommended`.
+
+If [`prettier`](#prettier) is set, it also configures `plugin:svelte/prettier`.
+
+#### `jest`
+
+Extends:
+
+- `plugin:jest/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- A custom rule set of `eslint-plugin-jest-extended`
+- A custom rule set of `eslint-plugin-jest-formatting`
 
 ### Predefined Configs
 
@@ -137,7 +154,7 @@ const config = {
 };
 ```
 
-Note, Typescript requires extra dependencies:
+Note, Typescript **requires** extra dependencies:
 
 ```sh
 npm install --save-dev eslint-import-resolver-typescript

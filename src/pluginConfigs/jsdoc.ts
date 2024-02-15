@@ -1,7 +1,7 @@
 /**
  * @file The configuration for `eslint-plugin-jsdoc`.
  */
-import {ConfigOptions} from "../types.js";
+import {ConfigOptions} from "../common.js";
 import jsdoc from "eslint-plugin-jsdoc";
 import {Linter} from "eslint";
 

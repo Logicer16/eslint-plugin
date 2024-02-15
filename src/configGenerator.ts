@@ -1,11 +1,12 @@
 /**
  * @file Generate an eslint config.
  */
-import type {ConfigOptions} from "./types.js";
+import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
 import {Linter} from "eslint";
 
 const defaultOptions: Required<ConfigOptions> = {
   javascript: true,
+  jest: false,
   jsdoc: false,
   prettier: false,
   svelte: false,
@@ -14,16 +15,6 @@ const defaultOptions: Required<ConfigOptions> = {
 
 export default class ConfigGenerator {
   private readonly options: Required<ConfigOptions>;
-
-  private readonly ESIncompatible = [
-    "json",
-    "jsonc",
-    "json5",
-    "yml",
-    "toml",
-    "md",
-    "md/**/*.js"
-  ];
 
   constructor(options?: ConfigOptions) {
     this.options = {...defaultOptions, ...options};
@@ -35,12 +26,12 @@ export default class ConfigGenerator {
 
   private static addIgnoreExtensions(
     config: Linter.FlatConfig,
-    extensions: string[]
+    ...extensions: (string[] | string)[]
   ): Linter.FlatConfig {
     return {
       ...config,
       ignores: [
-        ...extensions.map((extension) => {
+        ...extensions.flat().map((extension) => {
           return `**/*.${extension}`;
         }),
         ...(config.ignores ?? [])
@@ -109,7 +100,7 @@ export default class ConfigGenerator {
             return importedConfig.tsConfigs.map((config) => {
               return ConfigGenerator.addIgnoreExtensions(
                 config,
-                this.ESIncompatible
+                ...ESIncompatibleExtensionPatterns
               );
             });
           }),
@@ -117,7 +108,7 @@ export default class ConfigGenerator {
             return importedConfig.deprecationConfigs.map((config) => {
               return ConfigGenerator.addIgnoreExtensions(
                 config,
-                this.ESIncompatible
+                ...ESIncompatibleExtensionPatterns
               );
             });
           })
@@ -131,7 +122,7 @@ export default class ConfigGenerator {
           return importedConfig.getJSDocConfigs(this.options).map((config) => {
             return ConfigGenerator.addIgnoreExtensions(
               config,
-              this.ESIncompatible
+              ...ESIncompatibleExtensionPatterns
             );
           });
         })
@@ -142,6 +133,14 @@ export default class ConfigGenerator {
       configs.push(
         import("./pluginConfigs/svelte.js").then((importedConfig) => {
           return importedConfig.getSvelteConfigs(this.options);
+        })
+      );
+    }
+
+    if (this.options.jest) {
+      configs.push(
+        import("./pluginConfigs/jest.js").then((importedConfig) => {
+          return importedConfig.jestConfigs;
         })
       );
     }

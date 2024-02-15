@@ -1,5 +1,5 @@
 /**
- * @file Type declarations for `eslint-plugin-n`.
+ * @file Type declarations for `eslint-plugin-eslint-plugin`.
  *
  * Temporary until the added to DefinitelyTyped.
  */
