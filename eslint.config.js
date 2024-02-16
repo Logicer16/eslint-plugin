@@ -9,6 +9,7 @@ import {ConfigGenerator} from "@logicer/eslint-plugin";
 import ESLintPluginConfig from "eslint-plugin-eslint-plugin/configs/recommended";
 
 const generator = new ConfigGenerator({
+  ecmaVersion: 2024,
   javascript: true,
   jsdoc: true,
   prettier: true,
@@ -34,7 +35,6 @@ const eslintPluginConfigs = [
   {
     languageOptions: {
       parserOptions: {
-        ecmaVersion: 2024,
         project: ["./tsconfig.json", "./tsconfig.*.json"],
         sourceType: "module"
       }

@@ -5,6 +5,7 @@ import {Linter} from "eslint";
 import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
 
 const defaultOptions: Required<ConfigOptions> = {
+  ecmaVersion: "latest",
   javascript: true,
   jest: false,
   jsdoc: false,
@@ -18,6 +19,7 @@ export default class ConfigGenerator {
 
   constructor(options?: ConfigOptions) {
     this.options = {...defaultOptions, ...options};
+
     // Automatically enable javascript when typescript is enabled.
     this.options.javascript = this.options.javascript
       ? true
@@ -52,7 +54,11 @@ export default class ConfigGenerator {
       | Linter.FlatConfig
       | Linter.FlatConfig[]
       | Promise<Linter.FlatConfig | Linter.FlatConfig[]>
-    )[] = [];
+    )[] = [
+      import("./pluginConfigs/esX.js").then((importedConfig) => {
+        return importedConfig.getESXConfigs(this.options);
+      })
+    ];
 
     if (this.options.javascript) {
       configs.push(

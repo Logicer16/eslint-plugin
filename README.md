@@ -18,6 +18,7 @@ Contents:
     - [`jsdoc`](#jsdoc)
     - [`svelte`](#svelte)
     - [`jest`](#jest)
+    - [`ecmaVersion`](#ecmaversion)
   - [Predefined Configs](#predefined-configs)
     - [`recommended`](#recommended)
     - [`recommended-prettier`](#recommended-prettier)
@@ -37,6 +38,7 @@ In your `eslint.config.js`:
 import {ConfigGenerator} from "@logicer/eslint-plugin";
 
 const generator = new ConfigGenerator({
+  ecmaVersion: "latest", // or specific version
   javascript: true, // (default) or false
   jest: true, // or false (default)
   jsdoc: true, // or false (default)
@@ -124,6 +126,12 @@ Extends:
 - `plugin:jest/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `eslint-plugin-jest-extended`
 - A custom rule set of `eslint-plugin-jest-formatting`
+
+#### `ecmaVersion`
+
+This option sets the ecmascript version for eslint and relevant parsers. It expect's [ESLint's version format](https://eslint.org/docs/latest/use/configure/configuration-files#configuration-objects) and like ESLint, it defaults to `"latest"`.
+
+Additionally, it is used to automatically extend the appropriate configs from `eslint-plugin-es-x`.
 
 ### Predefined Configs
 
