@@ -1,7 +1,7 @@
 /**
  * @file The configuration for `@eslint/js`.
  */
-import js from "@eslint/js";
+import jsPlugin from "@eslint/js";
 import {Linter} from "eslint";
 
 export const jsPrettierOverrides: Linter.FlatConfig = {
@@ -11,7 +11,7 @@ export const jsPrettierOverrides: Linter.FlatConfig = {
 };
 
 export const jsConfigs: Linter.FlatConfig[] = [
-  js.configs.recommended,
+  jsPlugin.configs.recommended,
   jsPrettierOverrides,
   {
     rules: {

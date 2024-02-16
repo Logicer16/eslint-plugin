@@ -2,8 +2,8 @@
  * @file The configuration for eslint plugins for jest.
  */
 import {Linter} from "eslint";
-import eslintPluginJestExtended from "eslint-plugin-jest-extended";
-import eslintPluginJestFormatting from "eslint-plugin-jest-formatting";
+import jestExtendedPlugin from "eslint-plugin-jest-extended";
+import jestFormattingPlugin from "eslint-plugin-jest-formatting";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -74,7 +74,7 @@ let jestConfigs: Linter.FlatConfig[] = [
     }
   },
   {
-    plugins: {"jest-formatting": eslintPluginJestFormatting},
+    plugins: {"jest-formatting": jestFormattingPlugin},
     rules: {
       "jest-formatting/padding-around-after-all-blocks": "error",
       "jest-formatting/padding-around-after-each-blocks": "error",
@@ -86,7 +86,7 @@ let jestConfigs: Linter.FlatConfig[] = [
     }
   },
   {
-    plugins: {"jest-extended": eslintPluginJestExtended},
+    plugins: {"jest-extended": jestExtendedPlugin},
     rules: {
       "jest-extended/prefer-to-be-array": "error",
       "jest-extended/prefer-to-be-false": "error",

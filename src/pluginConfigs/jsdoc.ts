@@ -2,8 +2,8 @@
  * @file The configuration for `eslint-plugin-jsdoc`.
  */
 import {Linter} from "eslint";
-import jsdoc from "eslint-plugin-jsdoc";
-import {ConfigOptions} from "../common.js";
+import jsdocPlugin from "eslint-plugin-jsdoc";
+import type {ConfigOptions} from "../common.js";
 
 /**
  * Generate an eslint config for jsdoc based on the generator's options.
@@ -14,12 +14,12 @@ export function getJSDocConfigs(
   options: Required<ConfigOptions>
 ): Linter.FlatConfig[] {
   return [
-    jsdoc.configs["flat/recommended-typescript-flavor-error"],
+    jsdocPlugin.configs["flat/recommended-typescript-flavor-error"],
     {
       ...(options.typescript
         ? {
             ignores: ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"],
-            ...jsdoc.configs["flat/recommended-typescript-error"]
+            ...jsdocPlugin.configs["flat/recommended-typescript-error"]
           }
         : undefined)
     },

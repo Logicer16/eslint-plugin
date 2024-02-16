@@ -2,10 +2,10 @@
  * @file The configuration for `eslint-plugin-security`.
  */
 import {Linter} from "eslint";
-import eslintPluginSecurity from "eslint-plugin-security";
+import securityPlugin from "eslint-plugin-security";
 
 export const securityConfigs: Linter.FlatConfig[] = [
-  eslintPluginSecurity.configs.recommended,
+  securityPlugin.configs.recommended,
   {
     rules: {
       "security/detect-bidi-characters": "error",

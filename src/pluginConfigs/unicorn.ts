@@ -2,10 +2,10 @@
  * @file The configuration for `eslint-plugin-unicorn`.
  */
 import {Linter} from "eslint";
-import eslintPluginUnicorn from "eslint-plugin-unicorn";
+import unicornPlugin from "eslint-plugin-unicorn";
 
 export const unicornConfigs: Linter.FlatConfig[] = [
-  eslintPluginUnicorn.configs["flat/recommended"],
+  unicornPlugin.configs["flat/recommended"],
   {
     rules: {
       "unicorn/custom-error-definition": "error",
