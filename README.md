@@ -73,6 +73,7 @@ Extends:
 - `plugin:markdown/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
 If [`prettier`](#prettier) is set, it also extends:
 

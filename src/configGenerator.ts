@@ -91,8 +91,12 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/jsonSchema.js").then((importedConfig) => {
           return importedConfig.jsonSchemaConfigs;
+        }),
+        import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
+          return importedConfig.eslintCommentsConfigs;
         })
       );
+      
       // Typescript automatically enables javascript.
       if (this.options.typescript) {
         configs.push(
