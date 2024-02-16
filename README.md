@@ -76,6 +76,7 @@ Extends:
 - `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `eslint-plugin-simple-import-sort`
 - `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- A custom rule set of `eslint-plugin-no-constructor-bind`
 
 If [`prettier`](#prettier) is set, it also extends:
 
