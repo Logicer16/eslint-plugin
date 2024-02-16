@@ -96,7 +96,7 @@ export default class ConfigGenerator {
           return importedConfig.eslintCommentsConfigs;
         })
       );
-      
+
       // Typescript automatically enables javascript.
       if (this.options.typescript) {
         configs.push(

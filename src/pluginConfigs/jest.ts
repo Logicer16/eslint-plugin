@@ -8,8 +8,8 @@ import {Linter} from "eslint";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-const jestTSFiles = ["src/**/*.{test,spec}.ts{x,}"];
-const jestFiles = [...jestTSFiles, "src/**/*.{test,spec}.js{x,}"];
+const jestTSFiles = ["**/*.{test,spec}.ts{x,}"];
+const jestFiles = [...jestTSFiles, "**/*.{test,spec}.js{x,}"];
 
 let jestConfigs: Linter.FlatConfig[] = [
   ...compat.extends("plugin:jest/recommended"),
@@ -98,6 +98,12 @@ let jestConfigs: Linter.FlatConfig[] = [
 ];
 
 jestConfigs = jestConfigs.map((config) => {
+  const snapshotFilePatterns = config.files?.flat().filter((file) => {
+    return typeof file === "string" && file.endsWith(".snap");
+  });
+  if (snapshotFilePatterns !== undefined && snapshotFilePatterns.length > 0) {
+    return config;
+  }
   return {...config, files: [...(config.files ?? []), ...jestFiles]};
 });
 
