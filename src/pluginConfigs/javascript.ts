@@ -1,5 +1,5 @@
 /**
- * @file The configuration for built-in `eslint` rules.
+ * @file The configuration for `@eslint/js`.
  */
 import js from "@eslint/js";
 import {Linter} from "eslint";
