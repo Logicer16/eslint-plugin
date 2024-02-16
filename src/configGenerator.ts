@@ -1,8 +1,8 @@
 /**
  * @file Generate an eslint config.
  */
-import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
 import {Linter} from "eslint";
+import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
 
 const defaultOptions: Required<ConfigOptions> = {
   javascript: true,
@@ -94,6 +94,9 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
           return importedConfig.eslintCommentsConfigs;
+        }),
+        import("./pluginConfigs/simpleImportSort.js").then((importedConfig) => {
+          return importedConfig.simpleImportSortConfig;
         })
       );
 

@@ -111,12 +111,6 @@ export const jsConfigs: Linter.FlatConfig[] = [
       "require-atomic-updates": "error",
       "require-await": "error",
       "require-unicode-regexp": "error",
-      "sort-imports": [
-        "error",
-        {
-          ignoreCase: true
-        }
-      ],
       "sort-keys": ["error", "asc", {natural: true}],
       "symbol-description": "error",
       "unicode-bom": "error",

@@ -1,9 +1,9 @@
 /**
  * @file The configuration for `@typescript-eslint/eslint-plugin`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
-import {Linter} from "eslint";
 import typescriptParser from "@typescript-eslint/parser";
+import {Linter} from "eslint";
+import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

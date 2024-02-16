@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-svelte`.
  */
-import type {ConfigOptions} from "../common.js";
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 import {Linter} from "eslint";
 import svelteParser from "svelte-eslint-parser";
+import type {ConfigOptions} from "../common.js";
+import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

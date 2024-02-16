@@ -1,10 +1,10 @@
 /**
  * @file The configuration for eslint plugins for jest.
  */
+import {Linter} from "eslint";
 import eslintPluginJestExtended from "eslint-plugin-jest-extended";
 import eslintPluginJestFormatting from "eslint-plugin-jest-formatting";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
-import {Linter} from "eslint";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

@@ -1,9 +1,9 @@
 /**
  * @file The configuration for `eslint-plugin-jsdoc`.
  */
-import {ConfigOptions} from "../common.js";
-import jsdoc from "eslint-plugin-jsdoc";
 import {Linter} from "eslint";
+import jsdoc from "eslint-plugin-jsdoc";
+import {ConfigOptions} from "../common.js";
 
 /**
  * Generate an eslint config for jsdoc based on the generator's options.

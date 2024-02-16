@@ -1,8 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-unicorn`.
  */
-import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import {Linter} from "eslint";
+import eslintPluginUnicorn from "eslint-plugin-unicorn";
 
 export const unicornConfigs: Linter.FlatConfig[] = [
   eslintPluginUnicorn.configs["flat/recommended"],

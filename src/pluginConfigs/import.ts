@@ -1,9 +1,9 @@
 /**
  * @file The configuration for `eslint-plugin-import`/`eslint-plugin-i`.
  */
+import {Linter} from "eslint";
 import {ConfigOptions} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
-import {Linter} from "eslint";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

@@ -1,9 +1,9 @@
 /**
  * @file Plugin entrypoint and definitions.
  */
-import ConfigGenerator from "./configGenerator.js";
 import {ESLint} from "eslint";
 import packageJSON from "../package.json" with {type: "json"};
+import ConfigGenerator from "./configGenerator.js";
 
 const plugin: ESLint.Plugin = {
   configs: {

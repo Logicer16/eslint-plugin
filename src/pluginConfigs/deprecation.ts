@@ -1,8 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-deprecation`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 import {Linter} from "eslint";
+import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

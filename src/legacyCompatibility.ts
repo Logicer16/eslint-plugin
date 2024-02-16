@@ -1,9 +1,9 @@
 /**
  * @file Compatibility with the legacy config format.
  */
+import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {FlatCompat} from "@eslint/eslintrc";
-import path from "node:path";
 
 /**
  * Get the legacy config format compatibility instance for a module's path.
