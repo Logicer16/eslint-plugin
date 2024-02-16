@@ -97,6 +97,9 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/simpleImportSort.js").then((importedConfig) => {
           return importedConfig.simpleImportSortConfig;
+        }),
+        import("./pluginConfigs/noUseExtendNative.js").then((importedConfig) => {
+          return importedConfig.noUseExtendNativeConfigs;
         })
       );
 
