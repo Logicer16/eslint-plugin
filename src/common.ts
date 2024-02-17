@@ -9,9 +9,14 @@ type Enumerate<
   End extends number,
   Start extends number = 0,
   Accumulator extends number[] = []
-> = Accumulator["length"] extends Subtract<End, Start>
-  ? Accumulator
-  : Enumerate<End, Start, [...Accumulator, Add<Accumulator["length"], Start>]>;
+> =
+  Accumulator["length"] extends Subtract<End, Start>
+    ? Accumulator
+    : Enumerate<
+        End,
+        Start,
+        [...Accumulator, Add<Accumulator["length"], Start>]
+      >;
 
 type BigEnumerate<
   End extends number,
