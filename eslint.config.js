@@ -6,10 +6,10 @@
 // eslint-disable-next-line n/no-unpublished-import, import/namespace, import/no-deprecated
 import {ConfigGenerator} from "@logicer/eslint-plugin";
 // eslint-disable-next-line n/no-unpublished-import
-import ESLintPluginConfig from "eslint-plugin-eslint-plugin/configs/recommended";
 
 const generator = new ConfigGenerator({
   ecmaVersion: 2024,
+  eslintPlugin: true,
   javascript: true,
   jsdoc: true,
   prettier: true,
@@ -51,7 +51,6 @@ const eslintPluginConfigs = [
       }
     }
   },
-  ESLintPluginConfig,
   {
     rules: {
       "@typescript-eslint/naming-convention": "off"

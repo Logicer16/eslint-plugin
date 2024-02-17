@@ -5,12 +5,13 @@ import {Linter} from "eslint";
 
 export interface ConfigOptions {
   ecmaVersion?: Linter.ParserOptions["ecmaVersion"];
+  eslintPlugin?: boolean;
   javascript?: boolean;
-  typescript?: boolean;
-  prettier?: boolean;
-  jsdoc?: boolean;
-  svelte?: boolean;
   jest?: boolean;
+  jsdoc?: boolean;
+  prettier?: boolean;
+  svelte?: boolean;
+  typescript?: boolean;
 }
 
 export const ESIncompatibleExtensionPatterns = [

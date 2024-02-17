@@ -6,6 +6,7 @@ import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
 
 const defaultOptions: Required<ConfigOptions> = {
   ecmaVersion: "latest",
+  eslintPlugin: false,
   javascript: true,
   jest: false,
   jsdoc: false,
@@ -159,6 +160,14 @@ export default class ConfigGenerator {
       configs.push(
         import("./pluginConfigs/jest.js").then((importedConfig) => {
           return importedConfig.jestConfigs;
+        })
+      );
+    }
+
+    if (this.options.eslintPlugin) {
+      configs.push(
+        import("./pluginConfigs/eslintPlugin.js").then((importedConfig) => {
+          return importedConfig.eslintPluginConfigs;
         })
       );
     }

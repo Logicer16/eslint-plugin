@@ -1,5 +1,7 @@
 /**
  * @file Type declarations for `eslint-plugin-security`.
+ *
+ * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-security" {
   import type {ESLint, Linter} from "eslint";
