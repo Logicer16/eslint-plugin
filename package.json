@@ -43,11 +43,10 @@
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.8.7",
     "eslint": "^8.56.0",
-    "eslint-plugin-eslint-plugin": "^5.1.0",
     "prettier": "3.1.1",
     "ts-plugin-type-coverage": "^2.26.4",
     "type-coverage": "^2.27.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   },
   "typeCoverage": {
     "atLeast": 100,
@@ -92,10 +91,14 @@
   },
   "peerDependencies": {
     "eslint": ">=8.23.0",
-    "eslint-import-resolver-typescript": "^3.6.1"
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "typescript": ">=5.3.3"
   },
   "peerDependenciesMeta": {
     "eslint-import-resolver-typescript": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   }
