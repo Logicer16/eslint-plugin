@@ -2,8 +2,7 @@
  * @file Merge two sets of ESLint globals to create the most permissive combination.
  */
 import {ESLint} from "eslint";
-
-type GlobalValue = ESLint.Globals[string];
+import {GlobalValue} from "./common.js";
 
 /**
  * Compare two values to determine the greater valued one.

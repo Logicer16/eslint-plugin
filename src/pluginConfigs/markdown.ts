@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-markdown`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const markdownConfigs: Linter.FlatConfig[] = [
+export const markdownConfigs: FlatConfig[] = [
   ...compat.extends("plugin:markdown/recommended"),
   {
     files: ["**/*.md/**/*.js", "**/*.md"],

@@ -4,9 +4,9 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-no-constructor-bind" {
-  import type {ESLint} from "eslint";
+  type Plugin = import("../src/common.js").Plugin;
 
-  declare const eslintPluginNoConstructorBind: ESLint.Plugin;
+  declare const eslintPluginNoConstructorBind: Plugin;
 
   export default eslintPluginNoConstructorBind;
 }

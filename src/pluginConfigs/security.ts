@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-security`.
  */
-import {Linter} from "eslint";
 import securityPlugin from "eslint-plugin-security";
+import {FlatConfig} from "../common.js";
 
-export const securityConfigs: Linter.FlatConfig[] = [
+export const securityConfigs: FlatConfig[] = [
   securityPlugin.configs.recommended,
   {
     rules: {

@@ -1,9 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-svelte`.
  */
-import {Linter} from "eslint";
 import svelteParser from "svelte-eslint-parser";
-import type {ConfigOptions} from "../common.js";
+import type {ConfigOptions, FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -15,7 +14,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  */
 export function getSvelteConfigs(
   options: Required<ConfigOptions>
-): Linter.FlatConfig[] {
+): FlatConfig[] {
   return [
     ...compat.extends("plugin:svelte/recommended"),
     {
@@ -72,7 +71,7 @@ export function getSvelteConfigs(
       languageOptions: {
         // DefinitelyTyped/DefinitelyTyped#68232
         // type-coverage:ignore-next-line
-        parser: svelteParser as unknown as Linter.ParserModule,
+        parser: svelteParser,
         parserOptions: options.typescript
           ? {
               parser: "@typescript-eslint/parser"
@@ -90,6 +89,6 @@ export function getSvelteConfigs(
   ];
 }
 
-export const sveltePrettierConfigs: Linter.FlatConfig[] = compat.extends(
+export const sveltePrettierConfigs: FlatConfig[] = compat.extends(
   "plugin:svelte/prettier"
 );

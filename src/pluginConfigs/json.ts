@@ -1,7 +1,7 @@
 /**
  * @file The configuration for `eslint-plugin-jsonc`.
  */
-import {Linter} from "eslint";
+import {FlatConfig, RulesRecord} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -14,7 +14,7 @@ const lyingFilesWithComments = [
   "tsconfig.*.json"
 ];
 
-const sharedRules: Linter.RulesRecord = {
+const sharedRules: RulesRecord = {
   "jsonc/no-irregular-whitespace": [
     "error",
     {
@@ -33,10 +33,7 @@ const sharedRules: Linter.RulesRecord = {
  * @param extension The extension of the targeted files.
  * @returns The updated config.
  */
-function updateConfig(
-  config: Linter.FlatConfig,
-  extension: string
-): Linter.FlatConfig {
+function updateConfig(config: FlatConfig, extension: string): FlatConfig {
   config.rules = {...config.rules, ...sharedRules};
 
   config.files ??= [];
@@ -80,12 +77,12 @@ const json5Config = compat
     return updateConfig(config, ".json5");
   });
 
-export const jsonConfigs: Linter.FlatConfig[] = [
+export const jsonConfigs: FlatConfig[] = [
   ...jsonConfig,
   ...jsoncConfig,
   ...json5Config
 ];
 
-export const jsonPrettierConfigs: Linter.FlatConfig[] = compat.extends(
+export const jsonPrettierConfigs: FlatConfig[] = compat.extends(
   "plugin:jsonc/prettier"
 );

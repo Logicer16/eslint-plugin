@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-eslint-plugin`.
  */
-import {Linter} from "eslint";
 import eslintPluginRecommended from "eslint-plugin-eslint-plugin/configs/recommended";
+import {FlatConfig} from "../common.js";
 
-export const eslintPluginConfigs: Linter.FlatConfig[] = [
+export const eslintPluginConfigs: FlatConfig[] = [
   eslintPluginRecommended,
   {
     rules: {

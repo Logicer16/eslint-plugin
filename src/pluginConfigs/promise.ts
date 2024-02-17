@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-promise`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const promiseConfigs: Linter.FlatConfig[] = [
+export const promiseConfigs: FlatConfig[] = [
   ...compat.extends("plugin:promise/recommended"),
   {
     rules: {

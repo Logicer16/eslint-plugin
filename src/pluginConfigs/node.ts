@@ -1,11 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-n`.
  */
-
-import {Linter} from "eslint";
 import nodePlugin from "eslint-plugin-n";
+import {FlatConfig} from "../common.js";
 
-export const nodeConfigs: Linter.FlatConfig[] = [
+export const nodeConfigs: FlatConfig[] = [
   {
     // Default to inferred.
     ...nodePlugin.configs["flat/recommended"],

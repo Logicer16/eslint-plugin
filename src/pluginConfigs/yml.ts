@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-yml`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const ymlConfigs: Linter.FlatConfig[] = compat
+export const ymlConfigs: FlatConfig[] = compat
   .extends("plugin:yml/standard")
   .map((config) => {
     config.rules = {
@@ -33,6 +33,6 @@ export const ymlConfigs: Linter.FlatConfig[] = compat
     return config;
   });
 
-export const ymlPrettierConfigs: Linter.FlatConfig[] = compat.extends(
+export const ymlPrettierConfigs: FlatConfig[] = compat.extends(
   "plugin:yml/prettier"
 );

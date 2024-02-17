@@ -95,8 +95,8 @@ npm install --save-dev eslint-import-resolver-typescript
 
 Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and extends:
 
-- `plugin:@typescript-eslint/strict-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:@typescript-eslint/stylistic-type-checked` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"typescript-eslint".configs.strictTypeChecked`
+- `"typescript-eslint".configs.stylisticTypeChecked`
 - `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 

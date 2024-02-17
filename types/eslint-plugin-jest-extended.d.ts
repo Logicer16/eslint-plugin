@@ -4,9 +4,9 @@
  * Temporary until the added to DefinitelyTyped or bundled in module.
  */
 declare module "eslint-plugin-jest-extended" {
-  import type {ESLint} from "eslint";
+  type Plugin = import("../src/common.js").Plugin;
 
-  declare const eslintPluginJestExtended: ESLint.Plugin;
+  declare const eslintPluginJestExtended: Plugin;
 
   export default eslintPluginJestExtended;
 }

@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-simple-import-sort`.
  */
-import {Linter} from "eslint";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
+import {FlatConfig} from "../common.js";
 
-export const simpleImportSortConfig: Linter.FlatConfig = {
+export const simpleImportSortConfig: FlatConfig = {
   plugins: {
     "simple-import-sort": simpleImportSortPlugin
   },

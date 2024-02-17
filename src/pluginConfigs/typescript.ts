@@ -1,26 +1,13 @@
 /**
- * @file The configuration for `@typescript-eslint/eslint-plugin`.
+ * @file The configuration for `typescript-eslint`.
  */
-import typescriptParser from "@typescript-eslint/parser";
-import {Linter} from "eslint";
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import tsPlugin from "typescript-eslint";
+import {FlatConfig} from "../common.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
-export const tsConfigs: Linter.FlatConfig[] = [
-  ...compat.extends(
-    "plugin:@typescript-eslint/strict-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
-  ),
+export const tsConfigs: FlatConfig[] = [
+  ...tsPlugin.configs.strictTypeChecked,
+  ...tsPlugin.configs.stylisticTypeChecked,
   {
-    languageOptions: {
-      // DefinitelyTyped/DefinitelyTyped#68232
-      // type-coverage:ignore-next-line
-      parser: typescriptParser as Linter.ParserModule,
-      parserOptions: {
-        project: true
-      }
-    },
     rules: {
       // Modify existing eslint rules
       // eslint-disable-next-line sort-keys
@@ -52,6 +39,16 @@ export const tsConfigs: Linter.FlatConfig[] = [
       // Add new rules
       // eslint-disable-next-line sort-keys
       "@typescript-eslint/array-type": "error",
+      "@typescript-eslint/ban-ts-comment": [
+        "error",
+        {
+          "minimumDescriptionLength": 3,
+          "ts-check": false,
+          "ts-expect-error": {descriptionFormat: "^: TS\\d+ .+\\.$"},
+          "ts-ignore": true,
+          "ts-nocheck": true
+        }
+      ],
       "@typescript-eslint/consistent-generic-constructors": "error",
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/explicit-function-return-type": "error",

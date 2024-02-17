@@ -1,8 +1,7 @@
 /**
  * @file The configuration for `eslint-plugin-es-x`.
  */
-import {Linter} from "eslint";
-import {ConfigOptions} from "../common.js";
+import {ConfigOptions, EcmaVersion, FlatConfig, IntRange} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -10,19 +9,14 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
 const latestEcmaVersion = 2023;
 const ESNextVersion = latestEcmaVersion + 1;
 
-type standardEcmaVersions =
-  | 3
-  | 5
-  | 2015
-  | 2016
-  | 2017
-  | 2018
-  | 2019
-  | 2020
-  | 2021
-  | 2022
-  | 2023
-  | 2024;
+const EcmaInvalidStart = 6;
+const EcmaInvalidEnd = 2014;
+const EcmaValidRestart = EcmaInvalidEnd + 1;
+
+type standardEcmaVersions = Exclude<
+  EcmaVersion,
+  IntRange<typeof EcmaInvalidStart, typeof EcmaInvalidEnd> | "latest"
+>;
 
 /**
  * Check if the ecmascript version is in the standard range.
@@ -30,9 +24,13 @@ type standardEcmaVersions =
  * @returns True if the version is in the standard range.
  */
 function ecmaVersionIsInStandardRange(
-  version: Required<Linter.ParserOptions["ecmaVersion"]>
+  version: Required<EcmaVersion>
 ): version is standardEcmaVersions {
-  return typeof version === "number" && version >= 6 && version <= 2014;
+  return (
+    typeof version === "number" &&
+    version >= EcmaInvalidStart &&
+    version <= EcmaInvalidEnd
+  );
 }
 
 /**
@@ -40,15 +38,13 @@ function ecmaVersionIsInStandardRange(
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */
-export function getESXConfigs(
-  options: Required<ConfigOptions>
-): Linter.FlatConfig[] {
+export function getESXConfigs(options: Required<ConfigOptions>): FlatConfig[] {
   let ecmaVersion: standardEcmaVersions | "next";
   if (
     typeof options.ecmaVersion === "number" &&
     !ecmaVersionIsInStandardRange(options.ecmaVersion)
   ) {
-    ecmaVersion = options.ecmaVersion + 2014;
+    ecmaVersion = options.ecmaVersion + (EcmaValidRestart - EcmaInvalidStart);
   } else if (
     options.ecmaVersion === "latest" ||
     options.ecmaVersion >= ESNextVersion
@@ -58,7 +54,7 @@ export function getESXConfigs(
     ecmaVersion = options.ecmaVersion;
   }
 
-  const configs: Linter.FlatConfig[] = [
+  const configs: FlatConfig[] = [
     {
       languageOptions: {
         ecmaVersion: options.ecmaVersion,
@@ -77,7 +73,7 @@ export function getESXConfigs(
     if (ecmaVersion !== latestEcmaVersion) {
       configs.push(
         ...compat.extends(`plugin:es-x/restrict-to-es${ecmaVersion}`),
-        ...(ecmaVersion < 2015
+        ...(ecmaVersion < EcmaValidRestart
           ? compat.extends(`plugin:es-x/restrict-to-es-intl-api-1st-edition`)
           : compat.extends(`plugin:es-x/restrict-to-es${ecmaVersion}-intl-api`))
       );

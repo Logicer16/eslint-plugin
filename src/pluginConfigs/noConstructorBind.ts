@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-no-constructor-bind`.
  */
-import {Linter} from "eslint";
 import noConstructorBindPlugin from "eslint-plugin-no-constructor-bind";
+import {FlatConfig} from "../common.js";
 
-export const noConstructorBindConfig: Linter.FlatConfig = {
+export const noConstructorBindConfig: FlatConfig = {
   plugins: {
     "no-constructor-bind": noConstructorBindPlugin
   },

@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-regexp`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const regexpConfigs: Linter.FlatConfig[] = [
+export const regexpConfigs: FlatConfig[] = [
   ...compat.extends("plugin:regexp/recommended"),
   {
     rules: {

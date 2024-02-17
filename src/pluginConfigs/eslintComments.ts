@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `@eslint-community/eslint-plugin-eslint-comments`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const eslintCommentsConfigs: Linter.FlatConfig[] = [
+export const eslintCommentsConfigs: FlatConfig[] = [
   ...compat.extends("plugin:@eslint-community/eslint-comments/recommended"),
   {
     rules: {

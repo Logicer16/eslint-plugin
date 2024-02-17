@@ -4,11 +4,12 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-security" {
-  import type {ESLint, Linter} from "eslint";
+  type FlatConfig = import("../src/common.js").FlatConfig;
+  type Plugin = import("../src/common.js").Plugin;
 
-  declare const eslintPluginSecurity: ESLint.Plugin & {
+  declare const eslintPluginSecurity: Plugin & {
     configs: {
-      recommended: Linter.FlatConfig;
+      recommended: FlatConfig;
     };
   };
 

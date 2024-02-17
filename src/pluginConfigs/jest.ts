@@ -1,9 +1,9 @@
 /**
  * @file The configuration for eslint plugins for jest.
  */
-import {Linter} from "eslint";
 import jestExtendedPlugin from "eslint-plugin-jest-extended";
 import jestFormattingPlugin from "eslint-plugin-jest-formatting";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -11,7 +11,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
 const jestTSFiles = ["**/*.{test,spec}.ts{x,}"];
 const jestFiles = [...jestTSFiles, "**/*.{test,spec}.js{x,}"];
 
-let jestConfigs: Linter.FlatConfig[] = [
+let jestConfigs: FlatConfig[] = [
   ...compat.extends("plugin:jest/recommended"),
   {
     rules: {
@@ -97,7 +97,7 @@ let jestConfigs: Linter.FlatConfig[] = [
   }
 ];
 
-jestConfigs = jestConfigs.map((config) => {
+jestConfigs = jestConfigs.map(<T extends FlatConfig>(config: T): T => {
   const snapshotFilePatterns = config.files?.flat().filter((file) => {
     return typeof file === "string" && file.endsWith(".snap");
   });

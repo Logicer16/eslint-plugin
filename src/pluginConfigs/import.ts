@@ -1,8 +1,7 @@
 /**
  * @file The configuration for `eslint-plugin-import`/`eslint-plugin-i`.
  */
-import {Linter} from "eslint";
-import type {ConfigOptions} from "../common.js";
+import type {ConfigOptions, FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -14,8 +13,8 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  */
 export function getImportConfigs(
   options: Required<ConfigOptions>
-): Linter.FlatConfig[] {
-  const importTypescriptConfig: Linter.FlatConfig[] = options.typescript
+): FlatConfig[] {
+  const importTypescriptConfig: FlatConfig[] = options.typescript
     ? compat.extends("plugin:import/typescript")
     : [];
 

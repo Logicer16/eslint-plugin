@@ -4,9 +4,9 @@
  * Temporary until the added to DefinitelyTyped or bundled in module.
  */
 declare module "eslint-plugin-jest-formatting" {
-  import type {ESLint} from "eslint";
+  type Plugin = import("../src/common.js").Plugin;
 
-  declare const eslintPluginJestFormatting: ESLint.Plugin;
+  declare const eslintPluginJestFormatting: Plugin;
 
   export default eslintPluginJestFormatting;
 }

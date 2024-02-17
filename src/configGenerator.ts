@@ -1,8 +1,11 @@
 /**
  * @file Generate an eslint config.
  */
-import {Linter} from "eslint";
-import {type ConfigOptions, ESIncompatibleExtensionPatterns} from "./common.js";
+import {
+  type ConfigOptions,
+  ESIncompatibleExtensionPatterns,
+  FlatConfig
+} from "./common.js";
 
 const defaultOptions: Required<ConfigOptions> = {
   ecmaVersion: "latest",
@@ -27,10 +30,10 @@ export default class ConfigGenerator {
       : this.options.typescript;
   }
 
-  private static addIgnoreExtensions(
-    config: Linter.FlatConfig,
+  private static addIgnoreExtensions<T extends FlatConfig>(
+    config: T,
     ...extensions: (string[] | string)[]
-  ): Linter.FlatConfig {
+  ): T {
     return {
       ...config,
       ignores: [
@@ -46,15 +49,15 @@ export default class ConfigGenerator {
    * Get the main config based on the provided options.
    * @returns A promise which resolves to the config.
    */
-  public get config(): Promise<Linter.FlatConfig[]> {
+  public get config(): Promise<FlatConfig[]> {
     return this.getConfig();
   }
 
-  private async getConfig(): Promise<Linter.FlatConfig[]> {
+  private async getConfig(): Promise<FlatConfig[]> {
     const configs: (
-      | Linter.FlatConfig
-      | Linter.FlatConfig[]
-      | Promise<Linter.FlatConfig | Linter.FlatConfig[]>
+      | FlatConfig
+      | FlatConfig[]
+      | Promise<FlatConfig | FlatConfig[]>
     )[] = [
       import("./pluginConfigs/esX.js").then((importedConfig) => {
         return importedConfig.getESXConfigs(this.options);
@@ -177,15 +180,15 @@ export default class ConfigGenerator {
     });
   }
 
-  public get endConfig(): Promise<Linter.FlatConfig[]> {
+  public get endConfig(): Promise<FlatConfig[]> {
     return this.getEndConfig();
   }
 
-  private async getEndConfig(): Promise<Linter.FlatConfig[]> {
+  private async getEndConfig(): Promise<FlatConfig[]> {
     const configs: (
-      | Linter.FlatConfig
-      | Linter.FlatConfig[]
-      | Promise<Linter.FlatConfig | Linter.FlatConfig[]>
+      | FlatConfig
+      | FlatConfig[]
+      | Promise<FlatConfig | FlatConfig[]>
     )[] = [];
 
     if (this.options.prettier) {

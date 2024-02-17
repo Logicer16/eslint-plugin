@@ -1,11 +1,11 @@
 /**
  * @file The configuration for `eslint-plugin-json-schema-validator`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const jsonSchemaConfigs: Linter.FlatConfig[] = compat.extends(
+export const jsonSchemaConfigs: FlatConfig[] = compat.extends(
   "plugin:json-schema-validator/recommended"
 );

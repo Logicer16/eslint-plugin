@@ -1,11 +1,11 @@
 /**
  * @file Plugin entrypoint and definitions.
  */
-import {ESLint} from "eslint";
 import packageJSON from "../package.json" with {type: "json"};
+import type {Plugin} from "./common.js";
 import ConfigGenerator from "./configGenerator.js";
 
-const plugin: ESLint.Plugin = {
+const plugin: Plugin = {
   configs: {
     "recommended": await new ConfigGenerator({
       javascript: true,
@@ -37,3 +37,5 @@ export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";
 export {FlatCompat} from "@eslint/eslintrc";
 export * as ESLint from "eslint";
+export type {FlatConfig as TypescriptESLint} from "@typescript-eslint/utils/ts-eslint";
+export type {FlatConfig} from "./common.js";

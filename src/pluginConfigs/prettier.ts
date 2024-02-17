@@ -1,13 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-prettier`.
  */
-
-import {Linter} from "eslint";
 import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
+import {FlatConfig} from "../common.js";
 
-export const prettierConfig: Linter.FlatConfig = prettierRecommendedConfig;
+export const prettierConfig: FlatConfig = prettierRecommendedConfig;
 
-export const prettierConfigCustom: Linter.FlatConfig = {
+export const prettierConfigCustom: FlatConfig = {
   rules: {
     "prettier/prettier": "warn",
 

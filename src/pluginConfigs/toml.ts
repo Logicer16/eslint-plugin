@@ -1,12 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-toml`.
  */
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 
-export const tomlConfigs: Linter.FlatConfig[] = compat
+export const tomlConfigs: FlatConfig[] = compat
   .extends("plugin:toml/standard")
   .map((config) => {
     config.rules = {

@@ -29,7 +29,7 @@ const ignores = [
 ];
 
 /**
- * @type {import("eslint").Linter.FlatConfig[]}
+ * @type {import("@logicer/eslint-plugin").FlatConfig[]}
  */
 const eslintPluginConfigs = [
   {
@@ -59,7 +59,7 @@ const eslintPluginConfigs = [
 ];
 
 /**
- * @type {import("eslint").Linter.FlatConfig[]}
+ * @type {import("@logicer/eslint-plugin").FlatConfig[]}
  */
 const config = [
   {ignores},

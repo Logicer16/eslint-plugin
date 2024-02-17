@@ -4,9 +4,9 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-simple-import-sort" {
-  import type {ESLint} from "eslint";
+  type Plugin = import("../src/common.js").Plugin;
 
-  declare const eslintPluginSimpleImportSort: ESLint.Plugin;
+  declare const eslintPluginSimpleImportSort: Plugin;
 
   export default eslintPluginSimpleImportSort;
 }

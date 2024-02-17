@@ -2,15 +2,15 @@
  * @file The configuration for `@eslint/js`.
  */
 import jsPlugin from "@eslint/js";
-import {Linter} from "eslint";
+import {FlatConfig} from "../common.js";
 
-export const jsPrettierOverrides: Linter.FlatConfig = {
+export const jsPrettierOverrides: FlatConfig = {
   rules: {
     curly: ["error", "multi-line"]
   }
 };
 
-export const jsConfigs: Linter.FlatConfig[] = [
+export const jsConfigs: FlatConfig[] = [
   jsPlugin.configs.recommended,
   jsPrettierOverrides,
   {
