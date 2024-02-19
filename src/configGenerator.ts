@@ -69,55 +69,55 @@ export default class ConfigGenerator {
         import("./pluginConfigs/javascript.js").then((importedConfig) => {
           return importedConfig.jsConfigs;
         }),
-        import("./pluginConfigs/node.js").then((importedConfig) => {
-          return importedConfig.nodeConfigs;
-        }),
-        import("./pluginConfigs/unicorn.js").then((importedConfig) => {
-          return importedConfig.unicornConfigs;
-        }),
-        import("./pluginConfigs/regexp.js").then((importedConfig) => {
-          return importedConfig.regexpConfigs;
+        import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
+          return importedConfig.eslintCommentsConfigs;
         }),
         import("./pluginConfigs/import.js").then((importedConfig) => {
           return importedConfig.getImportConfigs(this.options);
         }),
-        import("./pluginConfigs/security.js").then((importedConfig) => {
-          return importedConfig.securityConfigs;
-        }),
-        import("./pluginConfigs/promise.js").then((importedConfig) => {
-          return importedConfig.promiseConfigs;
-        }),
-        import("./pluginConfigs/markdown.js").then((importedConfig) => {
-          return importedConfig.markdownConfigs;
-        }),
         import("./pluginConfigs/json.js").then((importedConfig) => {
           return importedConfig.jsonConfigs;
-        }),
-        import("./pluginConfigs/yml.js").then((importedConfig) => {
-          return importedConfig.ymlConfigs;
-        }),
-        import("./pluginConfigs/toml.js").then((importedConfig) => {
-          return importedConfig.tomlConfigs;
         }),
         import("./pluginConfigs/jsonSchema.js").then((importedConfig) => {
           return importedConfig.jsonSchemaConfigs;
         }),
-        import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
-          return importedConfig.eslintCommentsConfigs;
+        import("./pluginConfigs/markdown.js").then((importedConfig) => {
+          return importedConfig.markdownConfigs;
         }),
-        import("./pluginConfigs/simpleImportSort.js").then((importedConfig) => {
-          return importedConfig.simpleImportSortConfig;
+        import("./pluginConfigs/node.js").then((importedConfig) => {
+          return importedConfig.nodeConfigs;
         }),
         import("./pluginConfigs/noUseExtendNative.js").then(
           (importedConfig) => {
             return importedConfig.noUseExtendNativeConfigs;
           }
         ),
+        import("./pluginConfigs/promise.js").then((importedConfig) => {
+          return importedConfig.promiseConfigs;
+        }),
+        import("./pluginConfigs/regexp.js").then((importedConfig) => {
+          return importedConfig.regexpConfigs;
+        }),
+        import("./pluginConfigs/security.js").then((importedConfig) => {
+          return importedConfig.securityConfigs;
+        }),
+        import("./pluginConfigs/simpleImportSort.js").then((importedConfig) => {
+          return importedConfig.simpleImportSortConfig;
+        }),
+        import("./pluginConfigs/toml.js").then((importedConfig) => {
+          return importedConfig.tomlConfigs;
+        }),
+        import("./pluginConfigs/unicorn.js").then((importedConfig) => {
+          return importedConfig.unicornConfigs;
+        }),
         import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
           return ConfigGenerator.addIgnoreExtensions(
             importedConfig.unusedImportsConfig,
             ...ESIncompatibleExtensionPatterns
           );
+        }),
+        import("./pluginConfigs/yml.js").then((importedConfig) => {
+          return importedConfig.ymlConfigs;
         })
       );
 
@@ -132,6 +132,9 @@ export default class ConfigGenerator {
               );
             });
           }),
+          import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
+            return importedConfig.arrayFuncConfig;
+          }),
           import("./pluginConfigs/deprecation.js").then((importedConfig) => {
             return importedConfig.deprecationConfigs.map((config) => {
               return ConfigGenerator.addIgnoreExtensions(
@@ -139,12 +142,25 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
-          }),
-          import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
-            return importedConfig.arrayFuncConfig;
           })
         );
       }
+    }
+
+    if (this.options.eslintPlugin) {
+      configs.push(
+        import("./pluginConfigs/eslintPlugin.js").then((importedConfig) => {
+          return importedConfig.eslintPluginConfigs;
+        })
+      );
+    }
+
+    if (this.options.jest) {
+      configs.push(
+        import("./pluginConfigs/jest.js").then((importedConfig) => {
+          return importedConfig.jestConfigs;
+        })
+      );
     }
 
     if (this.options.jsdoc) {
@@ -164,22 +180,6 @@ export default class ConfigGenerator {
       configs.push(
         import("./pluginConfigs/svelte.js").then((importedConfig) => {
           return importedConfig.getSvelteConfigs(this.options);
-        })
-      );
-    }
-
-    if (this.options.jest) {
-      configs.push(
-        import("./pluginConfigs/jest.js").then((importedConfig) => {
-          return importedConfig.jestConfigs;
-        })
-      );
-    }
-
-    if (this.options.eslintPlugin) {
-      configs.push(
-        import("./pluginConfigs/eslintPlugin.js").then((importedConfig) => {
-          return importedConfig.eslintPluginConfigs;
         })
       );
     }
