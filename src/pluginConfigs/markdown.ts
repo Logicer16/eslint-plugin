@@ -21,7 +21,8 @@ export const markdownConfigs: FlatConfig[] = [
       "no-unused-vars": "off",
       "padded-blocks": "off",
       "strict": "off",
-      "unicode-bom": "off"
+      "unicode-bom": "off",
+      "unused-imports/no-unused-vars": "off"
     }
   }
 ];

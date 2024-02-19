@@ -112,7 +112,13 @@ export default class ConfigGenerator {
           (importedConfig) => {
             return importedConfig.noUseExtendNativeConfigs;
           }
-        )
+        ),
+        import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
+          return ConfigGenerator.addIgnoreExtensions(
+            importedConfig.unusedImportsConfig,
+            ...ESIncompatibleExtensionPatterns
+          );
+        })
       );
 
       // Typescript automatically enables javascript.
@@ -135,7 +141,7 @@ export default class ConfigGenerator {
             });
           }),
           import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
-            return importedConfig.arrayFuncConfig
+            return importedConfig.arrayFuncConfig;
           })
         );
       }
