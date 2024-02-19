@@ -14,10 +14,11 @@ Contents:
   - [Options](#options)
     - [`javascript`](#javascript)
     - [`typescript`](#typescript)
-    - [`prettier`](#prettier)
-    - [`jsdoc`](#jsdoc)
-    - [`svelte`](#svelte)
+    - [`eslintPlugin`](#eslintplugin)
     - [`jest`](#jest)
+    - [`jsdoc`](#jsdoc)
+    - [`prettier`](#prettier)
+    - [`svelte`](#svelte)
     - [`ecmaVersion`](#ecmaversion)
   - [Predefined Configs](#predefined-configs)
     - [`recommended`](#recommended)
@@ -39,6 +40,7 @@ import {ConfigGenerator} from "@logicer/eslint-plugin";
 
 const generator = new ConfigGenerator({
   ecmaVersion: "latest", // or specific version
+  eslintPlugin: true, // or false (default)
   javascript: true, // (default) or false
   jest: true, // or false (default)
   jsdoc: true, // or false (default)
@@ -63,22 +65,23 @@ export default config;
 Extends:
 
 - `"@eslint/js".configs.recommended`
-- `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` and `"eslint-plugin-n"configs["flat/recommended"]` for all other files
-- `"eslint-plugin-unicorn".configs["flat/recommended"]`
-- `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `"eslint-plugin-security".configs.recommended`
+- `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json5` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:markdown/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- A custom rule set of `eslint-plugin-simple-import-sort`
-- `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` (`"eslint-plugin-n"configs["flat/recommended"]` for all other files)
 - A custom rule set of `eslint-plugin-no-constructor-bind`
+- `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-security".configs.recommended`
+- `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- A custom rule set of `eslint-plugin-simple-import-sort`
+- `"eslint-plugin-unicorn".configs["flat/recommended"]`
+- A custom rule set of `eslint-plugin-unused-imports`
+- `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
 If [`prettier`](#prettier) is set, it also extends:
 
@@ -97,27 +100,15 @@ Automatically enables [`javascript`](#javascript). Configures `@typescript-eslin
 
 - `"typescript-eslint".configs.strictTypeChecked`
 - `"typescript-eslint".configs.stylisticTypeChecked`
+- A custom rule set of `eslint-plugin-array-func`
 - `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
-#### `prettier`
-
-Extends `plugin:prettier/recommended`
-
-See also [`javascript`](#javascript) and [`svelte`](#svelte)
-
-#### `jsdoc`
+#### `eslintPlugin`
 
 Extends:
 
-- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-error"]` for TypeScript
-- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-flavor-error"]` for JavaScript.
-
-#### `svelte`
-
-Extends `plugin:svelte/recommended`.
-
-If [`prettier`](#prettier) is set, it also configures `plugin:svelte/prettier`.
+- `"eslint-plugin-eslint-plugin/configs/recommended"`
 
 #### `jest`
 
@@ -126,6 +117,25 @@ Extends:
 - `plugin:jest/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `eslint-plugin-jest-extended`
 - A custom rule set of `eslint-plugin-jest-formatting`
+
+#### `jsdoc`
+
+Extends:
+
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-error"]` for TypeScript
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-flavor-error"]` for JavaScript.
+
+#### `prettier`
+
+Extends `plugin:prettier/recommended`
+
+See also [`javascript`](#javascript) and [`svelte`](#svelte)
+
+#### `svelte`
+
+Extends `plugin:svelte/recommended`.
+
+If [`prettier`](#prettier) is set, it also configures `plugin:svelte/prettier`.
 
 #### `ecmaVersion`
 

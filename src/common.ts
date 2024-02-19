@@ -90,10 +90,10 @@ export const ESIncompatibleExtensionPatterns = [
   "json",
   "jsonc",
   "json5",
-  "yml",
-  "toml",
   "md",
-  "md/**/*.js"
+  "md/**/*.js",
+  "toml",
+  "yml"
 ];
 
 export type {ConfigedPlugin as Plugin};
