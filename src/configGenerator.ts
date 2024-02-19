@@ -81,9 +81,6 @@ export default class ConfigGenerator {
         import("./pluginConfigs/jsonSchema.js").then((importedConfig) => {
           return importedConfig.jsonSchemaConfigs;
         }),
-        import("./pluginConfigs/markdown.js").then((importedConfig) => {
-          return importedConfig.markdownConfigs;
-        }),
         import("./pluginConfigs/node.js").then((importedConfig) => {
           return importedConfig.nodeConfigs;
         }),
@@ -109,12 +106,6 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/unicorn.js").then((importedConfig) => {
           return importedConfig.unicornConfigs;
-        }),
-        import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
-          return ConfigGenerator.addIgnoreExtensions(
-            importedConfig.unusedImportsConfig,
-            ...ESIncompatibleExtensionPatterns
-          );
         }),
         import("./pluginConfigs/yml.js").then((importedConfig) => {
           return importedConfig.ymlConfigs;
@@ -147,6 +138,20 @@ export default class ConfigGenerator {
       }
     }
 
+    configs.push(
+      // Must follow `typescript-eslint`
+      import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
+        return ConfigGenerator.addIgnoreExtensions(
+          importedConfig.unusedImportsConfig,
+          ...ESIncompatibleExtensionPatterns
+        );
+      }),
+      // Must follow `eslint-plugin-n` and `eslint-plugin-unused-imports`.
+      import("./pluginConfigs/markdown.js").then((importedConfig) => {
+        return importedConfig.markdownConfigs;
+      })
+    );
+
     if (this.options.eslintPlugin) {
       configs.push(
         import("./pluginConfigs/eslintPlugin.js").then((importedConfig) => {
@@ -178,6 +183,7 @@ export default class ConfigGenerator {
 
     if (this.options.svelte) {
       configs.push(
+        // Must follow `eslint-plugin-jsdoc` and `eslint-plugin-import`
         import("./pluginConfigs/svelte.js").then((importedConfig) => {
           return importedConfig.getSvelteConfigs(this.options);
         })
