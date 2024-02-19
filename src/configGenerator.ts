@@ -133,6 +133,9 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
+          }),
+          import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
+            return importedConfig.arrayFuncConfig
           })
         );
       }
