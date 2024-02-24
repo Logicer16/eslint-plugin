@@ -49,7 +49,10 @@ export const tsConfigs: FlatConfig[] = [
         }
       ],
       "@typescript-eslint/consistent-generic-constructors": "error",
-      "@typescript-eslint/consistent-type-exports": "error",
+      "@typescript-eslint/consistent-type-exports": [
+        "error",
+        {fixMixedExportsWithInlineTypeSpecifier: true}
+      ],
       "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/explicit-member-accessibility": [
         "error",
