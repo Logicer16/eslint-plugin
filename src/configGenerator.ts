@@ -17,6 +17,7 @@ const defaultOptions: RequiredConfigOptions = {
   prettier: false,
   sourceFiles: [],
   svelte: false,
+  tailwind: false,
   typescript: false
 };
 
@@ -195,6 +196,14 @@ export default class ConfigGenerator {
               ...ESIncompatibleExtensionPatterns
             );
           });
+        })
+      );
+    }
+
+    if (this.options.tailwind) {
+      configs.push(
+        import("./pluginConfigs/tailwindcss.js").then((importedConfig) => {
+          return importedConfig.tailwindcssConfigs;
         })
       );
     }

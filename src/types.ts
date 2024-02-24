@@ -86,6 +86,7 @@ export interface ConfigOptions {
   prettier?: boolean;
   sourceFiles?: (FileSpec | FileSpec[])[];
   svelte?: boolean;
+  tailwind?: boolean;
   typescript?: boolean;
 }
 

@@ -18,6 +18,7 @@ Contents:
     - [`jest`](#jest)
     - [`jsdoc`](#jsdoc)
     - [`prettier`](#prettier)
+    - [`tailwind`](#tailwind)
     - [`svelte`](#svelte)
     - [`ecmaVersion`](#ecmaversion)
   - [Predefined Configs](#predefined-configs)
@@ -47,6 +48,7 @@ const generator = new ConfigGenerator({
   prettier: true, // or false (default)
   sourceFiles: ["src/**/*"], // The eslint config files value representing the project's source code (default: [])
   svelte: true, // or false (default)
+  tailwind: true, //or false (default)
   typescript: true // or false (default)
 });
 
@@ -134,6 +136,10 @@ Extends `plugin:prettier/recommended`
 Configures `"prettier/prettier"` to use the config from `@logicer/prettier-config`. If you need to override any of these options, ensure you do so in both your `.prettierrc.js` and the `prettier/prettier` rule in your `eslint.config.js`.
 
 See also [`javascript`](#javascript) and [`svelte`](#svelte)
+
+#### `tailwind`
+
+Extends `plugin:tailwindcss/recommended`
 
 #### `svelte`
 
