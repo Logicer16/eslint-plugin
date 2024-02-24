@@ -5,17 +5,19 @@
 // eslint-disable-next-line import/namespace, import/no-deprecated
 import {ConfigGenerator} from "@logicer/eslint-plugin";
 
-const generator = new ConfigGenerator({
+export const options = {
   ecmaVersion: 2024,
   eslintPlugin: true,
   javascript: true,
   jsdoc: true,
   prettier: true,
   typescript: true
-});
+};
+
+const generator = new ConfigGenerator(options);
 
 /**
- * @type {import("eslint").Linter.FlatConfigFileSpec[]}
+ * @type {import("@logicer/eslint-plugin").ESLint.Linter.FlatConfigFileSpec[]}
  */
 const ignores = [
   "node_modules/**/*",
