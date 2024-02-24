@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-no-constructor-bind`.
  */
 import noConstructorBindPlugin from "eslint-plugin-no-constructor-bind";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const noConstructorBindConfig: FlatConfig = {
   plugins: {

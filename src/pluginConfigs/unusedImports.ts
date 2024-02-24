@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-unused-imports`.
  */
 import unusedImports from "eslint-plugin-unused-imports";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const unusedImportsConfig: FlatConfig = {
   plugins: {

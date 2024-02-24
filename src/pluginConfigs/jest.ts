@@ -3,8 +3,8 @@
  */
 import jestExtendedPlugin from "eslint-plugin-jest-extended";
 import jestFormattingPlugin from "eslint-plugin-jest-formatting";
-import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import {FlatConfig} from "../types.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

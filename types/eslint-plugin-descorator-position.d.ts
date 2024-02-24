@@ -4,7 +4,7 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-decorator-position" {
-  type Plugin = import("../src/common.ts").Plugin;
+  type Plugin = import("../src/types.ts").Plugin;
 
   declare const eslintPluginDecoratorPosition: Plugin;
 

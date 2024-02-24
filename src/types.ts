@@ -75,6 +75,8 @@ export type RulesRecord = Exclude<
   undefined
 >;
 
+export type FileSpec = Exclude<FlatConfig["ignores"], undefined>[number];
+
 export interface ConfigOptions {
   ecmaVersion?: EcmaVersion;
   eslintPlugin?: boolean;
@@ -82,22 +84,12 @@ export interface ConfigOptions {
   jest?: boolean;
   jsdoc?: boolean;
   prettier?: boolean;
-  sourceFiles?: FlatConfig["files"];
+  sourceFiles?: (FileSpec | FileSpec[])[];
   svelte?: boolean;
   typescript?: boolean;
 }
 
 export type RequiredConfigOptions = Required<ConfigOptions>;
-
-export const ESIncompatibleExtensionPatterns = [
-  "json",
-  "jsonc",
-  "json5",
-  "md",
-  "md/**/*.js",
-  "toml",
-  "yml"
-];
 
 export type {ConfigedPlugin as Plugin};
 export type GlobalValue =

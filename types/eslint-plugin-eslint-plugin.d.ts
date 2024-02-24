@@ -4,7 +4,7 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-eslint-plugin/configs/recommended" {
-  type FlatConfig = import("../src/common.js").FlatConfig;
+  type FlatConfig = import("../src/types.ts").FlatConfig;
 
   declare const eslintPluginESLintPluginConfigRecommended: FlatConfig;
 

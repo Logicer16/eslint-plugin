@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-n`.
  */
 import nodePlugin from "eslint-plugin-n";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const nodeConfigs: FlatConfig[] = [
   {

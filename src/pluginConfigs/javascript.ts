@@ -2,7 +2,7 @@
  * @file The configuration for `@eslint/js`.
  */
 import jsPlugin from "@eslint/js";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const jsPrettierOverrides: FlatConfig = {
   rules: {

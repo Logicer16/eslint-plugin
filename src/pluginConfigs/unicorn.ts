@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-unicorn`.
  */
 import unicornPlugin from "eslint-plugin-unicorn";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const unicornConfigs: FlatConfig[] = [
   unicornPlugin.configs["flat/recommended"],

@@ -1,8 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-import`/`eslint-plugin-i`.
  */
-import type {FlatConfig, RequiredConfigOptions} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import type {FlatConfig, RequiredConfigOptions} from "../types.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

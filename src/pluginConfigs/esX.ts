@@ -1,13 +1,13 @@
 /**
  * @file The configuration for `eslint-plugin-es-x`.
  */
+import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 import {
   EcmaVersion,
   FlatConfig,
   IntRange,
   RequiredConfigOptions
-} from "../common.js";
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+} from "../types.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

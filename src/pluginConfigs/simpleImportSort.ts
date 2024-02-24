@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-simple-import-sort`.
  */
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const simpleImportSortConfig: FlatConfig = {
   plugins: {

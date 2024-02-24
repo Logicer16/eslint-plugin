@@ -7,8 +7,8 @@
 declare module "eslint-plugin-n" {
   import type {ESLint} from "eslint";
 
-  type FlatConfig = import("../src/common.js").FlatConfig;
-  type Plugin = import("../src/common.js").Plugin;
+  type FlatConfig = import("../src/types.ts").FlatConfig;
+  type Plugin = import("../src/types.ts").Plugin;
 
   declare const eslintPluginN: Plugin & {
     configs: {

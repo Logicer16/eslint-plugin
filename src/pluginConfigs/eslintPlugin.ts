@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-eslint-plugin`.
  */
 import eslintPluginRecommended from "eslint-plugin-eslint-plugin/configs/recommended";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const eslintPluginConfigs: FlatConfig[] = [
   eslintPluginRecommended,

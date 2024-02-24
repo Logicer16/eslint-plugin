@@ -1,8 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-regexp`.
  */
-import {FlatConfig} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import {FlatConfig} from "../types.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

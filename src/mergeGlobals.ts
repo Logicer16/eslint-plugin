@@ -2,7 +2,7 @@
  * @file Merge two sets of ESLint globals to create the most permissive combination.
  */
 import {ESLint} from "eslint";
-import {GlobalValue} from "./common.js";
+import {GlobalValue} from "./types.js";
 
 /**
  * Compare two values to determine the greater valued one.

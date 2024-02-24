@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-jsdoc`.
  */
 import jsdocPlugin from "eslint-plugin-jsdoc";
-import type {FlatConfig, RequiredConfigOptions} from "../common.js";
+import type {FlatConfig, RequiredConfigOptions} from "../types.js";
 
 /**
  * Generate an eslint config for jsdoc based on the generator's options.

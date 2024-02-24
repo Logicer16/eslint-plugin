@@ -3,7 +3,7 @@
  */
 import {prettierConfigGenerator} from "@logicer/prettier-config";
 import decoratorPosition from "eslint-plugin-decorator-position";
-import {FlatConfig, RequiredConfigOptions} from "../common.js";
+import {FlatConfig, RequiredConfigOptions} from "../types.js";
 
 /**
  * Generate an eslint config for decoratorPosition based on the generator's options. Depends on `@typescript-eslint/parser`.

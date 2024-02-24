@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-security`.
  */
 import securityPlugin from "eslint-plugin-security";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const securityConfigs: FlatConfig[] = [
   securityPlugin.configs.recommended,

@@ -2,7 +2,7 @@
  * @file The configuration for `typescript-eslint`.
  */
 import tsPlugin from "typescript-eslint";
-import {FlatConfig} from "../common.js";
+import {FlatConfig} from "../types.js";
 
 export const tsConfigs: FlatConfig[] = [
   ...tsPlugin.configs.strictTypeChecked,

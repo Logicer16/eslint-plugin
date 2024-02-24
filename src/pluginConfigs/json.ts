@@ -1,8 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-jsonc`.
  */
-import {FlatConfig, RulesRecord} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import {FlatConfig, RulesRecord} from "../types.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
 

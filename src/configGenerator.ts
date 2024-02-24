@@ -1,12 +1,12 @@
 /**
  * @file Generate an eslint config.
  */
+import {ESIncompatibleExtensionPatterns} from "./const.js";
 import {
   type ConfigOptions,
-  ESIncompatibleExtensionPatterns,
   FlatConfig,
   type RequiredConfigOptions
-} from "./common.js";
+} from "./types.js";
 
 const defaultOptions: RequiredConfigOptions = {
   ecmaVersion: "latest",
@@ -20,16 +20,27 @@ const defaultOptions: RequiredConfigOptions = {
   typescript: false
 };
 
+/**
+ * Process a config object ensuring all values are set by setting them to their default value if they are not already set.
+ * @param options The config object to process.
+ * @returns A config object with all values set.
+ */
+export function processConfig(options?: ConfigOptions): RequiredConfigOptions {
+  const processedOptions = {...defaultOptions, ...options};
+
+  // Automatically enable javascript when typescript is enabled.
+  processedOptions.javascript = processedOptions.javascript
+    ? true
+    : processedOptions.typescript;
+
+  return processedOptions;
+}
+
 export default class ConfigGenerator {
   private readonly options: RequiredConfigOptions;
 
   constructor(options?: ConfigOptions) {
-    this.options = {...defaultOptions, ...options};
-
-    // Automatically enable javascript when typescript is enabled.
-    this.options.javascript = this.options.javascript
-      ? true
-      : this.options.typescript;
+    this.options = processConfig(options);
   }
 
   private static addIgnoreExtensions<T extends FlatConfig>(

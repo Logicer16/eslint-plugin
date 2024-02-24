@@ -5,7 +5,7 @@
  * Temporary until the added to DefinitelyTyped.
  */
 declare module "eslint-plugin-array-func" {
-  type Plugin = import("../src/common.ts").Plugin;
+  type Plugin = import("../src/types.ts").Plugin;
 
   declare const eslintPluginArrayFunc: Plugin;
 
