@@ -3,7 +3,9 @@
   "extends": "@logicer/tsconfig",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
   },
   "include": [".prettierrc.js", "eslint.config.js"]
 }

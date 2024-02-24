@@ -4,3 +4,4 @@ dist/
 
 .eslint_report.json
 .eslintcache
+*.tsbuildinfo
