@@ -129,6 +129,8 @@ Extends:
 
 Extends `plugin:prettier/recommended`
 
+Configures `"prettier/prettier"` to use the config from `@logicer/prettier-config`. If you need to override any of these options, ensure you do so in both your `.prettierrc.js` and the `prettier/prettier` rule in your `eslint.config.js`.
+
 See also [`javascript`](#javascript) and [`svelte`](#svelte)
 
 #### `svelte`

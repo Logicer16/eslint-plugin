@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@logicer/eslint-plugin": "file:.",
-    "@logicer/prettier-config": "^2.0.0",
+    "@logicer/prettier-config": "^2.1.0",
     "@logicer/tsconfig": "^4.0.0",
     "@types/eslint": "^8.56.2",
     "@types/eslint__eslintrc": "^2.1.1",
@@ -60,6 +60,7 @@
   "optionalDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
     "@eslint/js": "^8.56.0",
+    "@logicer/prettier-config": "^2.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
     "eslint-plugin-deprecation": "^2.0.0",

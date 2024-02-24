@@ -225,7 +225,7 @@ export default class ConfigGenerator {
         );
       }
       configs.push(
-        prettierConfig.prettierConfigCustom,
+        prettierConfig.getCustomPrettierConfig(this.options),
         import("./pluginConfigs/javascript.js").then((importedConfig) => {
           return importedConfig.jsPrettierOverrides;
         })
