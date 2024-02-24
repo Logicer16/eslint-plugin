@@ -2,10 +2,8 @@
  * @file The eslint config.
  */
 // Espree is yet to support import-attributes
-// n/no-unpublished-import giving false positives
-// eslint-disable-next-line n/no-unpublished-import, import/namespace, import/no-deprecated
+// eslint-disable-next-line import/namespace, import/no-deprecated
 import {ConfigGenerator} from "@logicer/eslint-plugin";
-// eslint-disable-next-line n/no-unpublished-import
 
 const generator = new ConfigGenerator({
   ecmaVersion: 2024,

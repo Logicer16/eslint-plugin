@@ -10,7 +10,6 @@ export const tsConfigs: FlatConfig[] = [
   {
     rules: {
       // Modify existing eslint rules
-      // eslint-disable-next-line sort-keys
       "@typescript-eslint/class-methods-use-this": "error",
       "class-methods-use-this": "off",
       // eslint-disable-next-line sort-keys
