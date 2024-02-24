@@ -38,11 +38,9 @@
     "@logicer/eslint-plugin": "file:.",
     "@logicer/prettier-config": "^2.1.0",
     "@logicer/tsconfig": "^4.0.0",
-    "@types/eslint": "^8.56.2",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.8.7",
-    "@typescript-eslint/utils": "^7.0.1",
     "eslint": "^8.56.0",
     "prettier": "3.2.5",
     "ts-arithmetic": "^0.1.1",
@@ -92,7 +90,9 @@
     "typescript-eslint": "^7.0.1"
   },
   "dependencies": {
-    "@eslint/eslintrc": "^3.0.0"
+    "@eslint/eslintrc": "^3.0.0",
+    "@types/eslint": "^8.56.3",
+    "@typescript-eslint/utils": "^7.0.2"
   },
   "peerDependencies": {
     "eslint": ">=8.23.0",
