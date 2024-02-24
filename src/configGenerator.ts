@@ -4,10 +4,11 @@
 import {
   type ConfigOptions,
   ESIncompatibleExtensionPatterns,
-  FlatConfig
+  FlatConfig,
+  type RequiredConfigOptions
 } from "./common.js";
 
-const defaultOptions: Required<ConfigOptions> = {
+const defaultOptions: RequiredConfigOptions = {
   ecmaVersion: "latest",
   eslintPlugin: false,
   javascript: true,
@@ -19,7 +20,7 @@ const defaultOptions: Required<ConfigOptions> = {
 };
 
 export default class ConfigGenerator {
-  private readonly options: Required<ConfigOptions>;
+  private readonly options: RequiredConfigOptions;
 
   constructor(options?: ConfigOptions) {
     this.options = {...defaultOptions, ...options};
@@ -126,6 +127,11 @@ export default class ConfigGenerator {
           import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
             return importedConfig.arrayFuncConfig;
           }),
+          import("./pluginConfigs/decoratorPosition.js").then(
+            (importedConfig) => {
+              return importedConfig.getDecoratorPositionConfig(this.options);
+            }
+          ),
           import("./pluginConfigs/deprecation.js").then((importedConfig) => {
             return importedConfig.deprecationConfigs.map((config) => {
               return ConfigGenerator.addIgnoreExtensions(

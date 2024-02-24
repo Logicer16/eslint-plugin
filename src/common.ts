@@ -86,6 +86,8 @@ export interface ConfigOptions {
   typescript?: boolean;
 }
 
+export type RequiredConfigOptions = Required<ConfigOptions>;
+
 export const ESIncompatibleExtensionPatterns = [
   "json",
   "jsonc",

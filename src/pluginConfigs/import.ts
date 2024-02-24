@@ -1,7 +1,7 @@
 /**
  * @file The configuration for `eslint-plugin-import`/`eslint-plugin-i`.
  */
-import type {ConfigOptions, FlatConfig} from "../common.js";
+import type {FlatConfig, RequiredConfigOptions} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -11,9 +11,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  * @param options The options of the config generator.
  * @returns A eslint config for import.
  */
-export function getImportConfigs(
-  options: Required<ConfigOptions>
-): FlatConfig[] {
+export function getImportConfigs(options: RequiredConfigOptions): FlatConfig[] {
   const importTypescriptConfig: FlatConfig[] = options.typescript
     ? compat.extends("plugin:import/typescript")
     : [];

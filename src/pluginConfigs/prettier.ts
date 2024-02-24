@@ -3,7 +3,7 @@
  */
 import {prettierConfigGenerator} from "@logicer/prettier-config";
 import prettierRecommendedConfig from "eslint-plugin-prettier/recommended";
-import {ConfigOptions, FlatConfig} from "../common.js";
+import {FlatConfig, RequiredConfigOptions} from "../common.js";
 
 export const prettierConfig: FlatConfig = prettierRecommendedConfig;
 
@@ -13,7 +13,7 @@ export const prettierConfig: FlatConfig = prettierRecommendedConfig;
  * @returns A eslint config for prettier.
  */
 export function getCustomPrettierConfig(
-  options: Required<ConfigOptions>
+  options: RequiredConfigOptions
 ): FlatConfig {
   return {
     rules: {

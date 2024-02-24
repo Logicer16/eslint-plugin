@@ -5,7 +5,7 @@
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": true
   },
   "include": [".prettierrc.js", "eslint.config.js"]
 }

@@ -101,6 +101,7 @@ Automatically enables [`javascript`](#javascript). Configures `@typescript-eslin
 - `"typescript-eslint".configs.strictTypeChecked`
 - `"typescript-eslint".configs.stylisticTypeChecked`
 - A custom rule set of `eslint-plugin-array-func`
+- A custom rule set of `eslint-plugin-decorator-position`
 - `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 

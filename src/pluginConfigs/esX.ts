@@ -1,7 +1,12 @@
 /**
  * @file The configuration for `eslint-plugin-es-x`.
  */
-import {ConfigOptions, EcmaVersion, FlatConfig, IntRange} from "../common.js";
+import {
+  EcmaVersion,
+  FlatConfig,
+  IntRange,
+  RequiredConfigOptions
+} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -38,7 +43,7 @@ function ecmaVersionIsInStandardRange(
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */
-export function getESXConfigs(options: Required<ConfigOptions>): FlatConfig[] {
+export function getESXConfigs(options: RequiredConfigOptions): FlatConfig[] {
   let ecmaVersion: standardEcmaVersions | "next";
   if (
     typeof options.ecmaVersion === "number" &&

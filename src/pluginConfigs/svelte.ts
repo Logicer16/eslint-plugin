@@ -2,7 +2,7 @@
  * @file The configuration for `eslint-plugin-svelte`.
  */
 import svelteParser from "svelte-eslint-parser";
-import type {ConfigOptions, FlatConfig} from "../common.js";
+import type {FlatConfig, RequiredConfigOptions} from "../common.js";
 import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 
 const compat = getLegacyCompatibilityInstance(import.meta.url);
@@ -12,9 +12,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */
-export function getSvelteConfigs(
-  options: Required<ConfigOptions>
-): FlatConfig[] {
+export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
   return [
     ...compat.extends("plugin:svelte/recommended"),
     {
