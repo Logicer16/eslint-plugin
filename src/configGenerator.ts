@@ -15,6 +15,7 @@ const defaultOptions: RequiredConfigOptions = {
   jest: false,
   jsdoc: false,
   prettier: false,
+  sourceFiles: [],
   svelte: false,
   typescript: false
 };
@@ -189,7 +190,7 @@ export default class ConfigGenerator {
 
     if (this.options.svelte) {
       configs.push(
-        // Must follow `eslint-plugin-jsdoc` and `eslint-plugin-import`
+        // Must follow `eslint-plugin-jsdoc`, `eslint-plugin-n`, and `eslint-plugin-import`
         import("./pluginConfigs/svelte.js").then((importedConfig) => {
           return importedConfig.getSvelteConfigs(this.options);
         })

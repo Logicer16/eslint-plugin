@@ -82,6 +82,7 @@ export interface ConfigOptions {
   jest?: boolean;
   jsdoc?: boolean;
   prettier?: boolean;
+  sourceFiles?: FlatConfig["files"];
   svelte?: boolean;
   typescript?: boolean;
 }

@@ -13,6 +13,37 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
  * @returns A eslint config for svelte.
  */
 export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
+  const sourceFileConfigs: FlatConfig[] =
+    options.sourceFiles.length === 0
+      ? []
+      : [
+          {
+            files: options.sourceFiles,
+            rules: {
+              "import/no-unresolved": [
+                "error",
+                {
+                  // Regex
+                  ignore: [
+                    "\\$app/environment",
+                    "\\$app/forms",
+                    "\\$app/navigation",
+                    "\\$app/paths",
+                    "\\$app/stores",
+                    "\\$env/dynamic/private",
+                    "\\$env/dynamic/public",
+                    "\\$env/static/private",
+                    "\\$env/static/public",
+                    "\\$service-worker"
+                  ]
+                }
+              ],
+              "n/no-missing-import": "off",
+              "n/prefer-global/process": ["error", "always"]
+            }
+          }
+        ];
+
   return [
     ...compat.extends("plugin:svelte/recommended"),
     {
@@ -83,7 +114,8 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         "import/no-mutable-exports": "off",
         "import/unambiguous": "off"
       }
-    }
+    },
+    ...sourceFileConfigs
   ];
 }
 

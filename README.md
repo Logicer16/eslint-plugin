@@ -45,6 +45,7 @@ const generator = new ConfigGenerator({
   jest: true, // or false (default)
   jsdoc: true, // or false (default)
   prettier: true, // or false (default)
+  sourceFiles: ["src/**/*"], // The eslint config files value representing the project's source code (default: [])
   svelte: true, // or false (default)
   typescript: true // or false (default)
 });
