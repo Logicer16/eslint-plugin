@@ -3,7 +3,9 @@
 .vscode/
 src/
 types/
+
 .editorconfig
+.eslintcache
 .gitattributes
 .gitignore
 .nvmrc
@@ -14,4 +16,5 @@ types/
 eslint.config.js
 tsconfig.eslint.json
 tsconfig.json
+*.js.map
 *.tsbuildinfo
