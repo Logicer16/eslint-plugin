@@ -152,6 +152,14 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
+          }),
+          import("./pluginConfigs/etc.js").then((importedConfig) => {
+            return importedConfig.etcConfigs.map((config) => {
+              return ConfigGenerator.addIgnoreExtensions(
+                config,
+                ...ESIncompatibleExtensionPatterns
+              );
+            });
           })
         );
       }
