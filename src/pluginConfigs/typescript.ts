@@ -111,6 +111,7 @@ export const tsConfigs: FlatConfig[] = [
         }
       ],
       "@typescript-eslint/switch-exhaustiveness-check": "error",
+      "@typescript-eslint/unbound-method": ["error", {ignoreStatic: true}],
 
       // Disable undesirable rules
       // eslint-disable-next-line sort-keys
