@@ -160,6 +160,9 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
+          }),
+          import("./pluginConfigs/totalFunctions.js").then((importedConfig) => {
+            return importedConfig.totalFunctionsConfigs;
           })
         );
       }

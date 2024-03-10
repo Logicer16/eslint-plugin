@@ -37,7 +37,7 @@
   "devDependencies": {
     "@logicer/eslint-plugin": "file:.",
     "@logicer/prettier-config": "^2.1.0",
-    "@logicer/tsconfig": "^4.0.0",
+    "@logicer/tsconfig": "^5.0.0",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.8.7",
@@ -85,6 +85,7 @@
     "eslint-plugin-svelte": "^2.35.1",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "eslint-plugin-toml": "^0.9.2",
+    "eslint-plugin-total-functions": "^7.1.0",
     "eslint-plugin-unicorn": "^50.0.1",
     "eslint-plugin-unused-imports": "^3.1.0",
     "eslint-plugin-yml": "^1.12.2",

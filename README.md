@@ -106,7 +106,9 @@ Automatically enables [`javascript`](#javascript). Configures `@typescript-eslin
 - A custom rule set of `eslint-plugin-array-func`
 - A custom rule set of `eslint-plugin-decorator-position`
 - `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:etc/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- A custom rule set of `eslint-plugin-total-functions`
 
 #### `eslintPlugin`
 
