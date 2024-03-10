@@ -12,6 +12,7 @@
   "type": "module",
   "types": "dist/src/index.d.ts",
   "scripts": {
+    "preinstall": "pnpx only-allow pnpm",
     "build": "tsc && tsc -p ./tsconfig.eslint.json",
     "start": "tsc && node dist/index.js",
     "style": "npm run lint && npm run prettier",
@@ -32,7 +33,8 @@
   },
   "homepage": "https://github.com/Logicer16/eslint-plugin#readme",
   "engines": {
-    "node": "^20.10.0"
+    "node": "^20.10.0",
+    "pnpm": ">=8.10.0"
   },
   "devDependencies": {
     "@logicer/eslint-plugin": "file:.",
@@ -109,5 +111,6 @@
     "typescript": {
       "optional": true
     }
-  }
+  },
+  "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2"
 }
