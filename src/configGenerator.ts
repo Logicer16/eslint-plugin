@@ -2,10 +2,10 @@
  * @file Generate an eslint config.
  */
 import {ESIncompatibleExtensionPatterns} from "./const.js";
-import {
-  type ConfigOptions,
+import type {
+  ConfigOptions,
   FlatConfig,
-  type RequiredConfigOptions
+  RequiredConfigOptions
 } from "./types.js";
 
 const defaultOptions: RequiredConfigOptions = {
@@ -106,6 +106,9 @@ export default class ConfigGenerator {
         import("./pluginConfigs/promise.js").then((importedConfig) => {
           return importedConfig.promiseConfigs;
         }),
+        import("./pluginConfigs/perfectionist.js").then((importedConfig) => {
+          return importedConfig.perfectionistConfigs;
+        }),
         import("./pluginConfigs/regexp.js").then((importedConfig) => {
           return importedConfig.regexpConfigs;
         }),
@@ -160,9 +163,6 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
-          }),
-          import("./pluginConfigs/totalFunctions.js").then((importedConfig) => {
-            return importedConfig.totalFunctionsConfigs;
           })
         );
       }

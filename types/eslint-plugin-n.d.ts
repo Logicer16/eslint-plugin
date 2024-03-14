@@ -12,13 +12,13 @@ declare module "eslint-plugin-n" {
 
   declare const eslintPluginN: Plugin & {
     configs: {
-      "recommended-module": ESLint.ConfigData;
-      "recommended-script": ESLint.ConfigData;
-      "recommended": ESLint.ConfigData;
+      "flat/mixed-esm-and-cjs": FlatConfig[];
+      "flat/recommended": FlatConfig;
       "flat/recommended-module": FlatConfig;
       "flat/recommended-script": FlatConfig;
-      "flat/recommended": FlatConfig;
-      "flat/mixed-esm-and-cjs": FlatConfig[];
+      "recommended": ESLint.ConfigData;
+      "recommended-module": ESLint.ConfigData;
+      "recommended-script": ESLint.ConfigData;
     };
   };
 

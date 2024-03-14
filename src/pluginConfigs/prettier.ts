@@ -19,7 +19,6 @@ export function getCustomPrettierConfig(
     rules: {
       "prettier/prettier": ["warn", prettierConfigGenerator(options)],
 
-      // eslint-disable-next-line sort-keys
       "array-bracket-spacing": "off",
       "object-bracket-spacing": "off",
       "unicorn/template-indent": "off"

@@ -111,7 +111,6 @@ export const jsConfigs: FlatConfig[] = [
       "require-atomic-updates": "error",
       "require-await": "error",
       "require-unicode-regexp": "error",
-      "sort-keys": ["error", "asc", {natural: true}],
       "symbol-description": "error",
       "unicode-bom": "error",
       "valid-typeof": ["error", {requireStringLiterals: true}],
@@ -119,7 +118,6 @@ export const jsConfigs: FlatConfig[] = [
 
       // Disable undesirable rules
       // Doesn't work.
-      // eslint-disable-next-line sort-keys
       "consistent-return": "off",
       "init-declarations": "off",
       "lines-between-class-members": "off",

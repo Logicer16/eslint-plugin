@@ -12,16 +12,16 @@ export const tsConfigs: FlatConfig[] = [
       // Modify existing eslint rules
       "@typescript-eslint/class-methods-use-this": "error",
       "class-methods-use-this": "off",
-      // eslint-disable-next-line sort-keys
+
       "@typescript-eslint/no-empty-function": [
         "error",
         {allow: ["decoratedFunctions", "overrideMethods"]}
       ],
       "no-empty-function": "off",
-      // eslint-disable-next-line sort-keys
+
       "@typescript-eslint/no-loop-func": "error",
       "no-loop-func": "off",
-      // eslint-disable-next-line sort-keys
+
       "@typescript-eslint/no-unused-expressions": [
         "error",
         {
@@ -31,12 +31,11 @@ export const tsConfigs: FlatConfig[] = [
         }
       ],
       "no-unused-expressions": "off",
-      // eslint-disable-next-line sort-keys
+
       "@typescript-eslint/return-await": "error",
       "no-return-await": "off",
 
       // Add new rules
-      // eslint-disable-next-line sort-keys
       "@typescript-eslint/array-type": "error",
       "@typescript-eslint/ban-ts-comment": [
         "error",
@@ -114,7 +113,6 @@ export const tsConfigs: FlatConfig[] = [
       "@typescript-eslint/unbound-method": ["error", {ignoreStatic: true}],
 
       // Disable undesirable rules
-      // eslint-disable-next-line sort-keys
       "@typescript-eslint/consistent-type-imports": "off",
       "@typescript-eslint/init-declarations": "off",
       "@typescript-eslint/lines-between-class-members": "off",

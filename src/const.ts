@@ -9,5 +9,6 @@ export const ESIncompatibleExtensionPatterns = [
   "md",
   "md/**/*.js",
   "toml",
+  "yaml",
   "yml"
 ];

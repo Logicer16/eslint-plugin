@@ -111,7 +111,7 @@ jestConfigs.push({
   files: jestTSFiles,
   rules: {
     "jest/no-untyped-mock-factory": "error",
-    // eslint-disable-next-line sort-keys
+    // eslint-disable-next-line perfectionist/sort-objects
     "@typescript-eslint/unbound-method": "off",
     "jest/unbound-method": "error"
   }

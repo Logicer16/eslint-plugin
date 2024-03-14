@@ -29,6 +29,7 @@ export const ymlConfigs: FlatConfig[] = compat
       // eslint-disable-next-line @typescript-eslint/dot-notation
       config.languageOptions.parserOptions["extraFileExtensions"]
     ].flat();
+    config.ignores = [...(config.ignores ?? []), "**/pnpm-lock.yaml"];
 
     return config;
   });

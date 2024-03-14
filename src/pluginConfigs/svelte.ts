@@ -91,7 +91,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         "svelte/valid-prop-names-in-kit-pages": "error",
 
         // Doesn't work with tailwind.
-        // eslint-disable-next-line sort-keys
         "svelte/no-unused-class-name": "off"
       }
     },
@@ -110,7 +109,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
       rules: {
         "jsdoc/require-file-overview": "off",
 
-        // eslint-disable-next-line sort-keys
         "import/no-mutable-exports": "off",
         "import/unambiguous": "off"
       }

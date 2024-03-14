@@ -77,6 +77,8 @@ export type RulesRecord = Exclude<
 
 export type FileSpec = Exclude<FlatConfig["ignores"], undefined>[number];
 
+export type RuleEntry = Exclude<FlatConfig["rules"], undefined>[string];
+
 export interface ConfigOptions {
   ecmaVersion?: EcmaVersion;
   eslintPlugin?: boolean;
