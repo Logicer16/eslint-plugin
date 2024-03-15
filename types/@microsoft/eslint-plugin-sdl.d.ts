@@ -1,7 +1,7 @@
 /**
  * @file Type declarations for `@microsoft/eslint-plugin-sdl`.
  *
- * Temporary until the added to DefinitelyTyped.
+ * Temporary until added to DefinitelyTyped.
  */
 
 declare module "@microsoft/eslint-plugin-sdl" {

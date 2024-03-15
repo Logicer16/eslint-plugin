@@ -2,7 +2,7 @@
 /**
  * @file Type declarations for `eslint-plugin-array-func`.
  *
- * Temporary until the added to DefinitelyTyped.
+ * Temporary until added to DefinitelyTyped.
  */
 declare module "eslint-plugin-array-func" {
   type Plugin = import("../src/types.ts").Plugin;

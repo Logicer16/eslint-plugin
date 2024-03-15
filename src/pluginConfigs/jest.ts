@@ -1,19 +1,25 @@
 /**
  * @file The configuration for eslint plugins for jest.
  */
+import jestPlugin from "eslint-plugin-jest";
 import jestExtendedPlugin from "eslint-plugin-jest-extended";
 import jestFormattingPlugin from "eslint-plugin-jest-formatting";
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
 import {FlatConfig} from "../types.js";
-
-const compat = getLegacyCompatibilityInstance(import.meta.url);
 
 const jestTSFiles = ["**/*.{test,spec}.ts{x,}"];
 const jestFiles = [...jestTSFiles, "**/*.{test,spec}.js{x,}"];
 
-let jestConfigs: FlatConfig[] = [
-  ...compat.extends("plugin:jest/recommended"),
+const jestRecommendedConfig = jestPlugin.configs["flat/recommended"];
+
+export const jestConfigs: FlatConfig[] = [
+  jestPlugin.configs["flat/snapshots"],
   {
+    ...jestRecommendedConfig,
+    files: [...(jestRecommendedConfig.files ?? []), ...jestFiles]
+  },
+  {
+    // plugins: {jest: jestPlugin},
+    files: jestFiles,
     rules: {
       "jest/consistent-test-it": "error",
       "jest/expect-expect": "error",
@@ -74,6 +80,16 @@ let jestConfigs: FlatConfig[] = [
     }
   },
   {
+    files: jestTSFiles,
+    rules: {
+      "jest/no-untyped-mock-factory": "error",
+      // eslint-disable-next-line perfectionist/sort-objects
+      "@typescript-eslint/unbound-method": "off",
+      "jest/unbound-method": "error"
+    }
+  },
+  {
+    files: jestFiles,
     plugins: {"jest-formatting": jestFormattingPlugin},
     rules: {
       "jest-formatting/padding-around-after-all-blocks": "error",
@@ -86,6 +102,7 @@ let jestConfigs: FlatConfig[] = [
     }
   },
   {
+    files: jestFiles,
     plugins: {"jest-extended": jestExtendedPlugin},
     rules: {
       "jest-extended/prefer-to-be-array": "error",
@@ -96,25 +113,3 @@ let jestConfigs: FlatConfig[] = [
     }
   }
 ];
-
-jestConfigs = jestConfigs.map(<T extends FlatConfig>(config: T): T => {
-  const snapshotFilePatterns = config.files?.flat().filter((file) => {
-    return typeof file === "string" && file.endsWith(".snap");
-  });
-  if (snapshotFilePatterns !== undefined && snapshotFilePatterns.length > 0) {
-    return config;
-  }
-  return {...config, files: [...(config.files ?? []), ...jestFiles]};
-});
-
-jestConfigs.push({
-  files: jestTSFiles,
-  rules: {
-    "jest/no-untyped-mock-factory": "error",
-    // eslint-disable-next-line perfectionist/sort-objects
-    "@typescript-eslint/unbound-method": "off",
-    "jest/unbound-method": "error"
-  }
-});
-
-export {jestConfigs};
