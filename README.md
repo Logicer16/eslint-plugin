@@ -79,7 +79,7 @@ Extends:
 - A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `"eslint-plugin-perfectionist/configs/recommended-natural"`
-- `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-regexp".configs["flat/recommended"]`
 - A custom rule set of `@microsoft/eslint-plugin-sdl`
 - `"eslint-plugin-security".configs.recommended`
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
@@ -122,7 +122,8 @@ Extends:
 
 Extends:
 
-- `plugin:jest/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-jest".configs["flat/snapshots"]`
+- `"eslint-plugin-jest".configs["flat/recommended"]`
 - A custom rule set of `eslint-plugin-jest-extended`
 - A custom rule set of `eslint-plugin-jest-formatting`
 
