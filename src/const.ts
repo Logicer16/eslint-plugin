@@ -7,7 +7,7 @@ export const ESIncompatibleExtensionPatterns = [
   "jsonc",
   "json5",
   "md",
-  "md/**/*.js",
+  "md/**/*",
   "toml",
   "yaml",
   "yml"

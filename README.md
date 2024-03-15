@@ -74,7 +74,7 @@ Extends:
 - `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json5` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:markdown/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-markdown".configs.recommended`
 - `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` (`"eslint-plugin-n"configs["flat/recommended"]` for all other files)
 - A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))

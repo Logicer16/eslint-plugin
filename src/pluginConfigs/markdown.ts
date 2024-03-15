@@ -1,15 +1,13 @@
 /**
  * @file The configuration for `eslint-plugin-markdown`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import markdownPlugin from "eslint-plugin-markdown";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
 export const markdownConfigs: FlatConfig[] = [
-  ...compat.extends("plugin:markdown/recommended"),
+  ...markdownPlugin.configs.recommended,
   {
-    files: ["**/*.md/**/*.js", "**/*.md"],
+    files: ["**/*.md/**/*", "**/*.md"],
     rules: {
       "eol-last": "off",
       "import/namespace": "off",
