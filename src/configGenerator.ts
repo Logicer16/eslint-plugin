@@ -95,7 +95,7 @@ export default class ConfigGenerator {
         import("./pluginConfigs/jsonSchema.js").then((importedConfig) => {
           return importedConfig.jsonSchemaConfigs;
         }),
-        import("./pluginConfigs/node.js").then((importedConfig) => {
+        import("./pluginConfigs/n.js").then((importedConfig) => {
           return importedConfig.nodeConfigs;
         }),
         import("./pluginConfigs/noUseExtendNative.js").then(
