@@ -1,13 +1,11 @@
 /**
  * @file The configuration for `eslint-plugin-regexp`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import regexpPlugin from "eslint-plugin-regexp";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
 export const regexpConfigs: FlatConfig[] = [
-  ...compat.extends("plugin:regexp/recommended"),
+  regexpPlugin.configs["flat/recommended"],
   {
     rules: {
       "regexp/grapheme-string-literal": "error",
