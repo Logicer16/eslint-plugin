@@ -61,6 +61,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
     "@eslint/js": "^8.56.0",
     "@logicer/prettier-config": "v2.1.0",
+    "@microsoft/eslint-plugin-sdl": "github:microsoft/eslint-plugin-sdl",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
     "eslint-plugin-decorator-position": "^5.0.2",

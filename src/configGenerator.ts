@@ -163,6 +163,9 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
+          }),
+          import("./pluginConfigs/microsoftSDL.js").then((importedConfig) => {
+            return importedConfig.MicrosoftSDLConfig;
           })
         );
       }

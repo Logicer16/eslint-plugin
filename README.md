@@ -78,7 +78,9 @@ Extends:
 - `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` (`"eslint-plugin-n"configs["flat/recommended"]` for all other files)
 - A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:no-use-extend-native/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-perfectionist/configs/recommended-natural"`
 - `plugin:regexp/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- A custom rule set of `@microsoft/eslint-plugin-sdl`
 - `"eslint-plugin-security".configs.recommended`
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `eslint-plugin-simple-import-sort`
