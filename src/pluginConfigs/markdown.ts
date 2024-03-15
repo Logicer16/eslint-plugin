@@ -10,8 +10,8 @@ export const markdownConfigs: FlatConfig[] = [
     files: ["**/*.md/**/*", "**/*.md"],
     rules: {
       "eol-last": "off",
-      "import/namespace": "off",
-      "import/no-deprecated": "off",
+      "import-x/namespace": "off",
+      "import-x/no-deprecated": "off",
       "n/no-missing-import": "off",
       "n/no-unpublished-import": "off",
       "no-undef": "off",

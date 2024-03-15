@@ -20,7 +20,7 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
           {
             files: options.sourceFiles,
             rules: {
-              "import/no-unresolved": [
+              "import-x/no-unresolved": [
                 "error",
                 {
                   // Regex
@@ -109,8 +109,8 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
       rules: {
         "jsdoc/require-file-overview": "off",
 
-        "import/no-mutable-exports": "off",
-        "import/unambiguous": "off"
+        "import-x/no-mutable-exports": "off",
+        "import-x/unambiguous": "off"
       }
     },
     ...sourceFileConfigs

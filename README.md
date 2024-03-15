@@ -69,7 +69,7 @@ Extends:
 
 - `"@eslint/js".configs.recommended`
 - `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:import/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:import-x/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
@@ -109,7 +109,7 @@ Automatically enables [`javascript`](#javascript). Configures `@typescript-eslin
 - A custom rule set of `eslint-plugin-decorator-position`
 - `plugin:deprecation/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:etc/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:import/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `plugin:import-x/typescript` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `eslint-plugin-total-functions`
 
 #### `eslintPlugin`

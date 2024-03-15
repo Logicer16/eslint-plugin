@@ -2,7 +2,7 @@
  * @file The eslint config.
  */
 // Espree is yet to support import-attributes
-// eslint-disable-next-line import/namespace, import/no-deprecated
+// eslint-disable-next-line import-x/namespace, import-x/no-deprecated
 import {ConfigGenerator} from "@logicer/eslint-plugin";
 
 /**
@@ -43,11 +43,11 @@ const eslintPluginConfigs = [
       }
     },
     settings: {
-      "import/parsers": {
+      "import-x/parsers": {
         // Temporary until https://github.com/import-js/eslint-plugin-import/pull/2829
         espree: [".js", ".jsx", ".cjs", ".mjs"]
       },
-      "import/resolver": {
+      "import-x/resolver": {
         typescript: {
           project: ["tsconfig.json", "tsconfig.eslint.json"]
         }
