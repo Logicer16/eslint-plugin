@@ -82,8 +82,9 @@ Extends:
 - `"eslint-plugin-regexp".configs["flat/recommended"]`
 - A custom rule set of `@microsoft/eslint-plugin-sdl`
 - `"eslint-plugin-security".configs.recommended`
+- A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- A custom rule set of `eslint-plugin-simple-import-sort`
+- A custom rule set of `@shopify/eslint-plugi`
 - `"eslint-plugin-unicorn".configs["flat/recommended"]`
 - A custom rule set of `eslint-plugin-unused-imports`
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))

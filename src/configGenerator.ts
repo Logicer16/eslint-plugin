@@ -95,6 +95,9 @@ export default class ConfigGenerator {
         import("./pluginConfigs/jsonSchema.js").then((importedConfig) => {
           return importedConfig.jsonSchemaConfigs;
         }),
+        import("./pluginConfigs/microsoftSDL.js").then((importedConfig) => {
+          return importedConfig.microsoftSDLConfig;
+        }),
         import("./pluginConfigs/n.js").then((importedConfig) => {
           return importedConfig.nodeConfigs;
         }),
@@ -114,6 +117,9 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/security.js").then((importedConfig) => {
           return importedConfig.securityConfigs;
+        }),
+        import("./pluginConfigs/shopify.js").then((importedConfig) => {
+          return importedConfig.shopifyConfig;
         }),
         import("./pluginConfigs/simpleImportSort.js").then((importedConfig) => {
           return importedConfig.simpleImportSortConfig;
@@ -163,9 +169,6 @@ export default class ConfigGenerator {
                 ...ESIncompatibleExtensionPatterns
               );
             });
-          }),
-          import("./pluginConfigs/microsoftSDL.js").then((importedConfig) => {
-            return importedConfig.MicrosoftSDLConfig;
           })
         );
       }
