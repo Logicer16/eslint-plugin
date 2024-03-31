@@ -86,6 +86,7 @@ Extends:
 - A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - A custom rule set of `@shopify/eslint-plugin`
+- A custom rule set of `eslint-plugin-simple-import-sort`
 - `"eslint-plugin-unicorn".configs["flat/recommended"]`
 - A custom rule set of `eslint-plugin-unused-imports`
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
