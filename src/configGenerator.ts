@@ -44,19 +44,22 @@ export default class ConfigGenerator {
     this.options = processConfig(options);
   }
 
-  private static addIgnoreExtensions<T extends FlatConfig>(
-    config: T,
+  private static ignoreExtensions<T extends FlatConfig>(
+    configs: T[],
     ...extensions: (string[] | string)[]
-  ): T {
-    return {
-      ...config,
-      ignores: [
-        ...extensions.flat().map((extension) => {
-          return `**/*.${extension}`;
-        }),
-        ...(config.ignores ?? [])
-      ]
-    };
+  ): T[] {
+    return configs.map((config) => {
+      return {
+        ...config,
+        ignores: [
+          ...extensions.flat().map((extension) => {
+            return `**/*.${extension}`;
+          }),
+          ...(config.ignores ?? [])
+        ]
+      };
+    });
+
   }
 
   /**
@@ -73,9 +76,6 @@ export default class ConfigGenerator {
       | FlatConfig[]
       | Promise<FlatConfig | FlatConfig[]>
     )[] = [
-      import("./pluginConfigs/esX.js").then((importedConfig) => {
-        return importedConfig.getESXConfigs(this.options);
-      })
     ];
 
     if (this.options.javascript) {
@@ -85,6 +85,9 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
           return importedConfig.eslintCommentsConfigs;
+        }),
+        import("./pluginConfigs/html.js").then((importedConfig) => {
+          return importedConfig.htmlConfig;
         }),
         import("./pluginConfigs/importX.js").then((importedConfig) => {
           return importedConfig.getImportXConfigs(this.options);
@@ -135,16 +138,21 @@ export default class ConfigGenerator {
         })
       );
 
+      configs.push(
+        // Must follow `eslint-plugin-import-x`
+        import("./pluginConfigs/esX.js").then((importedConfig) => {
+          return importedConfig.getESXConfigs(this.options);
+        })
+      );
+
       // Typescript automatically enables javascript.
       if (this.options.typescript) {
         configs.push(
           import("./pluginConfigs/typescript.js").then((importedConfig) => {
-            return importedConfig.tsConfigs.map((config) => {
-              return ConfigGenerator.addIgnoreExtensions(
-                config,
+            return ConfigGenerator.ignoreExtensions(
+                importedConfig.tsConfigs,
                 ...ESIncompatibleExtensionPatterns
               );
-            });
           }),
           import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
             return importedConfig.arrayFuncConfig;
@@ -155,38 +163,35 @@ export default class ConfigGenerator {
             }
           ),
           import("./pluginConfigs/deprecation.js").then((importedConfig) => {
-            return importedConfig.deprecationConfigs.map((config) => {
-              return ConfigGenerator.addIgnoreExtensions(
-                config,
+            return ConfigGenerator.ignoreExtensions(
+                importedConfig.deprecationConfigs,
                 ...ESIncompatibleExtensionPatterns
               );
-            });
           }),
           import("./pluginConfigs/etc.js").then((importedConfig) => {
-            return importedConfig.etcConfigs.map((config) => {
-              return ConfigGenerator.addIgnoreExtensions(
-                config,
+            return ConfigGenerator.ignoreExtensions(
+                importedConfig.etcConfigs,
                 ...ESIncompatibleExtensionPatterns
               );
-            });
           })
+        );
+
+        configs.push(
+          // Must follow `typescript-eslint`
+          import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
+            return ConfigGenerator.ignoreExtensions(
+              [importedConfig.unusedImportsConfig],
+              ...ESIncompatibleExtensionPatterns
+            );
+          }),
+          // Must follow `eslint-plugin-n` and `eslint-plugin-unused-imports`.
+          import("./pluginConfigs/markdown.js").then((importedConfig) => {
+            return importedConfig.markdownConfigs;
+          }),
         );
       }
     }
 
-    configs.push(
-      // Must follow `typescript-eslint`
-      import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
-        return ConfigGenerator.addIgnoreExtensions(
-          importedConfig.unusedImportsConfig,
-          ...ESIncompatibleExtensionPatterns
-        );
-      }),
-      // Must follow `eslint-plugin-n` and `eslint-plugin-unused-imports`.
-      import("./pluginConfigs/markdown.js").then((importedConfig) => {
-        return importedConfig.markdownConfigs;
-      })
-    );
 
     if (this.options.eslintPlugin) {
       configs.push(
@@ -207,12 +212,10 @@ export default class ConfigGenerator {
     if (this.options.jsdoc) {
       configs.push(
         import("./pluginConfigs/jsdoc.js").then((importedConfig) => {
-          return importedConfig.getJSDocConfigs(this.options).map((config) => {
-            return ConfigGenerator.addIgnoreExtensions(
-              config,
+            return ConfigGenerator.ignoreExtensions(
+              importedConfig.getJSDocConfigs(this.options),
               ...ESIncompatibleExtensionPatterns
             );
-          });
         })
       );
     }

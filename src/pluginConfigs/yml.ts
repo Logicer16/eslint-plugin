@@ -22,13 +22,6 @@ export const ymlConfigs: FlatConfig[] = compat
     if (config.languageOptions.parserOptions === undefined) {
       config.languageOptions.parserOptions = {};
     }
-    // eslint-disable-next-line @typescript-eslint/dot-notation
-    config.languageOptions.parserOptions["extraFileExtensions"] = [
-      ".yml",
-      ".yaml",
-      // eslint-disable-next-line @typescript-eslint/dot-notation
-      config.languageOptions.parserOptions["extraFileExtensions"]
-    ].flat();
     config.ignores = [...(config.ignores ?? []), "**/pnpm-lock.yaml"];
 
     return config;

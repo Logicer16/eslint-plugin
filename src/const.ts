@@ -3,6 +3,7 @@
  */
 
 export const ESIncompatibleExtensionPatterns = [
+  "html",
   "json",
   "jsonc",
   "json5",

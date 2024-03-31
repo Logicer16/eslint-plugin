@@ -102,7 +102,8 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         parser: svelteParser,
         parserOptions: options.typescript
           ? {
-              parser: "@typescript-eslint/parser"
+              parser: "@typescript-eslint/parser",
+              extraFileExtensions: [".svelte"],
             }
           : undefined
       },

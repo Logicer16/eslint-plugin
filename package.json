@@ -60,6 +60,8 @@
   "optionalDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
     "@eslint/js": "^8.56.0",
+    "@html-eslint/eslint-plugin": "^0.24.0",
+    "@html-eslint/parser": "^0.24.0",
     "@logicer/prettier-config": "v2.1.0",
     "@microsoft/eslint-plugin-sdl": "github:microsoft/eslint-plugin-sdl",
     "@shopify/eslint-plugin": "^44.0.0",

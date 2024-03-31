@@ -37,7 +37,7 @@ function updateConfig(config: FlatConfig, extension: string): FlatConfig {
   config.rules = {...config.rules, ...sharedRules};
 
   config.files ??= [];
-  config.files.push(`*${extension}`);
+  config.files.push(`**/*${extension}`);
   if (extension === ".jsonc") {
     config.files.push(...lyingFilesWithComments);
   } else {
@@ -51,12 +51,6 @@ function updateConfig(config: FlatConfig, extension: string): FlatConfig {
   if (config.languageOptions.parserOptions === undefined) {
     config.languageOptions.parserOptions = {};
   }
-  // eslint-disable-next-line @typescript-eslint/dot-notation
-  config.languageOptions.parserOptions["extraFileExtensions"] = [
-    extension,
-    // eslint-disable-next-line @typescript-eslint/dot-notation
-    config.languageOptions.parserOptions["extraFileExtensions"]
-  ].flat();
 
   return config;
 }

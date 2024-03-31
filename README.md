@@ -69,6 +69,7 @@ Extends:
 
 - `"@eslint/js".configs.recommended`
 - `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"@html-eslint/eslint-plugin".configs["flat/recommended"]`
 - `plugin:import-x/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
@@ -84,7 +85,7 @@ Extends:
 - `"eslint-plugin-security".configs.recommended`
 - A custom rule set of `eslint-plugin-no-constructor-bind`
 - `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- A custom rule set of `@shopify/eslint-plugi`
+- A custom rule set of `@shopify/eslint-plugin`
 - `"eslint-plugin-unicorn".configs["flat/recommended"]`
 - A custom rule set of `eslint-plugin-unused-imports`
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))

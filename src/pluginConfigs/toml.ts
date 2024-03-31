@@ -25,12 +25,6 @@ export const tomlConfigs: FlatConfig[] = compat
     if (config.languageOptions.parserOptions === undefined) {
       config.languageOptions.parserOptions = {};
     }
-    // eslint-disable-next-line @typescript-eslint/dot-notation
-    config.languageOptions.parserOptions["extraFileExtensions"] = [
-      ".toml",
-      // eslint-disable-next-line @typescript-eslint/dot-notation
-      config.languageOptions.parserOptions["extraFileExtensions"]
-    ].flat();
 
     return config;
   });

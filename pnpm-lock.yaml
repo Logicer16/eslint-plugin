@@ -25,6 +25,12 @@ optionalDependencies:
   '@eslint/js':
     specifier: ^8.56.0
     version: 8.56.0
+  '@html-eslint/eslint-plugin':
+    specifier: ^0.24.0
+    version: 0.24.0
+  '@html-eslint/parser':
+    specifier: ^0.24.0
+    version: 0.24.0
   '@logicer/prettier-config':
     specifier: v2.1.0
     version: 2.1.0(@types/eslint@8.56.3)(eslint@8.56.0)(prettier@3.2.5)(svelte@4.2.12)(typescript@5.4.2)
@@ -642,6 +648,22 @@ packages:
   /@eslint/js@8.56.0:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  /@html-eslint/eslint-plugin@0.24.0:
+    resolution: {integrity: sha512-lkvHTv4dsQLU1wKhWXM30qmtKCsm1V/pF1a7xVClhTAimbJUC9p1DyjIHCNpUrx6lRg5AUNyzb1fcKmQ8tWw6A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@html-eslint/parser@0.24.0:
+    resolution: {integrity: sha512-Q9mGP+g3ZmNMFMqXroIY/nhlWt5q3usfcaMlud7YRSgFnHr3EK/rzWFObHNpMmB4btDLc9FkzxsSHUgRd+qd0w==}
+    engines: {node: '>=8.10.0'}
+    requiresBuild: true
+    dependencies:
+      es-html-parser: 0.0.9
+    dev: false
+    optional: true
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -2266,6 +2288,12 @@ packages:
   /es-errors@1.3.0:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /es-html-parser@0.0.9:
+    resolution: {integrity: sha512-oniQMi+466VFsDzcdron9Ry/sqUJpDJg1bbDn0jFJKDdxXhwIOYDr4DgBnO5/yPLGj2xv+n5yy4L1Q0vAC5TYQ==}
     requiresBuild: true
     dev: false
     optional: true
