@@ -1,10 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-jsonc`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import jsonPlugin from "eslint-plugin-jsonc";
 import {FlatConfig, RulesRecord} from "../types.js";
-
-const compat = getLegacyCompatibilityInstance(import.meta.url);
 
 const lyingFilesWithComments = [
   ".vscode/settings.json",
@@ -48,28 +46,31 @@ function updateConfig(config: FlatConfig, extension: string): FlatConfig {
   return config;
 }
 
-const jsonConfig = compat
-  .extends("plugin:jsonc/recommended-with-json")
-  .map((config) => {
+const jsonBaseConfig = jsonPlugin.configs["flat/base"].map((config) => {
+  return {...config};
+});
+const jsonConfig = jsonPlugin.configs["flat/recommended-with-json"].map(
+  (config) => {
     return updateConfig(config, ".json");
-  });
-const jsoncConfig = compat
-  .extends("plugin:jsonc/recommended-with-jsonc")
-  .map((config) => {
+  }
+);
+const jsoncConfig = jsonPlugin.configs["flat/recommended-with-jsonc"].map(
+  (config) => {
     return updateConfig(config, ".jsonc");
-  });
-const json5Config = compat
-  .extends("plugin:jsonc/recommended-with-json5")
-  .map((config) => {
+  }
+);
+const json5Config = jsonPlugin.configs["flat/recommended-with-json5"].map(
+  (config) => {
     return updateConfig(config, ".json5");
-  });
+  }
+);
 
 export const jsonConfigs: FlatConfig[] = [
+  ...jsonBaseConfig,
   ...jsonConfig,
   ...jsoncConfig,
   ...json5Config
 ];
 
-export const jsonPrettierConfigs: FlatConfig[] = compat.extends(
-  "plugin:jsonc/prettier"
-);
+export const jsonPrettierConfigs: FlatConfig[] =
+  jsonPlugin.configs["flat/prettier"];
