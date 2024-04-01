@@ -8,7 +8,6 @@ export const tsConfigs: FlatConfig[] = [
   ...tsPlugin.configs.strictTypeChecked,
   ...tsPlugin.configs.stylisticTypeChecked,
   {
-    
     rules: {
       // Modify existing eslint rules
       "@typescript-eslint/class-methods-use-this": "error",

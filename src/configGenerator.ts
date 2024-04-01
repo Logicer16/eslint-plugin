@@ -59,7 +59,6 @@ export default class ConfigGenerator {
         ]
       };
     });
-
   }
 
   /**
@@ -75,8 +74,7 @@ export default class ConfigGenerator {
       | FlatConfig
       | FlatConfig[]
       | Promise<FlatConfig | FlatConfig[]>
-    )[] = [
-    ];
+    )[] = [];
 
     if (this.options.javascript) {
       configs.push(
@@ -138,6 +136,7 @@ export default class ConfigGenerator {
         })
       );
 
+      // eslint-disable-next-line unicorn/no-array-push-push
       configs.push(
         // Must follow `eslint-plugin-import-x`
         import("./pluginConfigs/esX.js").then((importedConfig) => {
@@ -150,9 +149,9 @@ export default class ConfigGenerator {
         configs.push(
           import("./pluginConfigs/typescript.js").then((importedConfig) => {
             return ConfigGenerator.ignoreExtensions(
-                importedConfig.tsConfigs,
-                ...ESIncompatibleExtensionPatterns
-              );
+              importedConfig.tsConfigs,
+              ...ESIncompatibleExtensionPatterns
+            );
           }),
           import("./pluginConfigs/arrayFunc.js").then((importedConfig) => {
             return importedConfig.arrayFuncConfig;
@@ -164,18 +163,19 @@ export default class ConfigGenerator {
           ),
           import("./pluginConfigs/deprecation.js").then((importedConfig) => {
             return ConfigGenerator.ignoreExtensions(
-                importedConfig.deprecationConfigs,
-                ...ESIncompatibleExtensionPatterns
-              );
+              importedConfig.deprecationConfigs,
+              ...ESIncompatibleExtensionPatterns
+            );
           }),
           import("./pluginConfigs/etc.js").then((importedConfig) => {
             return ConfigGenerator.ignoreExtensions(
-                importedConfig.etcConfigs,
-                ...ESIncompatibleExtensionPatterns
-              );
+              importedConfig.etcConfigs,
+              ...ESIncompatibleExtensionPatterns
+            );
           })
         );
 
+        // eslint-disable-next-line unicorn/no-array-push-push
         configs.push(
           // Must follow `typescript-eslint`
           import("./pluginConfigs/unusedImports.js").then((importedConfig) => {
@@ -187,11 +187,10 @@ export default class ConfigGenerator {
           // Must follow `eslint-plugin-n` and `eslint-plugin-unused-imports`.
           import("./pluginConfigs/markdown.js").then((importedConfig) => {
             return importedConfig.markdownConfigs;
-          }),
+          })
         );
       }
     }
-
 
     if (this.options.eslintPlugin) {
       configs.push(
@@ -212,10 +211,10 @@ export default class ConfigGenerator {
     if (this.options.jsdoc) {
       configs.push(
         import("./pluginConfigs/jsdoc.js").then((importedConfig) => {
-            return ConfigGenerator.ignoreExtensions(
-              importedConfig.getJSDocConfigs(this.options),
-              ...ESIncompatibleExtensionPatterns
-            );
+          return ConfigGenerator.ignoreExtensions(
+            importedConfig.getJSDocConfigs(this.options),
+            ...ESIncompatibleExtensionPatterns
+          );
         })
       );
     }
