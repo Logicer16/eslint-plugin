@@ -16,12 +16,6 @@ export const ymlConfigs: FlatConfig[] = compat
       "yml/require-string-key": "error"
     };
 
-    if (config.languageOptions === undefined) {
-      config.languageOptions = {};
-    }
-    if (config.languageOptions.parserOptions === undefined) {
-      config.languageOptions.parserOptions = {};
-    }
     config.ignores = [...(config.ignores ?? []), "**/pnpm-lock.yaml"];
 
     return config;

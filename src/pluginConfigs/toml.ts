@@ -1,30 +1,16 @@
 /**
  * @file The configuration for `eslint-plugin-toml`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import tomlPlugin from "eslint-plugin-toml";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
-export const tomlConfigs: FlatConfig[] = compat
-  .extends("plugin:toml/standard")
-  .map((config) => {
-    config.rules = {
-      ...config.rules,
+export const tomlConfigs: FlatConfig[] = [
+  ...tomlPlugin.configs ["flat/standard"],
+  {
+    rules :{
       "toml/array-bracket-spacing": ["error", "never"],
       "toml/array-element-newline": "off",
       "toml/keys-order": "off",
       "toml/no-mixed-type-in-array": "error",
-      "toml/no-non-decimal-integer": ["error", {allowHexadecimal: false}],
-      "toml/tables-order": "error"
-    };
-
-    if (config.languageOptions === undefined) {
-      config.languageOptions = {};
-    }
-    if (config.languageOptions.parserOptions === undefined) {
-      config.languageOptions.parserOptions = {};
-    }
-
-    return config;
-  });
+      "toml/no-non-decimal-integer": ["error", {allowHexadecimal: true, allowBinary: true}]
+    }}];

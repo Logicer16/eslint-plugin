@@ -40,8 +40,6 @@ const htmlRules: RulesRecord =
 const htmlConfig: FlatConfig = htmlPlugin.configs["flat/recommended"];
 
 htmlConfig.files = [...(htmlConfig.files ?? []), "**/*.html"];
-htmlConfig.languageOptions ??= {};
-htmlConfig.languageOptions.parserOptions ??= {};
 htmlConfig.rules = {...htmlConfig.rules, ...htmlRules};
 
 export {htmlConfig};

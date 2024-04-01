@@ -119,8 +119,8 @@ optionalDependencies:
     specifier: ^3.14.3
     version: 3.14.3(tailwindcss@3.4.1)
   eslint-plugin-toml:
-    specifier: ^0.9.2
-    version: 0.9.2(eslint@8.56.0)
+    specifier: ^0.11.0
+    version: 0.11.0(eslint@8.56.0)
   eslint-plugin-unicorn:
     specifier: ^50.0.1
     version: 50.0.1(eslint@8.56.0)
@@ -2391,6 +2391,18 @@ packages:
     dev: false
     optional: true
 
+  /eslint-compat-utils@0.5.0(eslint@8.56.0):
+    resolution: {integrity: sha512-dc6Y8tzEcSYZMHa+CMPLi/hyo1FzNeonbhJL7Ol0ccuKQkwopJcJBA9YL/xmMTLU1eKigXo9vj9nALElWYSowg==}
+    engines: {node: '>=12'}
+    requiresBuild: true
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      eslint: 8.56.0
+      semver: 7.6.0
+    dev: false
+    optional: true
+
   /eslint-config-prettier@8.10.0(eslint@8.56.0):
     resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
     hasBin: true
@@ -3252,8 +3264,8 @@ packages:
     dev: false
     optional: true
 
-  /eslint-plugin-toml@0.9.2(eslint@8.56.0):
-    resolution: {integrity: sha512-ri0xf63PYf3pIq/WY9BIwrqxZmGTIwSkAO0bHddI0ajUwN4KGz6W8vOvdXFHOpRdRfzxlmXze/vfsY/aTEXESg==}
+  /eslint-plugin-toml@0.11.0(eslint@8.56.0):
+    resolution: {integrity: sha512-sau+YvPU4fWTjB+qtBt3n8WS87aoDCs+BVbSUAemGaIsRNbvR9uEk+Tt892iLHTGvp/DPWYoCX4/8DoyAbB+sQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     requiresBuild: true
     peerDependencies:
@@ -3261,7 +3273,7 @@ packages:
     dependencies:
       debug: 4.3.4
       eslint: 8.56.0
-      eslint-compat-utils: 0.4.1(eslint@8.56.0)
+      eslint-compat-utils: 0.5.0(eslint@8.56.0)
       lodash: 4.17.21
       toml-eslint-parser: 0.9.3
     transitivePeerDependencies:
@@ -4556,6 +4568,7 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    requiresBuild: true
 
   /mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}

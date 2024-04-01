@@ -45,13 +45,6 @@ function updateConfig(config: FlatConfig, extension: string): FlatConfig {
     config.ignores.push(...lyingFilesWithComments);
   }
 
-  if (config.languageOptions === undefined) {
-    config.languageOptions = {};
-  }
-  if (config.languageOptions.parserOptions === undefined) {
-    config.languageOptions.parserOptions = {};
-  }
-
   return config;
 }
 
