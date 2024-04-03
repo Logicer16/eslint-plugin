@@ -93,6 +93,10 @@ Extends:
 - A custom rule set of `eslint-plugin-unused-imports`
 - `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 
+Enables:
+
+- `eslint-plugin-html`
+
 If [`prettier`](#prettier) is set, it also extends:
 
 - `plugin:jsonc/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))

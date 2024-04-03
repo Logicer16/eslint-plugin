@@ -1,6 +1,7 @@
 /**
  * @file The configuration for `@html-eslint/eslint-plugin`.
  */
+import "eslint-plugin-html";
 import htmlPlugin from "@html-eslint/eslint-plugin";
 import {FlatConfig, RulesRecord} from "../types.js";
 
