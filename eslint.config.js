@@ -11,7 +11,7 @@ import {ConfigGenerator} from "@logicer/eslint-plugin";
 export const options = {
   ecmaVersion: 2024,
   eslintPlugin: true,
-  javascript: true,
+  general: true,
   jsdoc: true,
   prettier: true,
   typescript: true

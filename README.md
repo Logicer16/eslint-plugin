@@ -12,7 +12,7 @@ Contents:
 - [Install](#install)
 - [Usage](#usage)
   - [Options](#options)
-    - [`javascript`](#javascript)
+    - [`general`](#general)
     - [`typescript`](#typescript)
     - [`eslintPlugin`](#eslintplugin)
     - [`jest`](#jest)
@@ -42,7 +42,7 @@ import {ConfigGenerator} from "@logicer/eslint-plugin";
 const generator = new ConfigGenerator({
   ecmaVersion: "latest", // or specific version
   eslintPlugin: true, // or false (default)
-  javascript: true, // (default) or false
+  general: true, // (default) or false
   jest: true, // or false (default)
   jsdoc: true, // or false (default)
   prettier: true, // or false (default)
@@ -63,7 +63,9 @@ export default config;
 
 ### Options
 
-#### `javascript`
+Options are provided to configure sets of similar rules which may conflict with each other or parts of your code.
+
+#### `general`
 
 Extends:
 
@@ -104,7 +106,7 @@ Typescript **requires** extra dependencies:
 npm install --save-dev eslint-import-resolver-typescript
 ```
 
-Automatically enables [`javascript`](#javascript). Configures `@typescript-eslint/parser` and extends:
+Automatically enables [`general`](#general). Configures `@typescript-eslint/parser` and extends:
 
 - `"typescript-eslint".configs.strictTypeChecked`
 - `"typescript-eslint".configs.stylisticTypeChecked`
@@ -134,8 +136,13 @@ Extends:
 
 Extends:
 
-- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-error"]` for TypeScript
-- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-flavor-error"]` for JavaScript.
+If [`typescript`](#typescript) is set:
+
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-error"]`
+
+Otherwise:
+
+- `"eslint-plugin-jsdoc".configs["flat/recommended-typescript-flavor-error"]`
 
 #### `prettier`
 
@@ -143,7 +150,7 @@ Extends `plugin:prettier/recommended`
 
 Configures `"prettier/prettier"` to use the config from `@logicer/prettier-config`. If you need to override any of these options, ensure you do so in both your `.prettierrc.js` and the `prettier/prettier` rule in your `eslint.config.js`.
 
-See also [`javascript`](#javascript) and [`svelte`](#svelte)
+See also [`general`](#general) and [`svelte`](#svelte)
 
 #### `tailwind`
 
@@ -169,7 +176,7 @@ This plugin comes with some predefined configurations, generated with the follow
 
 ```js
 const config = {
-  javascript: true,
+  general: true,
   jsdoc: true
 };
 ```
@@ -178,7 +185,7 @@ const config = {
 
 ```js
 const config = {
-  javascript: true,
+  general: true,
   jsdoc: true,
   prettier: true
 };
@@ -188,7 +195,7 @@ const config = {
 
 ```js
 const config = {
-  javascript: true,
+  general: true,
   jsdoc: true,
   typescript: true
 };

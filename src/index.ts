@@ -8,16 +8,16 @@ import type {Plugin} from "./types.js";
 const plugin: Plugin = {
   configs: {
     "recommended": await new ConfigGenerator({
-      javascript: true,
+      general: true,
       jsdoc: true
     }).config,
     "recommended-prettier": await new ConfigGenerator({
-      javascript: true,
+      general: true,
       jsdoc: true,
       prettier: true
     }).endConfig,
     "recommended-typescript": await new ConfigGenerator({
-      javascript: true,
+      general: true,
       jsdoc: true,
       typescript: true
     }).config

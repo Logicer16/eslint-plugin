@@ -29,7 +29,7 @@ export type RuleEntry = Exclude<FlatConfig["rules"], undefined>[string];
 export interface ConfigOptions {
   ecmaVersion?: EcmaVersion;
   eslintPlugin?: boolean;
-  javascript?: boolean;
+  general?: boolean;
   jest?: boolean;
   jsdoc?: boolean;
   prettier?: boolean;

@@ -11,7 +11,7 @@ import type {
 const defaultOptions: RequiredConfigOptions = {
   ecmaVersion: "latest",
   eslintPlugin: false,
-  javascript: true,
+  general: true,
   jest: false,
   jsdoc: false,
   prettier: false,
@@ -29,8 +29,8 @@ const defaultOptions: RequiredConfigOptions = {
 export function processConfig(options?: ConfigOptions): RequiredConfigOptions {
   const processedOptions = {...defaultOptions, ...options};
 
-  // Automatically enable javascript when typescript is enabled.
-  processedOptions.javascript = processedOptions.javascript
+  // Automatically enable general when typescript is enabled.
+  processedOptions.general = processedOptions.general
     ? true
     : processedOptions.typescript;
 
@@ -76,7 +76,7 @@ export default class ConfigGenerator {
       | Promise<FlatConfig | FlatConfig[]>
     )[] = [];
 
-    if (this.options.javascript) {
+    if (this.options.general) {
       configs.push(
         import("./pluginConfigs/javascript.js").then((importedConfig) => {
           return importedConfig.jsConfigs;
@@ -144,7 +144,7 @@ export default class ConfigGenerator {
         })
       );
 
-      // Typescript automatically enables javascript.
+      // Typescript automatically enables general for javascript.
       if (this.options.typescript) {
         configs.push(
           import("./pluginConfigs/typescript.js").then((importedConfig) => {
