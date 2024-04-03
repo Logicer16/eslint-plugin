@@ -73,10 +73,10 @@ Extends:
 - `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `"@html-eslint/eslint-plugin".configs["flat/recommended"]`
 - `plugin:import-x/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:json-schema-validator/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:jsonc/recommended-with-json` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:jsonc/recommended-with-jsonc` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:jsonc/recommended-with-json5` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-json-schema-validator".configs["flat/recommended"]`
+- `"eslint-plugin-jsonc".configs["flat/recommended-with-json"]`
+- `"eslint-plugin-jsonc".configs["flat/recommended-with-jsonc"]`
+- `"eslint-plugin-jsonc".configs["flat/recommended-with-json5"]`
 - `"eslint-plugin-markdown".configs.recommended`
 - `"eslint-plugin-n".configs["flat/mixed-esm-and-cjs"]` (`"eslint-plugin-n"configs["flat/recommended"]` for all other files)
 - A custom rule set of `eslint-plugin-no-constructor-bind`
@@ -86,12 +86,12 @@ Extends:
 - A custom rule set of `@microsoft/eslint-plugin-sdl`
 - `"eslint-plugin-security".configs.recommended`
 - A custom rule set of `eslint-plugin-no-constructor-bind`
-- `plugin:toml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-toml".configs["flat/standard"]`
 - A custom rule set of `@shopify/eslint-plugin`
 - A custom rule set of `eslint-plugin-simple-import-sort`
 - `"eslint-plugin-unicorn".configs["flat/recommended"]`
 - A custom rule set of `eslint-plugin-unused-imports`
-- `plugin:yml/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-yml".configs["flat/standard"]`
 
 Enables:
 
@@ -99,8 +99,8 @@ Enables:
 
 If [`prettier`](#prettier) is set, it also extends:
 
-- `plugin:jsonc/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
-- `plugin:yml/prettier` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
+- `"eslint-plugin-jsonc".configs["flat/prettier"]`
+- `"eslint-plugin-yml".configs["flat/prettier"]`
 
 #### `typescript`
 
