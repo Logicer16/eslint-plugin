@@ -5,7 +5,7 @@
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Logicer16/ESLint-plugin)](https://github.com/Logicer16/eslint-plugin/graphs/contributors)
 [![Type Coverage](https://img.shields.io/badge/dynamic/json.svg?label=type%20coverage&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2FLogicer16%2Feslint-plugin%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 
-Logicer's ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs. Dependency plugins may be omitted if they're not configured to be used. For use in flat config files.
+Logicer's **_highly_** opinionated ESLint configuration as a plugin for use in other projects. Designed to be built upon for the project's specific needs. Dependency plugins may be omitted if they're not configured to be used. For use in flat config files.
 
 Contents:
 
@@ -70,6 +70,7 @@ Options are provided to configure sets of similar rules which may conflict with 
 Extends:
 
 - `"@eslint/js".configs.recommended`
+- `plugin:css/standard` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `plugin:@eslint-community/eslint-comments/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))
 - `"@html-eslint/eslint-plugin".configs["flat/recommended"]`
 - `plugin:import-x/recommended` (via [`FlatCompat`](https://github.com/eslint/eslintrc#usage))

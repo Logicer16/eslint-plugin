@@ -81,6 +81,9 @@ export default class ConfigGenerator {
         import("./pluginConfigs/javascript.js").then((importedConfig) => {
           return importedConfig.jsConfigs;
         }),
+        import("./pluginConfigs/css.js").then((importedConfig) => {
+          return importedConfig.cssConfigs;
+        }),
         import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
           return importedConfig.eslintCommentsConfigs;
         }),
