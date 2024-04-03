@@ -3,59 +3,6 @@
  */
 import type {FlatConfig as ConfigNamespace} from "@typescript-eslint/utils/ts-eslint";
 import {ESLint, Linter} from "eslint";
-import type {Add, LtOrEq, Subtract} from "ts-arithmetic";
-
-type Enumerate<
-  End extends number,
-  Start extends number = 0,
-  Accumulator extends number[] = []
-> =
-  Accumulator["length"] extends Subtract<End, Start>
-    ? Accumulator
-    : Enumerate<
-        End,
-        Start,
-        [...Accumulator, Add<Accumulator["length"], Start>]
-      >;
-
-type BigEnumerate<
-  End extends number,
-  Start extends number = 0,
-  Fallback = number,
-  // This is due to typescript limitations (cumulative type instantiation).
-  DepthRemaining extends number = 112,
-  Accumulator extends number[] = [],
-  ExpectedLength extends number = Subtract<End, Start>
-> = Accumulator["length"] extends ExpectedLength
-  ? Accumulator[number]
-  : LtOrEq<DepthRemaining, 0> extends 1
-    ? Fallback
-    : BigEnumerate<
-        End,
-        Add<Start, DepthRemaining>,
-        Fallback,
-        Subtract<DepthRemaining, 1>,
-        // @ts-expect-error: TS2321 Flawed typechecking due to recursion causes false positive citing uncertainty.
-        [
-          ...Accumulator,
-          ...Enumerate<
-            LtOrEq<Subtract<End, Start>, DepthRemaining> extends 1
-              ? End
-              : Add<Start, DepthRemaining>,
-            Start
-          >
-        ],
-        ExpectedLength
-      >;
-
-/**
- * The maximum number of union items is 6328 due to typescript limitations (cumulative type instantiation).
- */
-export type IntRange<
-  Start extends number,
-  End extends number,
-  Fallback = number
-> = BigEnumerate<End, Start, Fallback>;
 
 export type EcmaVersion =
   | ConfigNamespace.EcmaVersion
