@@ -1,14 +1,11 @@
 /**
  * @file The configuration for `eslint-plugin-yml`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import ymlPlugin from "eslint-plugin-yml";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
-export const ymlConfigs: FlatConfig[] = compat
-  .extends("plugin:yml/standard")
-  .map((config) => {
+export const ymlConfigs: FlatConfig[] = ymlPlugin.configs["flat/standard"].map(
+  (config: FlatConfig) => {
     config.rules = {
       ...config.rules,
       "yml/file-extension": ["error", {extension: "yml"}],
@@ -19,8 +16,8 @@ export const ymlConfigs: FlatConfig[] = compat
     config.ignores = [...(config.ignores ?? []), "**/pnpm-lock.yaml"];
 
     return config;
-  });
-
-export const ymlPrettierConfigs: FlatConfig[] = compat.extends(
-  "plugin:yml/prettier"
+  }
 );
+
+export const ymlPrettierConfigs: FlatConfig[] =
+  ymlPlugin.configs["flat/prettier"];
