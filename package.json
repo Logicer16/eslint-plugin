@@ -14,7 +14,6 @@
   "scripts": {
     "preinstall": "pnpx only-allow pnpm",
     "build": "tsc && tsc -p ./tsconfig.eslint.json",
-    "start": "tsc && node dist/index.js",
     "style": "npm run lint && npm run prettier",
     "lint": "eslint . --fix --cache",
     "lint:ci": "eslint . --cache",
