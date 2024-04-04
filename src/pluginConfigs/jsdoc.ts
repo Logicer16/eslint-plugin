@@ -38,7 +38,8 @@ export function getJSDocConfigs(options: RequiredConfigOptions): FlatConfig[] {
         "jsdoc/require-hyphen-before-param-description": ["error", "never"],
         "jsdoc/require-returns": ["error", {enableFixer: true}],
         "jsdoc/require-throws": "error",
-        "jsdoc/sort-tags": "error"
+        "jsdoc/sort-tags": "error",
+        "jsdoc/tag-lines": ["error", "never", {"startLines":1}]
       }
     }
   ];
