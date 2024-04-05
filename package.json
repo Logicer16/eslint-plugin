@@ -39,6 +39,7 @@
     "@logicer/eslint-plugin": "link:.",
     "@logicer/prettier-config": "v2.1.0",
     "@logicer/tsconfig": "^5.0.0",
+    "@logicer/util-types": "^1.0.0",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.8.7",

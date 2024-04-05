@@ -2,9 +2,10 @@
  * @file The configuration for `eslint-plugin-es-x`.
  */
 import esXPlugin from "eslint-plugin-es-x";
-import {Add} from "ts-arithmetic";
+// import {Add} from "ts-arithmetic";
 import {EcmaVersion, FlatConfig, RequiredConfigOptions} from "../types.js";
-import {IntRange, UnionMax} from "../utilTypes.js";
+// import {IntRange, UnionMax} from "../utilTypes.js";
+import type {Add, IntRange, UnionMax} from "@logicer/util-types";
 
 const latestEcmaVersion = 2023;
 // Bad typescript inference
