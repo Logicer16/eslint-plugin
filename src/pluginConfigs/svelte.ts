@@ -97,8 +97,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
     {
       files: ["**/*.svelte"],
       languageOptions: {
-        // DefinitelyTyped/DefinitelyTyped#68232
-        // type-coverage:ignore-next-line
         parser: svelteParser,
         parserOptions: options.typescript
           ? {
