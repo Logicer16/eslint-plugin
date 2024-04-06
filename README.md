@@ -206,8 +206,4 @@ const config = {
 };
 ```
 
-Note, Typescript **requires** extra dependencies:
-
-```sh
-npm install --save-dev eslint-import-resolver-typescript
-```
+Note, Typescript **requires** [extra dependencies](#typescript):
