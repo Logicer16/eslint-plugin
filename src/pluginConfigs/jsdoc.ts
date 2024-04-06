@@ -39,7 +39,7 @@ export function getJSDocConfigs(options: RequiredConfigOptions): FlatConfig[] {
         "jsdoc/require-returns": ["error", {enableFixer: true}],
         "jsdoc/require-throws": "error",
         "jsdoc/sort-tags": "error",
-        "jsdoc/tag-lines": ["error", "never", {"startLines":1}]
+        "jsdoc/tag-lines": ["error", "never", {startLines: 1}]
       }
     }
   ];
