@@ -12,13 +12,11 @@ const jestFiles = [...jestTSFiles, "**/*.{test,spec}.js{x,}"];
 const jestRecommendedConfig = jestPlugin.configs["flat/recommended"];
 
 export const jestConfigs: FlatConfig[] = [
-  jestPlugin.configs["flat/snapshots"],
   {
     ...jestRecommendedConfig,
     files: [...(jestRecommendedConfig.files ?? []), ...jestFiles]
   },
   {
-    // plugins: {jest: jestPlugin},
     files: jestFiles,
     rules: {
       "jest/consistent-test-it": "error",
@@ -62,6 +60,7 @@ export const jestConfigs: FlatConfig[] = [
       "jest/prefer-expect-resolves": "error",
       "jest/prefer-hooks-in-order": "error",
       "jest/prefer-hooks-on-top": "error",
+      "jest/prefer-importing-jest-globals": "error",
       "jest/prefer-lowercase-title": "error",
       "jest/prefer-mock-promise-shorthand": "error",
       "jest/prefer-snapshot-hint": ["error", "always"],
