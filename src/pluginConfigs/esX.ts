@@ -43,13 +43,13 @@ type ConfigKeys =
   | `flat/restrict-to-es${OldEcmaVersion}`;
 
 /**
- * Check if the ecmascript version is in the standard range.
+ * Check if the ecmascript version is outside the standard range.
  * @param ecmaVersion The ecmascript version to check.
- * @returns True if the version is in the standard range.
+ * @returns True if the version is outside the standard range.
  */
-function ecmaVersionIsInStandardRange(
+function ecmaVersionIsOutsideStandardRange(
   ecmaVersion: Required<EcmaVersion>
-): ecmaVersion is StandardEcmaVersion {
+): ecmaVersion is Exclude<EcmaVersion, StandardEcmaVersion | string> {
   return (
     typeof ecmaVersion === "number" &&
     ecmaVersion >= EcmaInvalidStart &&
@@ -90,7 +90,7 @@ function normaliseEcmaVersion(
   let ecmaVersion: StandardEcmaVersion | "next";
   if (
     typeof options.ecmaVersion === "number" &&
-    !ecmaVersionIsInStandardRange(options.ecmaVersion)
+    ecmaVersionIsOutsideStandardRange(options.ecmaVersion)
   ) {
     // Bad typescript inference
     // type-coverage:ignore-next-line
