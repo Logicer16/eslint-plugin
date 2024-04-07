@@ -9,6 +9,7 @@ export const prettierConfig: FlatConfig = prettierRecommendedConfig;
 
 /**
  * Generate an eslint config for prettier based on the generator's options. Exclusively contains the modifications to `eslint-plugin-prettier/recommended`.
+ *
  * @param options The options of the config generator.
  * @returns A eslint config for prettier.
  */

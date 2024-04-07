@@ -1,11 +1,9 @@
 /**
  * @file The configuration for `eslint-plugin-es-x`.
  */
-import esXPlugin from "eslint-plugin-es-x";
-// import {Add} from "ts-arithmetic";
-import {EcmaVersion, FlatConfig, RequiredConfigOptions} from "../types.js";
-// import {IntRange, UnionMax} from "../utilTypes.js";
 import type {Add, IntRange, UnionMax} from "@logicer/util-types";
+import esXPlugin from "eslint-plugin-es-x";
+import {EcmaVersion, FlatConfig, RequiredConfigOptions} from "../types.js";
 
 const latestEcmaVersion = 2023;
 // Bad typescript inference
@@ -44,6 +42,7 @@ type ConfigKeys =
 
 /**
  * Check if the ecmascript version is outside the standard range.
+ *
  * @param ecmaVersion The ecmascript version to check.
  * @returns True if the version is outside the standard range.
  */
@@ -59,6 +58,7 @@ function ecmaVersionIsOutsideStandardRange(
 
 /**
  * Check if the ecmascript version is older than the latest ecmascript version.
+ *
  * @param ecmaVersion The ecmascript version to check.
  * @returns True if the version is an old ecmascript version.
  */
@@ -70,6 +70,7 @@ function isOldEcmaVersion(
 
 /**
  * Check if the ecmascript version is of the new version style corresponding with the year it was published.
+ *
  * @param ecmaVersion The ecmascript version to check.
  * @returns True if the version is of the new version style.
  */
@@ -81,6 +82,7 @@ function isEcmaYearVersion(
 
 /**
  * Process eslint's ecmascript versions into a version which matches those used by the plugin.
+ *
  * @param options The configuration options passed to the generator.
  * @returns A version which matches those used by the plugin.
  */
@@ -109,6 +111,7 @@ function normaliseEcmaVersion(
 
 /**
  * Generate an eslint config for svelte based on the generator's options.
+ *
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */

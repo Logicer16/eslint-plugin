@@ -27,6 +27,7 @@ const sharedRules: RulesRecord = {
 
 /**
  * Add common properties to a config.
+ *
  * @param config The config to modify.
  * @param extension The extension of the targeted files.
  * @returns The updated config.

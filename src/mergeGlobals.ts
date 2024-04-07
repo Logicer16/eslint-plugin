@@ -6,6 +6,7 @@ import {GlobalValue} from "./types.js";
 
 /**
  * Compare two values to determine the greater valued one.
+ *
  * @param first The first value to compare.
  * @param second The second value to compare.
  * @returns The greater valued one of the two provided values.
@@ -34,6 +35,7 @@ function getGreaterKey(
 
 /**
  * Merge multiple eslint global objects.
+ *
  * @param globals The global objects to merge.
  * @returns A merged global object.
  */

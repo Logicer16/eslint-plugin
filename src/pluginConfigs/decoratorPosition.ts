@@ -7,6 +7,7 @@ import {FlatConfig, RequiredConfigOptions} from "../types.js";
 
 /**
  * Generate an eslint config for decoratorPosition based on the generator's options. Depends on `@typescript-eslint/parser`.
+ *
  * @param options The options of the config generator.
  * @returns A eslint config for decoratorPosition.
  */

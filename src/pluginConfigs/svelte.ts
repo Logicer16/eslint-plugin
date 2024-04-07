@@ -9,6 +9,7 @@ const compat = getLegacyCompatibilityInstance(import.meta.url);
 
 /**
  * Generate an eslint config for svelte based on the generator's options.
+ *
  * @param options The options of the config generator.
  * @returns A eslint config for svelte.
  */

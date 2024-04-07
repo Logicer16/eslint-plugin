@@ -6,6 +6,7 @@ import type {FlatConfig, RequiredConfigOptions} from "../types.js";
 
 /**
  * Generate an eslint config for jsdoc based on the generator's options.
+ *
  * @param options The options of the config generator.
  * @returns A eslint config for jsdoc.
  */

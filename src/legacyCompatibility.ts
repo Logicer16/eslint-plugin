@@ -7,6 +7,7 @@ import {FlatCompat} from "@eslint/eslintrc";
 
 /**
  * Get the legacy config format compatibility instance for a module's path.
+ *
  * @param importMetaURL The module path returned by `import.meta.url`.
  * @returns A `FlatCompat` instance.
  */

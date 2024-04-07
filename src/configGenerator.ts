@@ -23,6 +23,7 @@ const defaultOptions: RequiredConfigOptions = {
 
 /**
  * Process a config object ensuring all values are set by setting them to their default value if they are not already set.
+ *
  * @param options The config object to process.
  * @returns A config object with all values set.
  */
@@ -63,6 +64,7 @@ export default class ConfigGenerator {
 
   /**
    * Get the main config based on the provided options.
+   *
    * @returns A promise which resolves to the config.
    */
   public get config(): Promise<FlatConfig[]> {
@@ -87,9 +89,9 @@ export default class ConfigGenerator {
         import("./pluginConfigs/eslintComments.js").then((importedConfig) => {
           return importedConfig.eslintCommentsConfigs;
         }),
-        import("./pluginConfigs/html.js").then((importedConfig) => {
-          return importedConfig.htmlConfig;
-        }),
+        // import("./pluginConfigs/html.js").then((importedConfig) => {
+        //   return importedConfig.htmlConfig;
+        // }),
         import("./pluginConfigs/importX.js").then((importedConfig) => {
           return importedConfig.getImportXConfigs(this.options);
         }),
