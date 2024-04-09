@@ -57,7 +57,7 @@
     "reportSemanticError": true
   },
   "optionalDependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@eslint/js": "^8.56.0",
     "@html-eslint/eslint-plugin": "^0.24.1",
     "@html-eslint/parser": "^0.24.1",
