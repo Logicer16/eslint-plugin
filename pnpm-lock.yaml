@@ -36,7 +36,7 @@ optionalDependencies:
     version: 2.1.0(@types/eslint@8.56.3)(eslint@8.56.0)(prettier@3.2.5)(svelte@4.2.12)(typescript@5.4.2)
   '@microsoft/eslint-plugin-sdl':
     specifier: github:microsoft/eslint-plugin-sdl
-    version: github.com/microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd(eslint@8.56.0)
+    version: git/github.com+microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd(eslint@8.56.0)
   '@shopify/eslint-plugin':
     specifier: ^44.0.0
     version: 44.0.0(@babel/core@7.23.9)(@types/eslint@8.56.3)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.4.2)
@@ -113,8 +113,8 @@ optionalDependencies:
     specifier: ^2.3.0
     version: 2.3.0(eslint@8.56.0)
   eslint-plugin-security:
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^3.0.0
+    version: 3.0.0
   eslint-plugin-simple-import-sort:
     specifier: ^12.0.0
     version: 12.0.0(eslint@8.56.0)
@@ -3285,8 +3285,9 @@ packages:
     dev: false
     optional: true
 
-  /eslint-plugin-security@2.1.0:
-    resolution: {integrity: sha512-ywxclP954bf8d3gr6KOQ/AFc+PRvWuhOxtPOEtiHmVYiZr/mcgQtmSJq6+hTEXC5ylTjHnPPG+PEnzlDiWMXbQ==}
+  /eslint-plugin-security@3.0.0:
+    resolution: {integrity: sha512-2Ij7PkmXIF2cKwoVkEgemwoXbOnxg5UfdhdcpNxZwJxC/10dbsdhHISrTyJ/n8DUkt3yiN6P1ywEgcMGjIwHIw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     requiresBuild: true
     dependencies:
       safe-regex: 2.1.1
@@ -6312,9 +6313,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  github.com/microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd(eslint@8.56.0):
-    resolution: {tarball: https://codeload.github.com/microsoft/eslint-plugin-sdl/tar.gz/65e302dfa4ff43ee565ce04ea0b8576da8008bdd}
-    id: github.com/microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd
+  git/github.com+microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd(eslint@8.56.0):
+    resolution: {commit: 65e302dfa4ff43ee565ce04ea0b8576da8008bdd, repo: git@github.com:microsoft/eslint-plugin-sdl.git, type: git}
+    id: git@github.com+microsoft/eslint-plugin-sdl/65e302dfa4ff43ee565ce04ea0b8576da8008bdd
     name: '@microsoft/eslint-plugin-sdl'
     version: 0.2.2
     engines: {node: '>=0.10.0'}
