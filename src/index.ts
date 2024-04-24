@@ -35,11 +35,11 @@ export type {
   ConfigOptions,
   RequiredConfigOptions,
   FlatConfig,
-  FileSpec
+  FileSpec,
+  ConfigNamespace as TypescriptESLint
 } from "./types.js";
 export {default as ConfigGenerator, processConfig} from "./configGenerator.js";
 export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";
 export {FlatCompat} from "@eslint/eslintrc";
 export * as ESLint from "eslint";
-export type {FlatConfig as TypescriptESLint} from "@typescript-eslint/utils/ts-eslint";
