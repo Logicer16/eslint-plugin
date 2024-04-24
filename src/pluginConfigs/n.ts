@@ -22,6 +22,7 @@ export const nodeConfigs: FlatConfig[] = [
       "n/prefer-global/text-encoder": "error",
       "n/prefer-global/url": "error",
       "n/prefer-global/url-search-params": "error",
+      "n/prefer-node-protocol": "error",
       "n/prefer-promises/dns": "error",
       "n/prefer-promises/fs": "error"
     }
