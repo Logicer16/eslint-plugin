@@ -1,11 +1,11 @@
 /**
  * @file The configuration for `eslint-plugin-eslint-plugin`.
  */
-import eslintPluginRecommended from "eslint-plugin-eslint-plugin/configs/recommended";
+import eslintPluginRecommended from "eslint-plugin-eslint-plugin";
 import {FlatConfig} from "../types.js";
 
 export const eslintPluginConfigs: FlatConfig[] = [
-  eslintPluginRecommended,
+  eslintPluginRecommended.configs["flat/recommended"],
   {
     rules: {
       "eslint-plugin/no-property-in-node": "error",
