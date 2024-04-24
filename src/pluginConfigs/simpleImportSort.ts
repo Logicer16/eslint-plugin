@@ -9,6 +9,7 @@ export const simpleImportSortConfig: FlatConfig = {
     "simple-import-sort": simpleImportSortPlugin
   },
   rules: {
+    "simple-import-sort/exports": "error",
     "simple-import-sort/imports": [
       "error",
       {groups: [["^\\u0000", "^node:", "^@?\\w", "^", "^\\."]]}
