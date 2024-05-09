@@ -60,6 +60,9 @@ export const unicornConfigs: FlatConfig[] = [
           replacements: {
             args: {
               arguments: false
+            },
+            num: {
+              number: false
             }
           }
         }
