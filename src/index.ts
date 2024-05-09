@@ -31,15 +31,15 @@ const plugin: Plugin = {
 
 export default plugin;
 
-export type {
-  ConfigOptions,
-  RequiredConfigOptions,
-  FlatConfig,
-  FileSpec,
-  ConfigNamespace as TypescriptESLint
-} from "./types.js";
 export {default as ConfigGenerator, processConfig} from "./configGenerator.js";
 export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";
+export type {
+  ConfigOptions,
+  FileSpec,
+  FlatConfig,
+  RequiredConfigOptions,
+  ConfigNamespace as TypescriptESLint
+} from "./types.js";
 export {FlatCompat} from "@eslint/eslintrc";
 export * as ESLint from "eslint";
