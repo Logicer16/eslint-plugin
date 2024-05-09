@@ -107,7 +107,7 @@ export const jsConfigs: FlatConfig[] = [
       "prefer-rest-params": "error",
       "prefer-spread": "error",
       "prefer-template": "error",
-      "radix": ["error", "as-needed"],
+      "radix": ["error", "always"],
       "require-atomic-updates": "error",
       "require-await": "error",
       "require-unicode-regexp": "error",
