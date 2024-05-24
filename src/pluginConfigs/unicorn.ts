@@ -63,6 +63,9 @@ export const unicornConfigs: FlatConfig[] = [
             },
             num: {
               number: false
+            },
+            obj: {
+              object: false
             }
           }
         }
