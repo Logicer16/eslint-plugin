@@ -110,8 +110,8 @@ optionalDependencies:
     specifier: ^6.1.1
     version: 6.1.1(eslint@8.57.0)
   eslint-plugin-regexp:
-    specifier: ^2.3.0
-    version: 2.3.0(eslint@8.57.0)
+    specifier: ^2.6.0
+    version: 2.6.0(eslint@8.57.0)
   eslint-plugin-security:
     specifier: ^3.0.0
     version: 3.0.0
@@ -804,7 +804,7 @@ packages:
       eslint-plugin-jsdoc: 48.1.0(eslint@8.57.0)
       eslint-plugin-n: 16.5.0(eslint@8.57.0)
       eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.3)(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
-      eslint-plugin-regexp: 2.3.0(eslint@8.57.0)
+      eslint-plugin-regexp: 2.6.0(eslint@8.57.0)
       eslint-plugin-svelte: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
       eslint-plugin-unicorn: 50.0.1(eslint@8.57.0)
       svelte: 4.2.12
@@ -3479,8 +3479,8 @@ packages:
     dev: false
     optional: true
 
-  /eslint-plugin-regexp@2.3.0(eslint@8.57.0):
-    resolution: {integrity: sha512-T8JUs7ssRGbuXb+CGfdUJbcxTBMCNOpNqNBLuC8JUKAEIez72J37RaOi5/4dAUsGz92GbWVtqTLPSJZGyP/sQA==}
+  /eslint-plugin-regexp@2.6.0(eslint@8.57.0):
+    resolution: {integrity: sha512-FCL851+kislsTEQEMioAlpDuK5+E5vs0hi1bF8cFlPlHcEjeRhuAzEsGikXRreE+0j4WhW2uO54MqTjXtYOi3A==}
     engines: {node: ^18 || >=20}
     requiresBuild: true
     peerDependencies:

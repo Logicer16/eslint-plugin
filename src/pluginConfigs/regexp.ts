@@ -43,6 +43,8 @@ export const regexpConfigs: FlatConfig[] = [
           minAlternatives: 2
         }
       ],
+      "regexp/prefer-d": ["error", {insideCharacterClass: "range"
+      }],
       "regexp/prefer-escape-replacement-dollar-char": "error",
       "regexp/prefer-lookaround": "error",
       "regexp/prefer-named-backreference": "error",
@@ -58,6 +60,17 @@ export const regexpConfigs: FlatConfig[] = [
       "regexp/simplify-set-operations": "error",
       "regexp/sort-character-class-elements": "error",
       "regexp/unicode-escape": "error",
+      "regexp/unicode-property": [
+        "error",
+        {
+          key: "long",
+          property: {
+            binary: "short",
+            generalCategory: "long",
+            script: "long"
+          }
+        }
+      ],
       "regexp/use-ignore-case": "error"
     }
   }
