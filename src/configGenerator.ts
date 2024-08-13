@@ -109,7 +109,7 @@ export default class ConfigGenerator {
         }),
         import("./pluginConfigs/noUseExtendNative.js").then(
           (importedConfig) => {
-            return importedConfig.noUseExtendNativeConfigs;
+            return importedConfig.noUseExtendNativeConfig;
           }
         ),
         import("./pluginConfigs/promise.js").then((importedConfig) => {
