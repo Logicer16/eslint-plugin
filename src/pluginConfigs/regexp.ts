@@ -43,8 +43,12 @@ export const regexpConfigs: FlatConfig[] = [
           minAlternatives: 2
         }
       ],
-      "regexp/prefer-d": ["error", {insideCharacterClass: "range"
-      }],
+      "regexp/prefer-d": [
+        "error",
+        {
+          insideCharacterClass: "range"
+        }
+      ],
       "regexp/prefer-escape-replacement-dollar-char": "error",
       "regexp/prefer-lookaround": "error",
       "regexp/prefer-named-backreference": "error",

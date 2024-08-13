@@ -5,7 +5,7 @@ import type {Add, IntRange, UnionMax} from "@logicer/util-types";
 import esXPlugin from "eslint-plugin-es-x";
 import {EcmaVersion, FlatConfig, RequiredConfigOptions} from "../types.js";
 
-const latestEcmaVersion = 2023;
+const latestEcmaVersion = 2024;
 // Bad typescript inference
 // type-coverage:ignore-next-line
 const ESNextVersion: NextEcmaVersion = (latestEcmaVersion + 1) as Add<

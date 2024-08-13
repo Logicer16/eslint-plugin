@@ -27,6 +27,8 @@ declare module "eslint-plugin-es-x" {
       "flat/no-new-in-es2022-intl-api": FlatConfig;
       "flat/no-new-in-es2023": FlatConfig;
       "flat/no-new-in-es2023-intl-api": FlatConfig;
+      "flat/no-new-in-es2024": FlatConfig;
+      "flat/no-new-in-es2024-intl-api": FlatConfig;
       "flat/no-new-in-es5": FlatConfig;
       "flat/no-new-in-esnext": FlatConfig;
       "flat/no-new-in-esnext-intl-api": FlatConfig;
@@ -47,6 +49,8 @@ declare module "eslint-plugin-es-x" {
       "flat/restrict-to-es2021-intl-api": FlatConfig;
       "flat/restrict-to-es2022": FlatConfig;
       "flat/restrict-to-es2022-intl-api": FlatConfig;
+      "flat/restrict-to-es2023": FlatConfig;
+      "flat/restrict-to-es2023-intl-api": FlatConfig;
       "flat/restrict-to-es3": FlatConfig;
       "flat/restrict-to-es5": FlatConfig;
     };

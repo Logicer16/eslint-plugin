@@ -97,9 +97,7 @@ export const tsConfigs: FlatConfig[] = [
       "@typescript-eslint/restrict-template-expressions": [
         "error",
         {
-          allowAny: false,
-          allowNullish: false,
-          allowRegExp: false
+          allowArray: false
         }
       ],
       "@typescript-eslint/sort-type-constituents": "error",

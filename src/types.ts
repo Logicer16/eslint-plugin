@@ -4,9 +4,10 @@
 import type {FlatConfig as ConfigNamespace} from "@typescript-eslint/utils/ts-eslint";
 import {ESLint, Linter} from "eslint";
 
-export type EcmaVersion =
-  | ConfigNamespace.EcmaVersion
-  | Exclude<Linter.ParserOptions["ecmaVersion"], undefined>;
+export type EcmaVersion = Exclude<
+  ConfigNamespace.EcmaVersion | Linter.ParserOptions["ecmaVersion"],
+  undefined
+>;
 
 type Plugin = ConfigNamespace.Plugin | ESLint.Plugin;
 type PluginConfigs = Record<string, (ESLint.ConfigData | FlatConfig)[]>;
