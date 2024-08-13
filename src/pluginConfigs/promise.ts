@@ -1,13 +1,11 @@
 /**
  * @file The configuration for `eslint-plugin-promise`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import promisePlugin from "eslint-plugin-promise";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
-
 export const promiseConfigs: FlatConfig[] = [
-  ...compat.extends("plugin:promise/recommended"),
+  promisePlugin.configs["flat/recommended"],
   {
     rules: {
       "promise/always-return": "off",
