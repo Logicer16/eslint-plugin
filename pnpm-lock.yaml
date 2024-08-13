@@ -122,8 +122,8 @@ optionalDependencies:
     specifier: ^2.35.1
     version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
   eslint-plugin-tailwindcss:
-    specifier: ^3.14.3
-    version: 3.14.3(tailwindcss@3.4.1)
+    specifier: ^3.17.4
+    version: 3.17.4(tailwindcss@3.4.1)
   eslint-plugin-toml:
     specifier: ^0.11.0
     version: 0.11.0(eslint@8.57.0)
@@ -3458,9 +3458,9 @@ packages:
     dev: false
     optional: true
 
-  /eslint-plugin-tailwindcss@3.14.3(tailwindcss@3.4.1):
-    resolution: {integrity: sha512-1MKT8CrVuqVJleHxb7ICHsF2QwO0G+VJ28athTtlcOkccp0qmwK7nCUa1C9paCZ+VVgQU4fonsjLz/wUxoMHJQ==}
-    engines: {node: '>=12.13.0'}
+  /eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-gJAEHmCq2XFfUP/+vwEfEJ9igrPeZFg+skeMtsxquSQdxba9XRk5bn0Bp9jxG1VV9/wwPKi1g3ZjItu6MIjhNg==}
+    engines: {node: '>=18.12.0'}
     requiresBuild: true
     peerDependencies:
       tailwindcss: ^3.4.0
@@ -5140,12 +5140,6 @@ packages:
     dev: false
     optional: true
 
-  /picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
     requiresBuild: true
@@ -5303,7 +5297,7 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.0.2
     dev: false
     optional: true
@@ -6290,7 +6284,7 @@ packages:
     dependencies:
       browserslist: 4.22.2
       escalade: 3.1.1
-      picocolors: 1.0.0
+      picocolors: 1.0.1
     dev: false
     optional: true
 
