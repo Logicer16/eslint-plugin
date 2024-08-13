@@ -12,7 +12,17 @@ export const simpleImportSortConfig: FlatConfig = {
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": [
       "error",
-      {groups: [["^\\u0000", "^node:", "^@?\\w", "^", "^\\."]]}
+      {
+        groups: [
+          [
+            String.raw`^\u0000`,
+            "^node:",
+            String.raw`^@?\w`,
+            "^",
+            String.raw`^\.`
+          ]
+        ]
+      }
     ]
   }
 };

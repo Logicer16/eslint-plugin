@@ -42,7 +42,7 @@ export const tsConfigs: FlatConfig[] = [
         {
           "minimumDescriptionLength": 3,
           "ts-check": false,
-          "ts-expect-error": {descriptionFormat: "^: TS\\d+ .+\\.$"},
+          "ts-expect-error": {descriptionFormat: String.raw`^: TS\d+ .+\.$`},
           "ts-ignore": true,
           "ts-nocheck": true
         }

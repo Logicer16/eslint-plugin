@@ -26,16 +26,16 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
                 {
                   // Regex
                   ignore: [
-                    "\\$app/environment",
-                    "\\$app/forms",
-                    "\\$app/navigation",
-                    "\\$app/paths",
-                    "\\$app/stores",
-                    "\\$env/dynamic/private",
-                    "\\$env/dynamic/public",
-                    "\\$env/static/private",
-                    "\\$env/static/public",
-                    "\\$service-worker"
+                    String.raw`\$app/environment`,
+                    String.raw`\$app/forms`,
+                    String.raw`\$app/navigation`,
+                    String.raw`\$app/paths`,
+                    String.raw`\$app/stores`,
+                    String.raw`\$env/dynamic/private`,
+                    String.raw`\$env/dynamic/public`,
+                    String.raw`\$env/static/private`,
+                    String.raw`\$env/static/public`,
+                    String.raw`\$service-worker`
                   ]
                 }
               ],
