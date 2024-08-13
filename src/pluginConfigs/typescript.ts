@@ -100,7 +100,7 @@ export const tsConfigs: FlatConfig[] = [
           allowArray: false
         }
       ],
-      "@typescript-eslint/sort-type-constituents": "error",
+      "@typescript-eslint/sort-type-constituents": "off",
       "@typescript-eslint/strict-boolean-expressions": [
         "error",
         {

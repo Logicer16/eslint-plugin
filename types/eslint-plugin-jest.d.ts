@@ -9,7 +9,7 @@ declare module "eslint-plugin-jest" {
   type FlatConfig = import("../src/types.ts").FlatConfig;
   type Plugin = import("../src/types.ts").Plugin;
 
-  declare const eslintPluginJest: Plugin & {
+  declare const eslintPluginJest: {
     configs: {
       "all": ESLint.ConfigData;
       "flat/all": FlatConfig;
@@ -19,7 +19,7 @@ declare module "eslint-plugin-jest" {
       "recommended": ESLint.ConfigData;
       "style": ESLint.ConfigData;
     };
-  };
+  } & Plugin;
 
   export default eslintPluginJest;
 }

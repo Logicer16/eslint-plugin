@@ -20,7 +20,7 @@ const EcmaInvalidEnd = 2015;
 
 type StandardEcmaVersion = Exclude<
   EcmaVersion,
-  IntRange<typeof EcmaInvalidStart, typeof EcmaInvalidEnd> | "latest"
+  "latest" | IntRange<typeof EcmaInvalidStart, typeof EcmaInvalidEnd>
 >;
 
 type NextEcmaVersion = UnionMax<EcmaYearVersion, 2015>;
@@ -88,8 +88,8 @@ function isEcmaYearVersion(
  */
 function normaliseEcmaVersion(
   options: RequiredConfigOptions
-): StandardEcmaVersion | "next" {
-  let ecmaVersion: StandardEcmaVersion | "next";
+): "next" | StandardEcmaVersion {
+  let ecmaVersion: "next" | StandardEcmaVersion;
   if (
     typeof options.ecmaVersion === "number" &&
     ecmaVersionIsOutsideStandardRange(options.ecmaVersion)
@@ -116,7 +116,7 @@ function normaliseEcmaVersion(
  * @returns A eslint config for svelte.
  */
 export function getESXConfigs(options: RequiredConfigOptions): FlatConfig[] {
-  const ecmaVersion: StandardEcmaVersion | "next" =
+  const ecmaVersion: "next" | StandardEcmaVersion =
     normaliseEcmaVersion(options);
 
   const configs: FlatConfig[] = [

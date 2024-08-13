@@ -11,12 +11,11 @@ export type EcmaVersion = Exclude<
 
 type Plugin = ConfigNamespace.Plugin | ESLint.Plugin;
 type PluginConfigs = Record<string, (ESLint.ConfigData | FlatConfig)[]>;
-type ConfigedPlugin = Omit<Plugin, "configs"> & {configs?: PluginConfigs};
+type ConfigedPlugin = {configs?: PluginConfigs} & Omit<Plugin, "configs">;
 
-export type FlatConfig = Omit<
-  ConfigNamespace.Config | Linter.FlatConfig,
-  "plugins"
-> & {plugins?: Record<string, Omit<ConfigedPlugin, "configs">>};
+export type FlatConfig = {
+  plugins?: Record<string, Omit<ConfigedPlugin, "configs">>;
+} & Omit<ConfigNamespace.Config | Linter.FlatConfig, "plugins">;
 
 export type RulesRecord = Exclude<
   Record<string, (ConfigNamespace.Rules | Linter.RulesRecord)[string]>,

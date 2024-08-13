@@ -47,7 +47,7 @@ export default class ConfigGenerator {
 
   private static ignoreExtensions<T extends FlatConfig>(
     configs: T[],
-    ...extensions: (string[] | string)[]
+    ...extensions: (string | string[])[]
   ): T[] {
     return configs.map((config) => {
       return {
