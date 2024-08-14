@@ -1,11 +1,8 @@
 /**
  * @file The configuration for `eslint-plugin-svelte`.
  */
-import svelteParser from "svelte-eslint-parser";
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import sveltePlugin from "eslint-plugin-svelte";
 import type {FlatConfig, RequiredConfigOptions} from "../types.js";
-
-const compat = getLegacyCompatibilityInstance(import.meta.url);
 
 /**
  * Generate an eslint config for svelte based on the generator's options.
@@ -46,7 +43,7 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         ];
 
   return [
-    ...compat.extends("plugin:svelte/recommended"),
+    ...sveltePlugin.configs["flat/recommended"],
     {
       rules: {
         "svelte/block-lang": [
@@ -76,6 +73,7 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         "svelte/no-reactive-literals": "error",
         "svelte/no-reactive-reassign": "error",
         "svelte/no-store-async": "error",
+        "svelte/no-svelte-internal": "error",
         "svelte/no-target-blank": "error",
         "svelte/no-useless-mustaches": "error",
         "svelte/prefer-class-directive": "error",
@@ -98,7 +96,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
     {
       files: ["**/*.svelte"],
       languageOptions: {
-        parser: svelteParser,
         parserOptions: options.typescript
           ? {
               extraFileExtensions: [".svelte"],
@@ -117,6 +114,5 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
   ];
 }
 
-export const sveltePrettierConfigs: FlatConfig[] = compat.extends(
-  "plugin:svelte/prettier"
-);
+export const sveltePrettierConfigs: FlatConfig[] =
+  sveltePlugin.configs["flat/prettier"];
