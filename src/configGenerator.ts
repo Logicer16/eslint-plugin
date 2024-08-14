@@ -165,19 +165,19 @@ export default class ConfigGenerator {
             (importedConfig) => {
               return importedConfig.getDecoratorPositionConfig(this.options);
             }
-          ),
-          import("./pluginConfigs/deprecation.js").then((importedConfig) => {
-            return ConfigGenerator.ignoreExtensions(
-              importedConfig.deprecationConfigs,
-              ...ESIncompatibleExtensionPatterns
-            );
-          }),
-          import("./pluginConfigs/etc.js").then((importedConfig) => {
-            return ConfigGenerator.ignoreExtensions(
-              importedConfig.etcConfigs,
-              ...ESIncompatibleExtensionPatterns
-            );
-          })
+          )
+          // import("./pluginConfigs/deprecation.js").then((importedConfig) => {
+          //   return ConfigGenerator.ignoreExtensions(
+          //     importedConfig.deprecationConfigs,
+          //     ...ESIncompatibleExtensionPatterns
+          //   );
+          // }),
+          // import("./pluginConfigs/etc.js").then((importedConfig) => {
+          //   return ConfigGenerator.ignoreExtensions(
+          //     importedConfig.etcConfigs,
+          //     ...ESIncompatibleExtensionPatterns
+          //   );
+          // })
         );
 
         // eslint-disable-next-line unicorn/no-array-push-push

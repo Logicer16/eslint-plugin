@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-css`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import {legacyCompatibility} from "../legacyCompatibility.js";
 import {FlatConfig} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
+const compat = new legacyCompatibility(import.meta.url);
 
 export const cssConfigs: FlatConfig[] = [
   ...compat.extends("plugin:css/standard"),

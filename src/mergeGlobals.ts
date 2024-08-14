@@ -1,8 +1,7 @@
 /**
  * @file Merge two sets of ESLint globals to create the most permissive combination.
  */
-import {ESLint} from "eslint";
-import {GlobalValue} from "./types.js";
+import {Globals, GlobalValue} from "./types.js";
 
 /**
  * Compare two values to determine the greater valued one.
@@ -39,8 +38,8 @@ function getGreaterKey(
  * @param globals The global objects to merge.
  * @returns A merged global object.
  */
-export function mergeGlobals(...globals: ESLint.Globals[]): ESLint.Globals {
-  const merged: ESLint.Globals = {};
+export function mergeGlobals(...globals: Globals[]): Globals {
+  const merged: Globals = {};
 
   for (const global of globals) {
     for (const key of Object.keys(global)) {

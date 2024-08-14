@@ -3,6 +3,7 @@
  */
 import type {FlatConfig as ConfigNamespace} from "@typescript-eslint/utils/ts-eslint";
 import {ESLint, Linter} from "eslint";
+import {ArrayOrSolo} from "./typeUtils.js";
 
 export type EcmaVersion = Exclude<
   ConfigNamespace.EcmaVersion | Linter.ParserOptions["ecmaVersion"],
@@ -10,12 +11,15 @@ export type EcmaVersion = Exclude<
 >;
 
 type Plugin = ConfigNamespace.Plugin | ESLint.Plugin;
-type PluginConfigs = Record<string, (ESLint.ConfigData | FlatConfig)[]>;
+type PluginConfigs = Record<
+  string,
+  ArrayOrSolo<ESLint.ConfigData | FlatConfig>
+>;
 type ConfigedPlugin = {configs?: PluginConfigs} & Omit<Plugin, "configs">;
 
 export type FlatConfig = {
   plugins?: Record<string, Omit<ConfigedPlugin, "configs">>;
-} & Omit<ConfigNamespace.Config | Linter.FlatConfig, "plugins">;
+} & Omit<ConfigNamespace.Config | Linter.Config, "plugins">;
 
 export type RulesRecord = Exclude<
   Record<string, (ConfigNamespace.Rules | Linter.RulesRecord)[string]>,
@@ -42,8 +46,9 @@ export interface ConfigOptions {
 export type RequiredConfigOptions = Required<ConfigOptions>;
 
 export type {ConfigedPlugin as Plugin};
-export type GlobalValue =
-  | ConfigNamespace.GlobalsConfig[string]
-  | ESLint.Globals[string];
+
+export type Globals = ConfigNamespace.GlobalsConfig | Linter.Globals;
+
+export type GlobalValue = Globals[string];
 
 export {type FlatConfig as ConfigNamespace} from "@typescript-eslint/utils/ts-eslint";

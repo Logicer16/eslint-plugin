@@ -32,7 +32,7 @@ const plugin: Plugin = {
 export default plugin;
 
 export {default as ConfigGenerator, processConfig} from "./configGenerator.js";
-export {getLegacyCompatibilityInstance} from "./legacyCompatibility.js";
+export {legacyCompatibility} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";
 export type {
   ConfigOptions,

@@ -1,10 +1,10 @@
 /**
  * @file The configuration for `eslint-plugin-import-x`.
  */
-import {getLegacyCompatibilityInstance} from "../legacyCompatibility.js";
+import {legacyCompatibility} from "../legacyCompatibility.js";
 import type {FlatConfig, RequiredConfigOptions} from "../types.js";
 
-const compat = getLegacyCompatibilityInstance(import.meta.url);
+const compat = new legacyCompatibility(import.meta.url);
 
 /**
  * Generate an eslint config for import based on the generator's options.
