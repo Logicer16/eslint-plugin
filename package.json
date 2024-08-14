@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/Logicer16/eslint-plugin#readme",
   "engines": {
-    "node": "^20.10.0",
+    "node": "^20.11.0",
     "pnpm": ">=8.10.0"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@logicer/util-types": "^1.0.0",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^20.8.7",
+    "@types/node": "^20.11.30",
     "eslint": "^8.57.0",
     "prettier": "3.2.5",
     "ts-plugin-type-coverage": "^2.26.4",

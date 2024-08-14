@@ -157,8 +157,8 @@ devDependencies:
     specifier: ^8.42.3
     version: 8.42.3
   '@types/node':
-    specifier: ^20.8.7
-    version: 20.10.3
+    specifier: ^20.11.30
+    version: 20.11.30
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -976,8 +976,8 @@ packages:
     dev: false
     optional: true
 
-  /@types/node@20.10.3:
-    resolution: {integrity: sha512-XJavIpZqiXID5Yxnxv3RUDKTN5b81ddNC3ecsA0SoFXz/QU8OGBwZGMomiq0zw+uuqbL/krztv/DINAQ/EV4gg==}
+  /@types/node@20.11.30:
+    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
