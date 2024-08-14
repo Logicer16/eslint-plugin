@@ -165,6 +165,9 @@ devDependencies:
   eslint:
     specifier: ^9.9.0
     version: 9.9.0
+  eslint-typegen:
+    specifier: ^0.3.0
+    version: 0.3.0(eslint@9.9.0)
   prettier:
     specifier: 3.2.5
     version: 3.2.5
@@ -199,6 +202,15 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: false
     optional: true
+
+  /@apidevtools/json-schema-ref-parser@11.7.0:
+    resolution: {integrity: sha512-pRrmXMCwnmrkS3MLgAIW5dXRzeTv6GLjkjb4HmxNnvAKXN1Nfzp4KmGADBQvlVUcqi+a5D+hfGDLLnd5NnYxog==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@jsdevtools/ono': 7.1.3
+      '@types/json-schema': 7.0.15
+      js-yaml: 4.1.0
+    dev: true
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
@@ -817,6 +829,10 @@ packages:
     dev: false
     optional: true
 
+  /@jsdevtools/ono@7.1.3:
+    resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
+    dev: true
+
   /@logicer/eslint-plugin@4.0.3(@types/eslint@9.6.0)(eslint@9.9.0)(prettier@3.2.5)(typescript@5.4.2):
     resolution: {integrity: sha512-BII0RRiDEFhU4hFehBiUwK651Fx4KqMPlefxaFOMztIEQha4cWSMCdntUo/Utv3BUUY6Jh8fkvGMGEJtLLTHFA==}
     engines: {node: ^20.10.0}
@@ -1008,7 +1024,6 @@ packages:
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
-    dev: false
 
   /@types/eslint__eslintrc@2.1.1:
     resolution: {integrity: sha512-LI51vVv3N7WI4+fM7Xkh1+ciLA1gtuQPgXdKdece+vD8f/G2hrFqtwb4YIQyIM6VXpRM4vSy1PW5y3yuHK+Y2w==}
@@ -3705,6 +3720,17 @@ packages:
       esrecurse: 4.3.0
       estraverse: 5.3.0
 
+  /eslint-typegen@0.3.0(eslint@9.9.0):
+    resolution: {integrity: sha512-NXuFC16JBS8H11cD8DJcmSzpv2+MljyDvksSbx4ak5zXebk7SEFMIdk/idYGXgevs0Lz4BClYG7b4MtD0+tFVg==}
+    peerDependencies:
+      eslint: ^8.45.0 || ^9.0.0
+    dependencies:
+      '@types/eslint': 9.6.0
+      eslint: 9.9.0
+      json-schema-to-typescript-lite: 14.0.1
+      ohash: 1.1.3
+    dev: true
+
   /eslint-utils@2.1.0:
     resolution: {integrity: sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==}
     engines: {node: '>=6'}
@@ -4725,6 +4751,13 @@ packages:
     dev: false
     optional: true
 
+  /json-schema-to-typescript-lite@14.0.1:
+    resolution: {integrity: sha512-MhjvNC3MfEyYmKiC1rEzwDTCc22+hWU/2HKVfnklar4tifbkT8oZvvamEG1n550JeCmJ0V+2ly+5fF5K+lIExg==}
+    dependencies:
+      '@apidevtools/json-schema-ref-parser': 11.7.0
+      '@types/json-schema': 7.0.15
+    dev: true
+
   /json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -5178,6 +5211,10 @@ packages:
       define-properties: 1.2.1
       es-abstract: 1.22.5
     dev: false
+
+  /ohash@1.1.3:
+    resolution: {integrity: sha512-zuHHiGTYTA1sYJ/wZN+t5HKZaH23i4yI1HMwbuXm24Nid7Dv0KcuRlKoNKS9UNfAVSBlnGLcuQrnOKWOZoEGaw==}
+    dev: true
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}

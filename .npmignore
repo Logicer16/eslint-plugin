@@ -4,6 +4,10 @@
 src/
 types/
 
+dist/**/*
+!dist/src/**/*
+!dist/types/**/*.d.ts
+
 .editorconfig
 .eslintcache
 .gitattributes
@@ -16,5 +20,5 @@ types/
 eslint.config.js
 tsconfig.eslint.json
 tsconfig.json
-*.js.map
+*.map
 *.tsbuildinfo

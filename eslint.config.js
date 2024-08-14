@@ -26,6 +26,7 @@ const ignores = [
   "node_modules/**/*",
   "dist/**/*",
   ".type-coverage/**/*",
+  "types/generated/**/*",
 
   "**/.eslint_report.json",
   "**/.eslintcache"

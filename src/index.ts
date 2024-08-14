@@ -31,6 +31,7 @@ const plugin: Plugin = {
 
 export default plugin;
 
+export type * from "../types/generated/typegen.js";
 export {default as ConfigGenerator, processConfig} from "./configGenerator.js";
 export {legacyCompatibility} from "./legacyCompatibility.js";
 export {mergeGlobals} from "./mergeGlobals.js";

@@ -5,5 +5,5 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "include": [".prettierrc.js", "eslint.config.js"]
+  "include": [".prettierrc.js", "eslint.config.js", "typegen.js"]
 }
