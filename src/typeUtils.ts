@@ -26,3 +26,19 @@ export function isArrayOfType<ArrayValue, T extends ArrayValue>(
  * Permit an array of a type or the type itself, alone.
  */
 export type ArrayOrSolo<T> = T | T[];
+
+/**
+ * Check if a parameter is an object.
+ *
+ * @param obj The parameter to check.
+ * @returns True if `obj` is an object. Otherwise, returns false.
+ */
+export function isObject(obj: unknown): obj is Record<objectKeys, unknown> {
+  return typeof obj === "object" && !Array.isArray(obj) && obj !== null;
+}
+
+/**
+ * Valid keys for an object.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type objectKeys = keyof any;

@@ -3,6 +3,7 @@
  */
 import {legacyCompatibility} from "../legacyCompatibility.js";
 import type {FlatConfig, RequiredConfigOptions} from "../types.js";
+import {isObject, objectKeys} from "../typeUtils.js";
 
 const compat = new legacyCompatibility(import.meta.url);
 
@@ -16,7 +17,9 @@ export function getImportXConfigs(
   options: RequiredConfigOptions
 ): FlatConfig[] {
   const importTypescriptConfig: FlatConfig[] = options.typescript
-    ? compat.extends("plugin:import-x/typescript")
+    ? compat.extends("plugin:import-x/typescript").map((element) => {
+        return removeTSParser(element);
+      })
     : [];
 
   return [
@@ -62,4 +65,24 @@ export function getImportXConfigs(
       }
     }
   ];
+}
+
+/**
+ * Remove the explicitly stated typescript parser from import's settings to allow eslint's instance to be used. Avoids incorrect imports.
+ *
+ * @param config The config to modify.
+ * @returns The modified config.
+ */
+function removeTSParser(config: FlatConfig): FlatConfig {
+  if (config.settings === undefined) return config;
+  const oldSettings = config.settings["import-x/parsers"];
+
+  if (!isObject(oldSettings)) return config;
+  const settings: Record<objectKeys, unknown> = oldSettings;
+
+  if (Object.hasOwn(settings, "@typescript-eslint/parser")) {
+    settings["@typescript-eslint/parser"] = undefined;
+  }
+
+  return {...config, settings};
 }

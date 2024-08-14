@@ -71,8 +71,8 @@ optionalDependencies:
     specifier: ^8.0.0
     version: 8.0.0
   eslint-plugin-import-x:
-    specifier: ^0.5.0
-    version: 0.5.0(eslint@9.9.0)(typescript@5.4.2)
+    specifier: ^3.1.0
+    version: 3.1.0(eslint@9.9.0)(typescript@5.4.2)
   eslint-plugin-jest:
     specifier: ^28.2.0
     version: 28.2.0(eslint@9.9.0)(typescript@5.4.2)
@@ -2964,8 +2964,8 @@ packages:
     dev: false
     optional: true
 
-  /eslint-plugin-import-x@0.5.0(eslint@9.9.0)(typescript@5.4.2):
-    resolution: {integrity: sha512-C7R8Z4IzxmsoOPMtSzwuOBW5FH6iRlxHR6iTks+MzVlrk3r3TUxokkWTx3ypdj9nGOEP+CG/5e6ebZzHbxgbbQ==}
+  /eslint-plugin-import-x@3.1.0(eslint@9.9.0)(typescript@5.4.2):
+    resolution: {integrity: sha512-/UbPA+bYY7nIxcjL3kpcDY3UNdoLHFhyBFzHox2M0ypcUoueTn6woZUUmzzi5et/dXChksasYYFeKE2wshOrhg==}
     engines: {node: '>=16'}
     requiresBuild: true
     peerDependencies:
@@ -2978,8 +2978,10 @@ packages:
       eslint-import-resolver-node: 0.3.9
       get-tsconfig: 4.7.3
       is-glob: 4.0.3
-      minimatch: 9.0.3
-      semver: 7.6.0
+      minimatch: 9.0.5
+      semver: 7.6.3
+      stable-hash: 0.0.4
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6015,6 +6017,12 @@ packages:
 
   /spdx-license-ids@3.0.16:
     resolution: {integrity: sha512-eWN+LnM3GR6gPu35WxNgbGl8rmY1AEmoMDvL/QD6zYmPWgywxWqJWNdLGT+ke8dKNWrcYgYjPpG5gbTfghP8rw==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /stable-hash@0.0.4:
+    resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
     requiresBuild: true
     dev: false
     optional: true
