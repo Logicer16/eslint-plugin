@@ -54,15 +54,15 @@ export class legacyCompatibility {
   public static v8Config<T extends FixupConfig | FlatConfig>(
     config: ArrayOrSolo<T>
   ): T[] {
-    // type-coverage:ignore-line Use custom, more compatible types. Config should be identical in shape; only addition should be necessary wrappers.
+    // type-coverage:ignore-next-line Use custom, more compatible types. Config should be identical in shape; only addition should be necessary wrappers.
     return fixupConfigRules(config as FixupConfig) as T[];
   }
 
   public static v8Plugin<T extends FixupPluginDefinition | Plugin>(
     plugin: T
   ): T {
-    // type-coverage:ignore-line Use custom, more compatible types. Plugin should be identical in shape; only addition should be necessary wrappers.
-    return fixupPluginRules(plugin as FixupPluginDefinition) as typeof plugin;
+    // type-coverage:ignore-next-line Use custom, more compatible types. Plugin should be identical in shape; only addition should be necessary wrappers.
+    return fixupPluginRules(plugin as FixupPluginDefinition) as T;
   }
 
   /**

@@ -43,7 +43,8 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         ];
 
   return [
-    ...sveltePlugin.configs["flat/recommended"],
+    // type-coverage:ignore-line Old types.
+    ...(sveltePlugin.configs["flat/recommended"] as FlatConfig[]),
     {
       rules: {
         "svelte/block-lang": [
@@ -115,4 +116,5 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
 }
 
 export const sveltePrettierConfigs: FlatConfig[] =
-  sveltePlugin.configs["flat/prettier"];
+  // type-coverage:ignore-line Old types.
+  sveltePlugin.configs["flat/prettier"] as FlatConfig[];

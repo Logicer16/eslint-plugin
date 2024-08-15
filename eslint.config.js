@@ -38,8 +38,14 @@ const eslintPluginConfigs = [
   {
     languageOptions: {
       parserOptions: {
-        project: ["./tsconfig.json", "./tsconfig.*.json"],
-        sourceType: "module"
+        projectService: {
+          allowDefaultProject: [
+            ".prettierrc.js",
+            "eslint.config.js",
+            "typegen.js"
+          ],
+          defaultProject: "./tsconfig.json"
+        }
       }
     },
     settings: {

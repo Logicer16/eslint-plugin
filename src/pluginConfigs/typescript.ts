@@ -8,6 +8,11 @@ export const tsConfigs: FlatConfig[] = [
   ...tsPlugin.configs.strictTypeChecked,
   ...tsPlugin.configs.stylisticTypeChecked,
   {
+    languageOptions: {
+      parserOptions: {
+        projectService: true
+      }
+    },
     rules: {
       // Modify existing eslint rules
       "@typescript-eslint/class-methods-use-this": "error",
@@ -76,6 +81,10 @@ export const tsConfigs: FlatConfig[] = [
       "@typescript-eslint/prefer-literal-enum-member": [
         "error",
         {allowBitwiseExpressions: true}
+      ],
+      "@typescript-eslint/prefer-nullish-coalescing": [
+        "error",
+        {ignoreConditionalTests: false}
       ],
       "@typescript-eslint/prefer-optional-chain": "error",
       "@typescript-eslint/prefer-regexp-exec": "error",

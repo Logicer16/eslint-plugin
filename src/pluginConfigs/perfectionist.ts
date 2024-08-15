@@ -5,7 +5,6 @@ import perfectionist from "eslint-plugin-perfectionist";
 import type {FlatConfig} from "../types.js";
 
 export const perfectionistConfigs: FlatConfig[] = [
-  // @ts-expect-error: TS2322 Typo in eslint < 9 / typescript-eslint < 8.
   perfectionist.configs["recommended-natural"],
   {
     rules: {

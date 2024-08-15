@@ -99,12 +99,12 @@
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-unused-imports": "^4.1.3",
     "eslint-plugin-yml": "^1.14.0",
-    "typescript-eslint": "^7.18.0"
+    "typescript-eslint": "^8.1.0"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.0.0",
     "@types/eslint": "^9.6.0",
-    "@typescript-eslint/utils": "^7.18.0"
+    "@typescript-eslint/utils": "^8.1.0"
   },
   "peerDependencies": {
     "eslint": ">=9.9.0",

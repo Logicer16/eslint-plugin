@@ -13,7 +13,6 @@ import {pluginsToRulesDTS} from "eslint-typegen/core";
 const outPath = "types/generated/typegen.ts";
 
 const declaration = await pluginsToRulesDTS({
-  /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
   "array-func": (await import("eslint-plugin-array-func")).default,
   "css": (await import("eslint-plugin-css")).default,
   "decorator-position": (await import("eslint-plugin-decorator-position"))
@@ -55,7 +54,6 @@ const declaration = await pluginsToRulesDTS({
   "@microsoft/sdl": (await import("@microsoft/eslint-plugin-sdl")).default,
   "@typescript-eslint": (await import("typescript-eslint")).default,
   "shopify": (await import("@shopify/eslint-plugin")).default
-  /* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
 });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
