@@ -43,7 +43,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
         ];
 
   return [
-    // type-coverage:ignore-line Old types.
     ...(sveltePlugin.configs["flat/recommended"] as FlatConfig[]),
     {
       rules: {
@@ -115,6 +114,6 @@ export function getSvelteConfigs(options: RequiredConfigOptions): FlatConfig[] {
   ];
 }
 
-export const sveltePrettierConfigs: FlatConfig[] =
-  // type-coverage:ignore-line Old types.
-  sveltePlugin.configs["flat/prettier"] as FlatConfig[];
+export const sveltePrettierConfigs: FlatConfig[] = sveltePlugin.configs[
+  "flat/prettier"
+] as FlatConfig[];
